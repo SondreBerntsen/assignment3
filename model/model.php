@@ -1,15 +1,19 @@
 <?php
 
 include_once("model/Category.php");
+/*include_once("model/Item.php");
+include_once("model/User.php");
+include_once("model/MessageThread.php");
+include_once("model/Message.php");*/
 
 class Model {
 	public function getCategoryList()
 	{
 		// here goes some hardcoded values to simulate the database
 		return array(
-			"category1" => new Category("category1", "user1"),
-			"category2" => new Category("category2", "user2"),
-			"category3" => new Category("category3", "user3")
+			"category1" => new Category("category1"),
+			"category2" => new Category("category2"),
+			"category3" => new Category("category3")
 		);
 	}
 
