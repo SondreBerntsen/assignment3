@@ -25,6 +25,7 @@ class Controller {
 			include 'view/viewcategory.php';
 		}
 	}
+
 }
 
 ?>

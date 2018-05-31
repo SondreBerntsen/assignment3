@@ -7,6 +7,13 @@ include_once("model/MessageThread.php");
 include_once("model/Message.php");*/
 
 class Model {
+	public function connectToDB(){
+		$dsn= 'mysql:dbname=secondhand;host=127.0.0.1';
+		$user = 'root';
+		$password = '';
+		$db = new PDO($dsn, $user, $password);
+		return $db;
+	}
 	public function getCategoryList()
 	{
 		// here goes some hardcoded values to simulate the database
@@ -23,6 +30,10 @@ class Model {
 		// in a real life scenario this will be done through a db select command
 		$allCategories = $this->getCategoryList();
 		return $allCategories[$title];
+	}
+
+	public function newItem(){
+
 	}
 
 
