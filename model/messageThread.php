@@ -1,6 +1,6 @@
 <?php
 
-class Message {
+class MessageThread {
 	public $id;
 	public $qAsker;
   public $owner;
