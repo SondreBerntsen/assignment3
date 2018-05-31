@@ -1,20 +1,23 @@
 <?php
 
 class Item {
-	public $id;
-	public $owner;
-	public $description;
-  public $date;
 
-	public function __construct($id, $owner, $description, $date)
+
+	public function __construct()
     {
-      $this->id = $id;
-	    $this->owner = $owner;
-	    $this->description = $description;
-      $this->date = //NOW();
+
     }
 
-	public function whateverYouWant(){
+	public function createItem(){
+
+	}
+	public function getItem(){
+		
+	}
+	public function deleteItem(){
+
+	}
+	public function editItem(){
 
 	}
 }

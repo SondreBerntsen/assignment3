@@ -13,6 +13,9 @@ class User {
   public function registerUser(){
 
   }
+  public function changeUserData(){
+    
+  }
 
 
 }

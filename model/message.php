@@ -1,18 +1,18 @@
 <?php
 
 class Message {
-	public $content;
-	public $sender;
 
-	public function __construct($content, $sender)
-    {
-      $this->content = $content;
-	    $this->sender = $sender;
-    }
-  public function turboBæsj(){
+	public function __construct(){
+
 
   }
+	public function newMessage(){
+
+	}
+	public function deleteMessage(){
+		
+	}
+
 }
-  $qwe = new Message($qwe,$qwee);
-  Message::turboBæsj();
+
 ?>

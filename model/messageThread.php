@@ -1,18 +1,20 @@
 <?php
-
+//Trenger vi en klasse for dette?
 class MessageThread {
-	public $id;
-	public $qAsker;
-  public $owner;
-  public $subject;
 
-	public function __construct($id, $qAsker, $owner, $subject)
-    {
-      $this->id = $id;
-	    $this->qAsker = $qAsker;
-      $this->owner = $owner;
-      $this->subject = $subject;
-    }
+
+	public function __construct(){
+
+  }
+	public function listMessages(){
+
+	}
+	public function deleteThread(){
+		
+	}
+
+
+
 }
 
 ?>
