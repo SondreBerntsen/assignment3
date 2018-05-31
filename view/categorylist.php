@@ -11,61 +11,60 @@
 </head>
 
 <body>
-
 	<div class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Secondhand</a>
-        </div>
-        <center>
-            <div class="navbar-collapse collapse" id="navbar-main">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                </ul>
-                <form class="navbar-form navbar-right" role="search" method="POST">
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="username" placeholder="Username">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="password" placeholder="Password">
-                    </div>
-                    <button type="submit" class="btn btn-default">Log in</button>
-										<button type="submit" class="btn btn-default">Register</button>
-                </form>
-            </div>
-        </center>
-    </div>
-</div>
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Secondhand</a>
+			</div>
+			<center>
+				<div class="navbar-collapse collapse" id="navbar-main">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">Home</a></li>
+					</ul>
+					<form class="navbar-form navbar-right" role="search" method="POST">
+						<div class="form-group">
+							<input type="text" class="form-control" name="username" placeholder="Username">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" name="password" placeholder="Password">
+						</div>
+						<button type="submit" class="btn btn-default">Log in</button>
+						<button type="submit" class="btn btn-default">Register</button>
+					</form>
+				</div>
+			</center>
+		</div>
+	</div>
 
-<div class="sidenav">
+	<div class="sidenav">
+		<ul>
+			<li>
+				<h4>
+					<strong>Kategorier</strong>
+				</h4>
+			</li>
+				<?php
+				// for every category in categories
+				foreach ($categories as $title => $category)
+				{
+				// we place the category title in the url
+				echo '<li> <a href="index.php?category='.$category->title.'">'.$category->title.'</a></li>';
+				}
+				?>
+		</ul>
+	</div>
 
-<ul>
-	<li><h4><strong>Kategorier</strong></h4></li>
 	<?php
 
-		foreach ($categories as $title => $category)
-		{
-			// we place the category title in the url
-			echo '<li> <a href="index.php?category='.$category->title.'">'.$category->title.'</a></li>';
-		}
-		?>
-</ul>
-</div>
-	<!--	<table>
-		<tr><td>Kategorier</td></tr>
-	<?php
+	echo '</br> Dette er forsiden</br></br>';
+	echo '</br> Her vil nylig opplastede items ligge</br></br>';
 
-
-				echo '</br> Dette er forsiden</br></br>';
-				echo '</br> Her vil nylig opplastede items ligge</br></br>';
-
-		?>
-	</table>-->
+	?>
 
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
