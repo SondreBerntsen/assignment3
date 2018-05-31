@@ -11,6 +11,7 @@
 </head>
 
 <body>
+	<!-- navbar -->
 	<div class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -40,7 +41,7 @@
 			</center>
 		</div>
 	</div>
-
+	<!-- sidebar for categories -->
 	<div class="sidenav">
 		<ul>
 			<li>
@@ -48,14 +49,14 @@
 					<strong>Kategorier</strong>
 				</h4>
 			</li>
-				<?php
-				// for every category in categories
-				foreach ($categories as $title => $category)
-				{
-				// we place the category title in the url
-				echo '<li> <a href="index.php?category='.$category->title.'">'.$category->title.'</a></li>';
-				}
-				?>
+			<?php
+			// for every category in categories
+			foreach ($categories as $title => $category)
+			{
+			// we place the category title in the url
+			echo '<li> <a href="index.php?category='.$category->title.'">'.$category->title.'</a></li>';
+			}
+			?>
 		</ul>
 	</div>
 
