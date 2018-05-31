@@ -16,14 +16,19 @@ class User extends Model{
   public function changeUserData(){
 
   }
-	public function newItem(){
+	public function newItem($values){
 		$db = $this->connectToDB();
 
-
-		$query = 'INSERT INTO item
-							VALUES ()';
+		$query = 'INSERT INTO item(name, descr, img, date, owner, category, previewtxt)
+							VALUES (?, ?, ?, NOW(), ?, ?, ?)';
 		$sth = $db->prepare($query);
-		$sth->execute();
+		$sth->execute([$values[0], $values[1], $values[2], $_SESSION['user'], $values[3], $values[4]]);
+
+		if($sth->rowCount() == 1){
+			return "Things were inserted";
+		}else{
+			return "No workerino";
+		}
   }
 
 }

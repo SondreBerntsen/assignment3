@@ -2,7 +2,7 @@
 
 include('model/model.php');
 include('model/user.php');
-class Controller{
+class UserController{
 
   public function newItem(){
     $name = $_POST['name']
