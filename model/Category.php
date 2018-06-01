@@ -1,6 +1,6 @@
 <?php
 // Class for Category
-include('model/model.php');
+//include('model/model.php');
 class Category extends Model {
 
 
