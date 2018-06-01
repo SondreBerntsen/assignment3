@@ -1,6 +1,6 @@
 <?php
 // Class for Category
-//include('model/model.php');
+include('model/model.php');
 class Category extends Model {
 
 
@@ -24,16 +24,6 @@ class Category extends Model {
 		$query = 'DELETE FROM category WHERE name=?';
     $sth = $db->prepare($query);
     $sth->execute(array($name));
-	}
-	public function listCategories(){
-		$db = $this->connectToDB();
-		$query = 'SELECT name
-              FROM category
-              ORDER BY name DESC';
-    $sth = $this->db->prepare($query);
-    $sth->execute(array());
-    $data=$sth->fetchAll(PDO::FETCH_ASSOC);
-    return $data;
 	}
 
 }
