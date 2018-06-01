@@ -1,6 +1,6 @@
 <?php
 // Class for Category
-include('model/model.php');
+require_once('model/model.php');
 class Category extends Model {
 
 
@@ -30,10 +30,10 @@ class Category extends Model {
 		$query = 'SELECT name
               FROM category
               ORDER BY name DESC';
-    $sth = $this->db->prepare($query);
+    $sth = $db->prepare($query);
     $sth->execute(array());
     $data=$sth->fetchAll(PDO::FETCH_ASSOC);
-    return $data;
+    print_r($data);
 	}
 
 }

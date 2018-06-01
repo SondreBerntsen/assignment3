@@ -1,7 +1,7 @@
 <?php
-	include_once("controller/Controller.php");
+	include_once("controller/HomeController.php");
 
-	$controller = new Controller();
-	//$controller->invoke();
+	$controller = new HomeController();
+	$controller->listCategories();
 
 ?>
