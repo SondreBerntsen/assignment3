@@ -25,6 +25,16 @@ class Category extends Model {
     $sth = $db->prepare($query);
     $sth->execute(array($name));
 	}
+	public function listCategories(){
+		$db = $this->connectToDB();
+		$query = 'SELECT name
+              FROM category
+              ORDER BY name DESC';
+    $sth = $this->db->prepare($query);
+    $sth->execute(array());
+    $data=$sth->fetchAll(PDO::FETCH_ASSOC);
+    return $data;
+	}
 
 }
 
