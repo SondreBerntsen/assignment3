@@ -10,7 +10,7 @@ class Category extends Model {
 		$query = 'INSERT INTO category (name) VALUES (?)';
     $sth = $db->prepare($query);
     $data = array($name);
-   $sth->execute($data);
+   	$sth->execute($data);
    //If there is a new row in a database retrun true
    if ($sth->rowCount() == 1){
      return true;
@@ -25,6 +25,7 @@ class Category extends Model {
     $sth = $db->prepare($query);
     $sth->execute(array($name));
 	}
+
 }
 
 ?>
