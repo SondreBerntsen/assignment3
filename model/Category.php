@@ -3,13 +3,13 @@
 include('model/model.php');
 class Category extends Model {
 
-	$db = $this->connectToDB();
 //createCategory function creates a new category
 	public function createCategory($name){
+		$this->connectToDB();
 		$query = 'INSERT INTO category (name) VALUES (?)';
     $sth = $this->db->prepare($query);
     $data = array($name);
-   $sth->execute($data);
+   	$sth->execute($data);
    //If there is a new row in a database retrun true
    if ($sth->rowCount() == 1){
      return true;
@@ -24,6 +24,7 @@ class Category extends Model {
     $sth = $this->db->prepare($query);
     $sth->execute(array($name));
 	}
+	
 }
 
 ?>
