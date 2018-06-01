@@ -1,9 +1,10 @@
 <?php
 
-include('model/Model.php');
-include('model/Category.php');
-include('model/Item.php');
-class indexController extends Controller{
+require_once('model/Model.php');
+require_once('model/Category.php');
+require_once('model/Item.php');
+require_once('Controller.php');
+class HomeController extends Controller{
 
   public function listCategories(){
     $category = new Category();
