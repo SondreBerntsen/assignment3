@@ -65,3 +65,9 @@ a.navbar-brand {
     .sidenav {padding-top: 50px;}
     .sidenav a {font-size: 18px;}
 }
+
+/* Styling buttons in navbar */
+
+.marginbutton {
+  margin-left: 5px;
+}
