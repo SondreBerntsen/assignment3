@@ -3,11 +3,12 @@
 include('model/model.php');
 class Category extends Model {
 
-	$db = $this->connectToDB();
+
 //createCategory function creates a new category
 	public function createCategory($name){
+		$db = $this->connectToDB();
 		$query = 'INSERT INTO category (name) VALUES (?)';
-    $sth = $this->db->prepare($query);
+    $sth = $db->prepare($query);
     $data = array($name);
    $sth->execute($data);
    //If there is a new row in a database retrun true
@@ -21,7 +22,7 @@ class Category extends Model {
 		$db = $this->connectToDB();
 
 		$query = 'DELETE FROM category WHERE name=?';
-    $sth = $this->db->prepare($query);
+    $sth = $db->prepare($query);
     $sth->execute(array($name));
 	}
 }
