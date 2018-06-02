@@ -1,6 +1,6 @@
 <?php
 // Class for Category
-require_once('model/model.php');
+require_once('model.php');
 class Category extends Model {
 
 
@@ -18,14 +18,14 @@ class Category extends Model {
      return false;
    }
 	}
-	public function delteCategory($name){
+	public function deleteCategory($name){
 		$db = $this->connectToDB();
 
 		$query = 'DELETE FROM category WHERE name=?';
     $sth = $db->prepare($query);
     $sth->execute(array($name));
 	}
-	
+
 	public function listCategories(){
 		$db = $this->connectToDB();
 		$query = 'SELECT name
@@ -34,7 +34,7 @@ class Category extends Model {
     $sth = $db->prepare($query);
     $sth->execute(array());
     $data=$sth->fetchAll(PDO::FETCH_ASSOC);
-    print_r($data);
+    return $data;
 	}
 
 }

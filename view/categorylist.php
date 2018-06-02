@@ -1,5 +1,6 @@
 <?php
-include_once '../includes/header.inc.php';
+include_once('../includes/header.inc.php');
+include_once('../model/Category.php');
  ?>
 
 	<!-- sidebar for categories -->
@@ -14,13 +15,22 @@ include_once '../includes/header.inc.php';
 						</h4>
 					</li>
 					<?php
-					// for every category in categories
-					foreach ($categories as $title => $category)
+					// calling listCategories function from category class.
+          $categories = new Category();
+          $categories->listCategories();
+
+          for ($i=0; count($data) > $i  ; $i++) {
+            echo '<li> <a href="index.php?category='.$data[$i].'">'.$data[$i].'</a></li>';
+          }
+
+          // for every category in categories
+					/*foreach ($categories as $title => $category)
 					{
 					// we place the category title in the url
 					echo '<li> <a href="index.php?category='.$category->title.'">'.$category->title.'</a></li>';
-					}
+					}*/
 					?>
+
 				</ul>
 			</div>
     </div>

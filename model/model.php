@@ -1,6 +1,6 @@
 <?php
 
-include_once("model/Category.php");
+include_once("Category.php");
 /*include_once("model/Item.php");
 include_once("model/User.php");
 include_once("model/MessageThread.php");
