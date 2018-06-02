@@ -15,15 +15,14 @@
 			      <div class="row">
 			        <div class="col-md-6">
 			          <div class="card-block">
-			            <h4 class="card-title">Curabitur gravida vestibulum imperdiet.</h4>
+			            <h5 class="card-title">Curabitur gravida vestibulum imperdiet.</h5>
+									<h6 class='card-subtitle mb-2 text-muted'>02.06.2018</h6><br />
 			            <p class="card-text">Cras convallis ut turpis vitae facilisis. Morbi eu augue vel quam efficitur rhoncus vitae eget lectus. Cras augue ligula, aliquam ut enim ut, feugiat imperdiet sem. Integer sed mi quis nisl eleifend interdum.</p>
-			            <p class="card-text">Cras convallis ut turpis vitae facilisis. Morbi eu augue vel quam efficitur rhoncus vitae eget lectus. Cras augue ligula, aliquam ut enim ut, feugiat imperdiet sem.</p>
-			            <a href="#" class="btn btn-primary">Read More</a>
 			          </div>
 			        </div>
 			        <div class="col-md-6">
 			          <div class="card-img-bottom">
-									<img src="resources/images/testimg.jpg" class="img-fluid" alt="Responsive image">
+									<img src="resources/images/testimg.jpg" class="img-fluid imgItem" alt="Responsive image">
 			          </div>
 			        </div>
 			      </div>

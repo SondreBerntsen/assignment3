@@ -1,25 +1,11 @@
-/* styling cards */
-
-.card {
-  padding: 10px;
-}
-
-.card-img-bottom {
-  color: #fff;
-  height: 20rem;
-  background: url(resources/testimg.jpg) center no-repeat;
-  background-size: cover;
-}
-
-/* other bullshit */
-
+/**All pages**/
 .container{
   margin-top: 30px;
 }
 a.navbar-brand {
   font-size: 30px;
 }
-
+/**Sidenav in home**/
 .sidenav {
     z-index: 1;
     top: 100px;
@@ -79,6 +65,7 @@ a.navbar-brand {
   display: none;
 }
 @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 50px;}
     .sidenav a {font-size: 18px;}
 }
 
