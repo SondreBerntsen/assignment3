@@ -25,7 +25,7 @@ class Category extends Model {
     $sth = $db->prepare($query);
     $sth->execute(array($name));
 	}
-	
+
 	public function listCategories(){
 		$db = $this->connectToDB();
 		$query = 'SELECT name

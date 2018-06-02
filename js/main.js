@@ -1,18 +1,22 @@
+var json;
 function testRonny(){
-  $("#loadDivRonny").load('controller/HomeController.php'); //The full path of the Award.php file in the web root
-   $.post(
-      'classes/Award.php'
-    ).success(function(resp) {
-       json = $.parseJSON(resp);
-   });
+  console.log('thingIsClicked');
+  $.ajax({ url: 'controller/HomeController',
+           data: {action: 'testRonny'},
+           type: 'post',
+           success: function(output) {
+             json = $.parseJSON(output);
+             console.log(json);
+           }
+  });
+
 }
 
 /*
-$.ajax({ url: '/controller/HomeController',
-         data: {action: 'test'},
-         type: 'post',
-         success: function(output) {
-                      alert(output);
-                  }
-});
+$("#loadDivRonny").load('controller/HomeController.php'); //The full path of the Award.php file in the web root
+ $.post(
+    'classes/Award.php'
+  ).success(function(resp) {
+     json = $.parseJSON(resp);
+ });
 */

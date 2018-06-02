@@ -1,19 +1,13 @@
 <html>
-<head></head>
+<head>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
 
 <body>
 
-  <?php
-  	include_once("controller/HomeController.php");
-
-  	$controller = new HomeController();
-  	$controller->listCategories();
-
-  ?>
-
-  <button class="btn" onclick="testRonny();">Add</button>
+  <button class="btn" onclick="testRonny();">Load Ronny</button>
   <div id="loadDivRonny"></div>
-  
+
 <script src="js/main.js"></script>
 </body>
 </html>
