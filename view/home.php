@@ -10,32 +10,25 @@
 			</div>
     </div>
     <div class="col">
-			<div class="card-group">
-			  <div class="card">
-			    <img class="card-img-top" src="resources/images/testimg.jpg" alt="Card image cap">
-			    <div class="card-body">
-			      <h5 class="card-title">Card title</h5>
-			      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida dapibus vestibulum.</p>
-			      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+			<section>
+			    <div class="card">
+			      <div class="row">
+			        <div class="col-md-6">
+			          <div class="card-block">
+			            <h4 class="card-title">Curabitur gravida vestibulum imperdiet.</h4>
+			            <p class="card-text">Cras convallis ut turpis vitae facilisis. Morbi eu augue vel quam efficitur rhoncus vitae eget lectus. Cras augue ligula, aliquam ut enim ut, feugiat imperdiet sem. Integer sed mi quis nisl eleifend interdum.</p>
+			            <p class="card-text">Cras convallis ut turpis vitae facilisis. Morbi eu augue vel quam efficitur rhoncus vitae eget lectus. Cras augue ligula, aliquam ut enim ut, feugiat imperdiet sem.</p>
+			            <a href="#" class="btn btn-primary">Read More</a>
+			          </div>
+			        </div>
+			        <div class="col-md-6">
+			          <div class="card-img-bottom">
+									<img src="resources/images/testimg.jpg" class="img-fluid" alt="Responsive image">
+			          </div>
+			        </div>
+			      </div>
 			    </div>
-				  </div>
-				  <div class="card">
-				    <img class="card-img-top" src="resources/images/testimg.jpg" alt="Card image cap">
-				    <div class="card-body">
-				      <h5 class="card-title">Card title</h5>
-				      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida dapibus vestibulum.</p>
-				      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				    </div>
-				  </div>
-				  <div class="card">
-				    <img class="card-img-top" src="resources/images/testimg.jpg" alt="Card image cap">
-				    <div class="card-body">
-				      <h5 class="card-title">Card title</h5>
-				      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida dapibus vestibulum.</p>
-				      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				    </div>
-				  </div>
-			</div>
+			</section>
     </div>
   </div>
 </div>
