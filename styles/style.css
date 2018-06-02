@@ -2,8 +2,6 @@ a.navbar-brand {
   font-size: 30px;
 }
 
-
-
 .sidenav {
     z-index: 1;
     top: 100px;
@@ -59,6 +57,9 @@ a.navbar-brand {
     padding: 0px 10px;
 }
 
+#tmplContainer{
+  display: none;
+}
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 50px;}
     .sidenav a {font-size: 18px;}

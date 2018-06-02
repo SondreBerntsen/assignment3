@@ -1,37 +1,12 @@
-<?php
-include_once('../includes/header.inc.php');
-include_once('../model/Category.php');
- ?>
-
 	<!-- sidebar for categories -->
 	<div class="container">
   <div class="row">
     <div class="col-sm-3">
 			<div class="sidenav">
-				<ul>
-					<li>
-						<h4>
-							<strong>Kategorier</strong>
-						</h4>
-					</li>
-					<?php
-					// calling listCategories function from category class.
-          $categories = new Category();
-          $categories->listCategories();
-
-          for ($i=0; count($data) > $i  ; $i++) {
-            echo '<li> <a href="index.php?category='.$data[$i].'">'.$data[$i].'</a></li>';
-          }
-
-          // for every category in categories
-					/*foreach ($categories as $title => $category)
-					{
-					// we place the category title in the url
-					echo '<li> <a href="index.php?category='.$category->title.'">'.$category->title.'</a></li>';
-					}*/
-					?>
-
-				</ul>
+        <h4>
+          <strong>Kategorier</strong>
+        </h4>
+				<ul id="listOfCategories"></ul>
 			</div>
     </div>
     <div class="col">
@@ -65,11 +40,7 @@ include_once('../model/Category.php');
   </div>
 </div>
 
+<div id="tmplContainer">
+  <li id="listItemTmpl"></li>
 
-	<?php
-
-	echo '</br> Dette er forsiden</br></br>';
-	echo '</br> Her vil nylig opplastede items ligge</br></br>';
-
-	include_once '../includes/footer.inc.php'
-	?>
+</div>
