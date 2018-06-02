@@ -1,5 +1,5 @@
 $(document).ready(function listCategories(){
-  var json;
+
   $.ajax({ url: 'controller/HomeController.php',
            data: {action: 'testRonny'},
            type: 'post',
