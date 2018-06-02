@@ -69,6 +69,12 @@ a.navbar-brand {
     .sidenav a {font-size: 18px;}
 }
 
+/* Cards */
+
+.card {
+    border: none;
+}
+
 /* Styling buttons in navbar */
 
 .marginbutton {
