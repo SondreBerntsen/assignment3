@@ -1,11 +1,5 @@
 <?php
 
-include_once("Category.php");
-/*include_once("model/Item.php");
-include_once("model/User.php");
-include_once("model/MessageThread.php");
-include_once("model/Message.php");*/
-
 class Model {
 	public function connectToDB(){
 			 $dsn= 'mysql:dbname=secondhand;host=127.0.0.1';

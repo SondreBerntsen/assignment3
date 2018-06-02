@@ -1,5 +1,5 @@
 <?php
-include('model/model.php');
+require_once('Model.php');
 class User extends Model{
 
 

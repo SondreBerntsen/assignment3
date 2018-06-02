@@ -1,6 +1,6 @@
 <?php
 // Class for Category
-require_once('model.php');
+require_once('Model.php');
 class Category extends Model {
 
 

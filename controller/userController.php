@@ -1,7 +1,7 @@
 <?php
 
-include('model/model.php');
-include('model/user.php');
+require_once('../model/Model.php');
+require_once('../model/User.php');
 class UserController{
 
   public function newItem(){
