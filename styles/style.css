@@ -73,6 +73,12 @@ a.navbar-brand {
 
 .card {
     border: none;
+    padding: 10px;
+}
+.card:hover{
+  border:1px solid lightgray;
+  cursor: pointer;
+  background-color: #F8F8F8;
 }
 
 /* Styling buttons in navbar */
