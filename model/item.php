@@ -1,12 +1,7 @@
 <?php
-require_once('model/model.php');
+require_once('model.php');
 class Item extends Model  {
 
-
-	public function __construct()
-    {
-
-    }
 
 	public function newItem($values){
 		$db = $this->connectToDB();
@@ -33,9 +28,8 @@ class Item extends Model  {
 		$data = array($catName);
 		$sth->execute($data);
 		$itemData=$sth->fetchAll(PDO::FETCH_ASSOC);
-		return $itemData;
-
-		}
+		echo json_encode($itemData);
+	}
 	public function deleteItem($itemId){
 		$db = $this->connectToDB();
 

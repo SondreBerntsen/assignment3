@@ -2,6 +2,7 @@
 
 require_once('../model/Model.php');
 require_once('../model/Category.php');
+require_once('../model/Item.php');
 //require_once('../model/Item.php');
 require_once('Controller.php');
 
@@ -11,18 +12,20 @@ class HomeController extends Controller{
     $category = new Category();
     $category->listCategories();
   }
-  public function listItems(){
+public function getItem(){
     $item = new Item();
-    $item->listItems();
+    $item->getItem('Fiskeutstyr');
   }
-
 }
+$controller = new HomeController();
 if(isset($_POST['action'])) {
   $action = $_POST['action'];
   switch($action) {
-    case 'testRonny':
-      $controller = new HomeController();
+    case 'listCategories':
       $controller->listCategories();
+      break;
+    case 'listItems':
+      $controller->getItem();
       break;
   }
 }
