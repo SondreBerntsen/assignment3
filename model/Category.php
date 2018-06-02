@@ -34,7 +34,8 @@ class Category extends Model {
     $sth = $db->prepare($query);
     $sth->execute(array());
     $data=$sth->fetchAll(PDO::FETCH_ASSOC);
-    return $data;
+		$json = json_encode($data);
+		echo $json;
 	}
 
 }

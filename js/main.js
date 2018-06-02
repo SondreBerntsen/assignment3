@@ -1,15 +1,12 @@
-var json;
+
 function testRonny(){
-  console.log('thingIsClicked');
-  $.ajax({ url: 'controller/HomeController',
+  $.ajax({ url: 'controller/HomeController.php',
            data: {action: 'testRonny'},
            type: 'post',
            success: function(output) {
-             json = $.parseJSON(output);
-             console.log(json);
+           console.log(JSON.parse(output));
            }
   });
-
 }
 
 /*
