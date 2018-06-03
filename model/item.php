@@ -18,7 +18,6 @@ class Item extends Model  {
 		}
   }
 	public function getItem($catName){
-		echo $catName;
 		$db = $this->connectToDB();
 		$query = 'SELECT *
 							FROM item

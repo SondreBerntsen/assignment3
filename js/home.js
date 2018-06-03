@@ -1,4 +1,5 @@
 $(document).ready(function (){
+  alert(window.location.search);
   $.ajax({ url: 'controller/HomeController.php',
            data: {action: 'listCategories'},
            type: 'post',
@@ -20,11 +21,11 @@ $(document).ready(function (){
            }
   });
   $.ajax({ url: 'controller/HomeController.php',
-           data: {action: 'listItems'},
+           data: {action: 'listItems', cat: 'Fiskeutstyr'},
            type: 'post',
            success: function(output) {
            json = JSON.parse(output);
-           console.log(json);
+           console.log();
 
            for(i=0; json.length > i; i++){
 
