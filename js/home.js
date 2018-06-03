@@ -9,7 +9,10 @@ $(document).ready(function (){
 
              var tmpl = $('#categoryTmpl').clone();
              tmpl.removeAttr('id');
-             tmpl.html(json[i].name);
+
+             tmpl.find('li').html(json[i].name);
+             tmpl.attr('href', 'index.php?id='+json[i].name);
+             //tmpl.html(json[i].name);
 
              $('#listOfCategories').append(tmpl);
            }

@@ -20,7 +20,7 @@
 
 
 <div id="tmplContainer">
-  <li id="categoryTmpl"></li>
+  <a href="" id="categoryTmpl"><li></li></a>
 	<a id="itemCardTempl">
 		<div class="card">
 			<div class="row">

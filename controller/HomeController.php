@@ -13,7 +13,9 @@ class HomeController extends Controller{
   }
 public function getItem(){
     $item = new Item();
-    $item->getItem('Fiskeutstyr');
+    //echo $_GET['id'];
+    //echo"hello";
+    $item->getItem('Underholdning');
   }
 }
 $controller = new HomeController();
