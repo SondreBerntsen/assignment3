@@ -82,14 +82,9 @@ a.navbar-brand {
 }
 
 /* navbar & header */
-.iconbutton {
-    background-image: url( '../resources/open-iconic-master/svg/person.svg' );
-    background-size: 100px 130px;
-    height: 134px;
-    width: 104px;
-}
-.icon {
-  width: 100%;
+
+#logout {
+  background-color: #FFFFFF;
 }
 
 .marginbutton {

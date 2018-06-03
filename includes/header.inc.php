@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <html>
 <head>
 	<!-- Required meta tags -->
@@ -16,7 +20,7 @@
 
   <!-- navbar -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="view/home.php">Secondhand</a>
+		<a class="navbar-brand" href="index.php">Secondhand</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -24,14 +28,30 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="view/home.php">Home</a>
+					<a class="nav-link" href="index.php">Home</a>
 				</li>
 			</ul>
 		</div>
 
-		<a href="view/login.php" class="btn btn-success" role="button">
+		<a href="login.php" class="btn btn-success" role="button">
 			<i class="fas fa-user"></i> Login
 		</a>
+
+		<?php
+		// If session userID is set show the profile button
+		if (isset($_SESSION['userID'])) {
+			echo '<div class="dropdown">
+							<button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="fas fa-user"></i>
+							</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								<a class="dropdown-item" href="dashboard.php">Action</a>
+								<button class="btn btn-danger" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">logout
+								</button>
+							</div>
+						</div>';
+		}
+		 ?>
 
 		</nav>
 
