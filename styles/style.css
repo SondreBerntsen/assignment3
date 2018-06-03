@@ -81,7 +81,16 @@ a.navbar-brand {
   background-color: #F8F8F8;
 }
 
-/* Styling buttons in navbar */
+/* navbar & header */
+.iconbutton {
+    background-image: url( '../resources/open-iconic-master/svg/person.svg' );
+    background-size: 100px 130px;
+    height: 134px;
+    width: 104px;
+}
+.icon {
+  width: 100%;
+}
 
 .marginbutton {
   margin-left: 5px;
