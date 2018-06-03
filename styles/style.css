@@ -90,3 +90,15 @@ a.navbar-brand {
 .marginbutton {
   margin-left: 5px;
 }
+/* Item site */
+.imgInItem{
+  height:200px;
+}
+.nameHeadingItem{
+  background-color:#e6f2ff;
+  padding:20px;
+  text-align:center;
+}
+.userImg{
+  font-size:50px;
+}
