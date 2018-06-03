@@ -2,17 +2,54 @@
 
 require_once('../model/Model.php');
 require_once('../model/User.php');
-class UserController{
+class UserController extends Controller{
 
-  public function newItem(){
-    $name = $_POST['name']
-    $descr = $_POST['descr']
-    $img = $_POST['img']
-    $category = $_POST['category']
-    $previewText = $_POST['previewText']
+  $user = new User();
 
-    $returnArray = [$name, $descr, $img, $category, $previewText];
-    User::newItem($returnArray);
+  public function Login(){
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $data = [$email, $password];
+    $user->validateLogin($data);
+  }
+
+  public function register(){
+    $fname = $_POST['fname'];
+    $surname = $_POST['surname'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $data = [$fname, $surname, $password, $email];
+    $user->validateRegistration($data);
+  }
+
+  public function update(){
+    $fname = $_POST['fname'];
+    $surname = $_POST['surname'];
+    $password = $_POST['password'];
+
+    $data = [$fname, $surname, $password];
+
+    $user->update();
+  }
+}
+
+if(isset($_POST['action'])) {
+
+  $controller = new UserController();
+
+  $action = $_POST['action'];
+  switch($action) {
+    case 'login':
+      $controller->login();
+      break;
+    case 'register':
+      $controller->register();
+      break;
+    case 'update':
+      $controller->update();
+      break;
   }
 }
 ?>
