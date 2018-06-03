@@ -11,25 +11,23 @@ class HomeController extends Controller{
     $category = new Category();
     $category->listCategories();
   }
-  public function getItem(){
+  public function getItem($category){
       $item = new Item();
-      if(isset($_GET['id'])){
-        $item->getItem($_GET['id']);
-      }else{
-        $item->getItem();
-      }
+      $item->getItem($category);
 
     }
   }
 $controller = new HomeController();
 if(isset($_POST['action'])) {
   $action = $_POST['action'];
+
   switch($action) {
     case 'listCategories':
       $controller->listCategories();
       break;
     case 'listItems':
-      $controller->getItem();
+      $category = $_POST['category'];
+      $controller->getItem($category);
       break;
   }
 }

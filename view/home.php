@@ -20,7 +20,9 @@
 
 
 <div id="tmplContainer">
-  <a href="" id="categoryTmpl"><li></li></a>
+
+  <a id="categoryTmpl"><li></li></a>
+
 	<a id="itemCardTempl">
 		<div class="card">
 			<div class="row">
@@ -39,4 +41,5 @@
 			</div>
 		</div>
 	</a>
+	
 </div>
