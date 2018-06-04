@@ -1,6 +1,3 @@
-<?php
-include '../includes/header.inc.php';
- ?>
 
 <head>
 	<!-- Required meta tags -->
@@ -59,18 +56,3 @@ include '../includes/header.inc.php';
     </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
- <?php
- include '../includes/homeFooter.inc.php';
-  ?>
