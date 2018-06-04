@@ -113,3 +113,19 @@ a li:hover{
 .profileheading {
   background-color: #FFFFFF !important;
 }
+/*
+.useritem {
+  border: solid 1px;
+  border-color: #dadada;
+}
+*/
+
+.useritemdesc {
+  border: solid 1px;
+  border-color: #dadada;
+  padding: 16px;
+}
+
+.userbutton {
+  margin-top: 10px;
+}
