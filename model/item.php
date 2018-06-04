@@ -10,6 +10,9 @@ class Item extends Model  {
 							VALUES (?, ?, ?, NOW(), ?, ?, ?)';
 		$sth = $db->prepare($query);
 		$sth->execute([$values[0], $values[1], $values[2], $_SESSION['user'], $values[3], $values[4]]);
+		$data=$sth->fetchAll(PDO::FETCH_ASSOC);
+		$json = json_encode($data);
+		echo $json;
 
 		if($sth->rowCount() == 1){
 			return "Things were inserted";
