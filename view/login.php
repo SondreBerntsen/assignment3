@@ -52,7 +52,7 @@
                 <input type="password" class="form-control" id="pwd" name="pwd" required placeholder="*******">
               </div>
             </div>
-              <button name="Mads sin knapp" type="submit" class="btn btn-success">Login!</button>
+              <button name="Mads sin knapp2" type="submit" class="btn btn-success">Login!</button>
           </form>
         </div>
       </div>
