@@ -1,5 +1,4 @@
 function checkLoginState(){
-
   $.ajax({ url: 'controller/UserController.php',
            data: {action: 'checkLoginState'},
            type: 'post',
@@ -13,24 +12,27 @@ function checkLoginState(){
   });
 }
 
-var loginState;
 //Denne brukes om vi trenger return variabler uten å kjøre kode i success funksjonen til ajax callet.
 function callback(func, val){
+
+  var path = location.pathname.split('assignment3/');
+  var page = path[1].split('.');
+
   switch(func){
     case 'checkLoginState':
       if(val == 'true'){
-        loginState = true;
+        loadUserView(page);
       }else{
-        loginState = false;
+        loadGuestView(page);
       }
     break;
   }
 }
 function loadGuestView(page){
   $('#headerButton').load('includes/headerButtonGuest.html');
-
+  console.log('EXCUSE ME, WHY DOES THIS LOAD?');
   switch(page){
-    case 'home':
+    case 'index':
       // Nothing is loaded I guess.
     break;
 
@@ -41,10 +43,10 @@ function loadGuestView(page){
 }
 
 function loadUserView(page){
-  $('#headerButton').load('includes/headerButtonUser.html');
-
+  $('#headerButton').load('includes/headerButtonUser.php');
+  console.log('loadUserView ENGAGE');
   switch(page){
-    case 'home':
+    case 'index':
       $('#').load('includes/submitButton.html');
     break;
 

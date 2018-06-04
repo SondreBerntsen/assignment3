@@ -32,25 +32,7 @@ session_start();
 			</ul>
 		</div>
 		<div id="headerButton">
-			<a href="login.php" class="btn btn-success" role="button">
-				<i class="fas fa-user"></i> Login
-			</a>
 		</div>
-		<?php
-		// If session userID is set show the profile button
-		if (isset($_SESSION['userID'])) {
-			echo '<div class="dropdown">
-							<button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i class="fas fa-user"></i>
-							</button>
-							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-								<a class="dropdown-item" href="dashboard.php">Action</a>
-								<button class="btn btn-danger" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">logout
-								</button>
-							</div>
-						</div>';
-		}
-		 ?>
 
 		</nav>
 
