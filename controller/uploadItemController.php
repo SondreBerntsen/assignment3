@@ -1,22 +1,24 @@
 <?php
 
 require_once('../model/Model.php');
-require_once('../model/Category.php');
+require_once('../model/Item.php');
 require_once('Controller.php');
 
 
+
 class uploadItemController extends Controller{
-  public function getCategories(){
-      $category = new Category();
-      $category->listCategories();
-    }
+
+    public function uploadItem(){
+
+      $values = array('name' => $_POST['name'], 'prev'=> $_POST['preview'],
+      'descr'=> $_POST['descr'], 'ftmp' => $_FILES['imgfile']['tmp_name']);
+      print_r($values);
+      
+        $item = new Item();
+        $item-> newItem($values);
+      }
 }
 
 
-$uploadItemController = new uploadItemController ();
-
-$uploadItemController -> getCategories();
-
-/*if(isset($_POST['item'])) {
-  $itemController->getItemData($_POST['item']);
-}*/
+$uploadItem = new uploadItemController ();
+$uploadItem -> uploadItem();
