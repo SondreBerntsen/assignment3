@@ -1,22 +1,43 @@
-function checkLoginState(page){
-
+function checkLoginState(){
+  var loginState;
   $.ajax({ url: 'controller/UserController.php',
            data: {action: 'checkLoginState'},
            type: 'post',
            success: function(output) {
-             json = JSON.parse(output);
-
-             for(i=0; json.length > i; i++){
-
-               var tmpl = $('#categoryTmpl').clone();
-               tmpl.removeAttr('id');
-               tmpl.find('li').html(json[i].name);
-
-               var onclick = 'pushURL('+'"'+json[i].name+'")'; // FY FAEN I SVARTE HELVETE
-               tmpl.attr('onclick', onclick);
-               $('#listOfCategories').append(tmpl);
+             if(output == 'true'){
+               loginState = true;
+             }else{
+               loginState = false;
              }
            }
   });
+  return loginState;
+}
 
+function loadGuestView(page){
+  $('#headerButton').load('includes/headerButtonGuest.html');
+
+  switch(page){
+    case 'home':
+      // Nothing is loaded I guess.
+    break;
+
+    case 'item'
+      // Nothing is loaded here either? =(
+    break;
+  }
+}
+
+function loadUserView(page){
+  $('#headerButton').load('includes/headerButtonUser.html');
+
+  switch(page){
+    case 'home':
+      $('#').load('includes/submitButton.html');
+    break;
+
+    case 'item'
+      //no idea yet
+    break;
+  }
 }

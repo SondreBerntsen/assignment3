@@ -31,11 +31,11 @@ session_start();
 				</li>
 			</ul>
 		</div>
-
-		<a href="login.php" class="btn btn-success" role="button">
-			<i class="fas fa-user"></i> Login
-		</a>
-
+		<div id="headerButton">
+			<a href="login.php" class="btn btn-success" role="button">
+				<i class="fas fa-user"></i> Login
+			</a>
+		</div>
 		<?php
 		// If session userID is set show the profile button
 		if (isset($_SESSION['userID'])) {

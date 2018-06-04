@@ -1,5 +1,12 @@
 $(document).ready(function (){
-  checkLoginState('user');
+  switch(checkLoginState()){
+    case false:
+      accessDenied();
+      break;
+    case true:
+      //If nothing e x t r a  is done here, use if == false only
+      break;
+  }
 });
 
 function accessDenied(){
