@@ -32,7 +32,7 @@ function loadSettings(){
 
 function loadOwnListings(){
   $.ajax({ url: 'controller/UserController.php',
-           data: {action: 'loadOwnListings'},
+           data: {action: 'listOwnItems'},
            type: 'post',
            success: function(output) {
 
@@ -48,10 +48,9 @@ function loadOwnListings(){
 
                var onclick = 'deleteListing('+'"'+json[i].id+'")';
                var del = $('#delTemplate').clone();
+
                del.removeAttr('id');
-               del.attr('onclick')
-
-
+               del.attr('onclick' onclick);
 
                tmpl.find('.deleteSection').append(del);
 
