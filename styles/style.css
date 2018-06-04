@@ -107,3 +107,9 @@ a li:hover{
 .userImg{
   font-size:50px;
 }
+
+/* User dashboard styling */
+
+.profileheading {
+  background-color: #FFFFFF !important;
+}
