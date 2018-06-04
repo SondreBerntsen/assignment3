@@ -136,3 +136,47 @@ a li:hover{
 .userbutton {
   margin-top: 10px;
 }
+
+/* message containers styling */
+
+.messagecontainer {
+  border: solid 1px;
+  border-radius: 2px;
+  border-color: #404040;
+}
+
+.mymessage {
+    background-color: #6c9afd;
+    border-radius: 4px;
+    color: #FFFFFF;
+    float: right;
+    width: 42%;
+    text-align: right;
+    padding: 5px 11px 0px 5px;
+    display: block;
+    margin-left: 17%;
+}
+
+.recipientmessage {
+    background-color: #e7e7e7;
+    border-radius: 4px;
+    color: #404040;
+    float: left;
+    width: 42%;
+    text-align: left;
+    padding: 5px 5px 0px 15px;
+    display: block;
+}
+
+.messagecontainer {
+    border: solid 1px;
+    border-radius: 9px;
+    border-color: #9f9f9f;
+    padding: 15px 10px 10px 10px;
+    min-height: 500px;
+}
+
+.mymessagecontainer {
+  display: block;
+  width: 100%;
+}

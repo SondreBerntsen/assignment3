@@ -41,15 +41,15 @@
           <form action="login.php" method="post">
             <div class="form-group row">
               <div class="col-sm-12">
-               <label for="firstName" class="form-label">Email</label>
-                <input type="text" class="form-control" id="firstName" name="email" autofocus required placeholder="email">
+               <label for="email" class="form-label">Email</label>
+                <input type="text" class="form-control" id="ext_email" name="email" autofocus required placeholder="email">
               </div>
             </div>
 
             <div class="form-group row">
               <div class="col-sm-12">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="pwd" name="pwd" required placeholder="*******">
+                <input type="password" class="form-control" id="ext_pwd" name="pwd" required placeholder="*******">
               </div>
             </div>
               <button name="Mads sin knapp2" type="submit" class="btn btn-success">Login!</button>

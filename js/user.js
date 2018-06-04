@@ -1,25 +1,13 @@
-
 $(document).ready(function (){
-  checkLoginState();
+  switch(checkLoginState()){
+    case false:
+      accessDenied();
+      break;
+    case true:
+      //If nothing e x t r a  is done here, use if == false only
+      break;
+  }
 });
-
-function checkLoginState(){
-
-  $.ajax({ url: 'controller/UserController.php',
-           data: {action: 'checkLoginState'},
-           type: 'post',
-           success: function(output) {
-
-             if(output == 'false'){
-               accessDenied();
-             }else{
-               // Makes next ajax call current call returns 'true'
-               loadSettings();
-             }
-           }
-  });
-
-}
 
 function accessDenied(){
   $('#content').load('accessDenied.html');

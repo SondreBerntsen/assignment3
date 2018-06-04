@@ -2,6 +2,15 @@
 require_once('Model.php');
 class User extends Model{
 
+	public function checkLoginState(){
+			if(isset($_SESSION['userID'])){
+				echo 'true';
+				die;
+			}else{
+				echo 'false';
+			}
+	}
+
 	public function validateLogin($data){
 		$db = $this->connectToDB();
 

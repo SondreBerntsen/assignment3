@@ -20,7 +20,15 @@ $(document).ready(function (){
   });
   getURL();
   listItems();
+  checkLoginState();
+  // loginState variable is located in main.js
+  if(loginState == false){
+    console.log('Not logged in');
+  }else{
+    console.log('Logged in');
+  }
 });
+
 var cat;
 function listItems(){
   var cateroony = cat;
@@ -41,10 +49,11 @@ function listItems(){
 
                $('#listOfItems').append(tmpl);
              }
-
            }
   });
 }
+
+
 function getURL(){
   url = location.href;
   console.log(url);
@@ -53,6 +62,7 @@ function getURL(){
     cat='none';
   }
 }
+
 function pushURL(category){
   $('#listOfItems').html('');
   window.history.replaceState("Details", "Title", window.location.pathname+'?id='+category);

@@ -1,11 +1,14 @@
 <?php
-
-require_once('../model/Model.php');
 require_once('../model/User.php');
+require_once('Controller.php');
+
 class UserController extends Controller{
 
   $user = new User();
 
+  public function checkLoginState(){
+    $user->checkLoginState();
+  }
   public function Login(){
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -41,6 +44,9 @@ if(isset($_POST['action'])) {
 
   $action = $_POST['action'];
   switch($action) {
+    case 'checkLoginState':
+      $controller->checkLoginState();
+      break;
     case 'login':
       $controller->login();
       break;
