@@ -37,6 +37,7 @@ a.navbar-brand {
 .sidenav li :hover {
   background-color: white;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .sidenav li a:hover {
@@ -49,12 +50,16 @@ a.navbar-brand {
     font-size: 18px;
     color: black;
     display: block;
+
 }
 
 .sidenav a:hover {
     color: #064579;
 }
-
+a li:hover{
+  cursor: pointer;
+  font-weight: bold;
+}
 .main {
     margin-left: 140px; /* Same width as the sidebar + left position in px */
     font-size: 28px; /* Increased text to enable scrolling */
@@ -89,4 +94,16 @@ a.navbar-brand {
 
 .marginbutton {
   margin-left: 5px;
+}
+/* Item site */
+.imgInItem{
+  height:200px;
+}
+.nameHeadingItem{
+  background-color:#e6f2ff;
+  padding:20px;
+  text-align:center;
+}
+.userImg{
+  font-size:50px;
 }

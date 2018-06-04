@@ -1,6 +1,3 @@
-<?php
-include '../includes/header.inc.php'
- ?>
 
  <div class="container">
    <div class="row">
@@ -63,19 +60,3 @@ include '../includes/header.inc.php'
      </div>
    </div>
  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
- <?php
- include '../includes/homeFooter.inc.php'
-  ?>
