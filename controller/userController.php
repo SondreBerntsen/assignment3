@@ -4,9 +4,8 @@ require_once('Controller.php');
 
 class UserController extends Controller{
 
-  $user = new User();
-
   public function checkLoginState(){
+    $user = new User();
     $user->checkLoginState();
   }
   public function Login(){
@@ -14,6 +13,7 @@ class UserController extends Controller{
     $password = $_POST['password'];
 
     $data = [$email, $password];
+    $user = new User();
     $user->validateLogin($data);
   }
 
@@ -24,6 +24,7 @@ class UserController extends Controller{
     $password = $_POST['password'];
 
     $data = [$fname, $surname, $password, $email];
+    $user = new User();
     $user->validateRegistration($data);
   }
 
@@ -33,7 +34,7 @@ class UserController extends Controller{
     $password = $_POST['password'];
 
     $data = [$fname, $surname, $password];
-
+    $user = new User();
     $user->update();
   }
 }

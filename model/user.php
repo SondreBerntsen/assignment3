@@ -3,12 +3,15 @@ require_once('Model.php');
 class User extends Model{
 
 	public function checkLoginState(){
+		$returnValue;
+
 			if(isset($_SESSION['userID'])){
-				echo 'true';
+				$returnValue = 'true';
 				die;
 			}else{
-				echo 'false';
+				$returnValue = 'false';
 			}
+		echo $returnValue;
 	}
 
 	public function validateLogin($data){
@@ -71,7 +74,7 @@ class User extends Model{
 
 		$query =
 			'INSERT INTO user (firstName, lastName, email, password, type)
-			 VALUES (?, ?, ?, ?, 'user')';
+			 VALUES (?, ?, ?, ?, "user")';
 
 		$sth = $db->prepare($query);
 		$sth->execute($data);

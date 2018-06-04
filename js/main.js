@@ -3,10 +3,11 @@ function checkLoginState(){
            data: {action: 'checkLoginState'},
            type: 'post',
            success: function(output) {
+             console.log(output);
              if(output == 'true'){
                callback('checkLoginState', 'true');
              }else{
-               callback('checkLoginState', 'true');
+               callback('checkLoginState', 'false');
              }
            }
   });
