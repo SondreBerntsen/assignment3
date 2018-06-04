@@ -101,11 +101,44 @@
                     </div>
                 </div>
                 <div class="tab-pane" id="messages" role="tabpanel">
-                  <h4 class="mb-3">Messages</h2>
-                  <p>The nav-tabs above use `justify-content-end` to align all tabs on the right. Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch. Butcher polaroid VHS art party, hashtag Brooklyn deep v PBR narwhal sustainable mixtape swag wolf squid tote bag. Tote bag cronut
-                      semiotics, raw denim deep v taxidermy messenger bag. Tofu YOLO Etsy, direct trade ethical Odd Future jean shorts paleo. Forage Shoreditch tousled aesthetic irony, street art organic Bushwick artisan cliche semiotics ugh synth chillwave
-                      meditation. Shabby chic lomo plaid vinyl chambray Vice. Vice sustainable cardigan, Williamsburg master cleanse hella DIY 90's blog.</p>
-                </div>
+										<div class="row">
+											<div class="col">
+			                  <h4 class="mb-3">Messages</h2>
+											</div>
+											<div class="col">
+												<h4 class="mb-3">Item in question</h4>
+											</div>
+										</div>
+											<div class="row">
+
+												<div class="col-3">
+													<div class="card">
+														<div class="card-block">
+															<h6 class="card-title">Item title</h5>
+															<h6 class='card-subtitle mb-2 text-muted dateItem'>Sellers name</h6>
+														</div>
+													</div>
+												</div>
+												<div class="col">
+													<div class="messagecontainer">
+
+															<div class="mymessage">
+																<h6>Me</h6>
+																<p>hello</p>
+															</div>
+															<div class="recipientmessage">
+																<div class="recipientname">
+																	<h6>Ronny</h6>
+																</div>
+																<p>yo</p>
+															</div>
+															<div class="mymessage">
+																<h6>Me</h6>
+																<p>About that used condom?About that used condom?</p>
+															</div>
+												</div>
+											</div>
+	                </div>                </div>
             </div>
         </div>
     </div>
