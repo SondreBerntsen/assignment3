@@ -54,7 +54,7 @@ function loadOwnListings(){
 
                tmpl.find('.deleteSection').append(del);
 
-               $('#listOfItems').append(tmpl);
+               $('#listings').append(tmpl);
              }
 
            }
