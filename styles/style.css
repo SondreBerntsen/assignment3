@@ -5,6 +5,13 @@
 a.navbar-brand {
   font-size: 30px;
 }
+a{
+  color:black;
+}
+a:hover{
+  text-decoration: none;
+  color:black;
+}
 /**Sidenav in home**/
 .sidenav {
     z-index: 1;
@@ -112,4 +119,20 @@ a li:hover{
 
 .profileheading {
   background-color: #FFFFFF !important;
+}
+/*
+.useritem {
+  border: solid 1px;
+  border-color: #dadada;
+}
+*/
+
+.useritemdesc {
+  border: solid 1px;
+  border-color: #dadada;
+  padding: 16px;
+}
+
+.userbutton {
+  margin-top: 10px;
 }

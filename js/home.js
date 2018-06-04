@@ -49,7 +49,7 @@ function getURL(){
   url = location.href;
   console.log(url);
   cat = url.substring(url.indexOf("=")+1);
-  if(cat.includes('index')){
+  if(cat.includes('assignment3')){//FIx tror ikke jeg like dettee, meeeen det fonka fin ja
     cat='none';
   }
 }

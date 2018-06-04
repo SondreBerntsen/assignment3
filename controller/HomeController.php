@@ -13,8 +13,7 @@ class HomeController extends Controller{
   }
   public function getItem($category){
       $item = new Item();
-      $item->getItem($category);
-
+      $item->getItemList($category);
     }
   }
 $controller = new HomeController();
