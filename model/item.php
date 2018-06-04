@@ -30,6 +30,17 @@ class Item extends Model  {
 		$itemData=$sth->fetchAll(PDO::FETCH_ASSOC);
 		echo json_encode($itemData);
 	}
+	public function getItemData($itemId){
+		$db = $this->connectToDB();
+		$query = 'SELECT item.id, item.name, item.descr, item.date, user.firstName, user.lastName
+							FROM item, user
+							WHERE item.id=?
+							AND item.owner = user.id';
+		$sth = $db->prepare($query);
+	 	$sth->execute(array($itemId));
+		$result = $sth->fetch(PDO::FETCH_ASSOC);
+		echo json_encode($result);
+	}
 	public function deleteItem($itemId){
 		$db = $this->connectToDB();
 
@@ -37,6 +48,7 @@ class Item extends Model  {
 		$sth = $db->prepare($query);
 		$sth->execute(array($itemId));
 	}
+
 	public function editItem(){
 
 	}

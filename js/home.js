@@ -16,7 +16,6 @@ $(document).ready(function (){
                tmpl.attr('onclick', onclick);
                $('#listOfCategories').append(tmpl);
              }
-
            }
   });
   getURL();
@@ -35,6 +34,7 @@ function listItems(){
 
                var tmpl = $('#itemCardTempl').clone();
                tmpl.removeAttr('id');
+               tmpl.attr("href", "item.php?id="+json[i].id);
                tmpl.find('.card-title').html(json[i].name);
                tmpl.find('.dateItem').html(json[i].date);
                tmpl.find('.card-text').html(json[i].descr);

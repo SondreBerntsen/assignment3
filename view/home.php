@@ -23,7 +23,7 @@
 
   <a id="categoryTmpl"><li></li></a>
 
-	<a id="itemCardTempl">
+	<a  id="itemCardTempl">
 		<div class="card">
 			<div class="row">
 				<div class="col-md-8">
@@ -41,5 +41,5 @@
 			</div>
 		</div>
 	</a>
-	
+
 </div>
