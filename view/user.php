@@ -18,11 +18,64 @@
             <div id="content" class="tab-content py-4">
                 <div class="tab-pane active" id="settings" role="tabpanel">
                   <h4 class="mb-3">Change your settings</h2>
-                    <!--
-
-                    ROGNHILD COMING TRUE
-
-                    -->
+                    <div class="accordion col-md-8" id="accordion">
+                      <div class="card">
+                        <div class="card-header" id="headingName"  type="button" data-toggle="collapse" data-target="#nameChangeForm" aria-expanded="false" aria-controls="nameChangeForm">
+                          <h6 class="mb-0">Change your name</h6>
+                        </div>
+                        <div id="nameChangeForm" class="collapse" aria-labelledby="headingName" data-parent="#accordion">
+                          <div class="card-body">
+                            <form>
+                              <div class="form-group">
+                                <label for="firstname">Firstname</label>
+                                <input type="text" class="form-control" id="firstname"  placeholder="Firstname" required>
+                              </div>
+                              <div class="form-group">
+                                <label for="lastname">Lastname</label>
+                                <input type="text" class="form-control" id="lastname" placeholder="Lastname" required>
+                              </div>
+                              <button type="submit" class="btn btn-primary" name="submitNameChange">Change name</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-header" id="headingEmail" type="button" data-toggle="collapse" data-target="#emailChangeForm" aria-expanded="false" aria-controls="emailChangeForm">
+                          <h6 class="mb-0">Change your email</h6>
+                        </div>
+                        <div id="emailChangeForm" class="collapse" aria-labelledby="headingEmail" data-parent="#accordion">
+                          <div class="card-body">
+                            <form>
+                              <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Email" required>
+                              </div>
+                              <button type="submit" class="btn btn-primary" name="submitEmailChange">Change email</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-header" id="headingPassword" type="button" data-toggle="collapse" data-target="#passwordChangeForm" aria-expanded="false" aria-controls="passwordChangeForm">
+                          <h6 class="mb-0">Change your password</h6>
+                        </div>
+                        <div id="passwordChangeForm" class="collapse" aria-labelledby="headingPassword" data-parent="#accordion">
+                          <div class="card-body">
+                            <form>
+                              <div class="form-group">
+                                <label for="password1">Password</label>
+                                <input type="password" class="form-control" id="password1"  placeholder="Password" required>
+                              </div>
+                              <div class="form-group">
+                                <label for="password2">Repeat password</label>
+                                <input type="password" class="form-control" id="password2" placeholder="Password" required>
+                              </div>
+                              <button type="submit" class="btn btn-primary" name="submitPasswordChange">Change Password</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
                 <div class="tab-pane" id="listings" role="tabpanel">
                   <h4 class="mb-3">Listings</h2>
