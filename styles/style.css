@@ -5,6 +5,13 @@
 a.navbar-brand {
   font-size: 30px;
 }
+a{
+  color:black;
+}
+a:hover{
+  text-decoration: none;
+  color:black;
+}
 /**Sidenav in home**/
 .sidenav {
     z-index: 1;
