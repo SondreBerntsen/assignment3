@@ -1,6 +1,9 @@
 $(document).ready(function (){
+  //Get the id that is located in the url
+   var url = location.href;
+   var itemId = url.substring(url.indexOf("=")+1);
   $.ajax({ url: 'controller/ItemController.php',
-           data: {item: '2'},
+           data: {item: itemId},
            type: 'post',
            success: function(output) {
              json = JSON.parse(output);

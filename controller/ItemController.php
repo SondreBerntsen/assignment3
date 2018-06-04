@@ -15,6 +15,5 @@ class ItemController extends Controller{
 $itemController = new ItemController ();
 
 if(isset($_POST['item'])) {
-
-  $itemController->getItemData(2);
+  $itemController->getItemData($_POST['item']);
 }
