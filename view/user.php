@@ -18,56 +18,11 @@
             <div id="content" class="tab-content py-4">
                 <div class="tab-pane active" id="settings" role="tabpanel">
                   <h4 class="mb-3">Change your settings</h2>
-                    <div class="row">
-                      <div class="col-3">
-                        <form>
-                        </form>
-                      </div>
-                      <div class="col">
-                        <div id="accordion">
+                    <!--
 
-                          <div class="card">
-                            <div class="card-header">
-                              <a class="card-link" data-toggle="collapse" href="#collapseOne">
-                                Collapsible Group Item #1
-                              </a>
-                            </div>
-                            <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                              <div class="card-body">
-                                Lorem ipsum..
-                              </div>
-                            </div>
-                          </div>
+                    ROGNHILD COMING TRUE
 
-                          <div class="card">
-                            <div class="card-header">
-                              <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
-                                Collapsible Group Item #2
-                              </a>
-                            </div>
-                            <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                              <div class="card-body">
-                                Lorem ipsum..
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="card">
-                            <div class="card-header">
-                              <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
-                                Collapsible Group Item #3
-                              </a>
-                            </div>
-                            <div id="collapseThree" class="collapse" data-parent="#accordion">
-                              <div class="card-body">
-                                Lorem ipsum..
-                              </div>
-                            </div>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
+                    -->
                 </div>
                 <div class="tab-pane" id="listings" role="tabpanel">
                   <h4 class="mb-3">Listings</h2>
