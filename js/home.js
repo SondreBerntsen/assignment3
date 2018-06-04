@@ -16,6 +16,13 @@ $(document).ready(function (){
                tmpl.attr('onclick', onclick);
                $('#listOfCategories').append(tmpl);
              }
+             checkLoginState();
+             // loginState variable is located in main.js
+             if(loginState == false){
+               console.log('Not logged in');
+             }else{
+               console.log('Logged in');
+             }
            }
   });
   getURL();
@@ -42,7 +49,6 @@ function listItems(){
 
                $('#listOfItems').append(tmpl);
              }
-
            }
   });
 }
