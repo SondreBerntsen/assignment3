@@ -21,6 +21,7 @@ $(document).ready(function (){
   getURL();
   listItems();
 });
+
 var cat;
 function listItems(){
   var cateroony = cat;
@@ -45,6 +46,8 @@ function listItems(){
            }
   });
 }
+
+
 function getURL(){
   url = location.href;
   console.log(url);
@@ -53,6 +56,7 @@ function getURL(){
     cat='none';
   }
 }
+
 function pushURL(category){
   $('#listOfItems').html('');
   window.history.replaceState("Details", "Title", window.location.pathname+'?id='+category);
