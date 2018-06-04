@@ -87,21 +87,24 @@ $sth->execute();
 
 // example data for category table
 $query ="INSERT INTO category (name)
-         VALUES ('Kjæledyr'),
-        ('Underholdning'),
-        ('Fiskeutstyr'),
-        ('Treningsutstyr'),
-        ('Hageutstyr')";
+         VALUES ('Pets'),
+        ('Entertainment'),
+        ('Fishing'),
+        ('Fitness'),
+        ('Gardening')";
 $sth = $db->prepare($query);
 $sth->execute();
 
 // example data for item table
 $query ="INSERT INTO item (name, descr, owner, category, previewtxt)
-         VALUES ('Kattunge gir bort', 'lorem ipsum', 1, 'Kjæledyr', 'Leveringsklar om fire uker'),
-        ('Triologi: Ringenes Herre', 'lorem ipsum', 2, 'Underholdning', 'Blue Ray DVDer'),
-        ('Fiskestang', 'lorem ipsum', 2, 'Fiskeutstyr', 'Har så mange fra før. Er i god stand.'),
-        ('Boksesekk', 'lorem ipsum', 3, 'Treningsutstyr', 'Litt slitt. Jeg er ikke sint nok til å bokse lenger'),
-        ('Blomsterpotte', 'lorem ipsum', 4, 'Hageutstyr', 'Veldig fin. Alle blomstene mine dør.')";
+         VALUES ('Kittens giveaway', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 1, 'Pets', 'Ready to be delivered in four weeks'),
+        ('A fish', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 3, 'Pets', 'I found a fish. Who wants it?'),
+        ('Rabbit', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 1, 'Pets', 'I am moving to Sweden, and my dog does not want to come with me. Who can give my cat a new home?'),
+        ('Triology: Lord of the Rings', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 2, 'Entertainment', 'Blue Ray DVDs'),
+        ('Lion King', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 3, 'Entertainment', 'VHS'),
+        ('Fishing rod', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 2, 'Fishing', 'I have too many. Still in good shape.'),
+        ('Punching bag', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 3, 'Fitness', 'A bit worn. I am not mad enough to be boxing bags in my scary basement anymore'),
+        ('Flower pot', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 4, 'Gardening', 'Very nice. All my flowers die.')";
 $sth = $db->prepare($query);
 $sth->execute();
 
@@ -119,13 +122,13 @@ $sth->execute();
 
 // example data for message table
 $query ="INSERT INTO message (sender, content, threadID)
-         VALUES (2, 'Kan jeg hente henne rundt 16:00 idag!?!', 1),
-        (3, 'Er hun kastrert?', 1),
-        (4, 'Når kan hun hentes?', 1),
-        (3, 'Er det riper i de?', 2),
-        (1, 'Jeg blir veldig sinna av eksamener! Er den tung å bære?', 4),
-        (4, 'Er det havstang?', 3),
-        (1, 'Henter nå. Hurra!', 2)";
+         VALUES (2, 'Can I pick her up around 4pm today!?!', 1),
+        (3, 'Is she castrated?', 1),
+        (4, 'When can she be picked up?', 1),
+        (3, 'Are they scratched?', 2),
+        (1, 'Exams are making me very mad. How heavy is it?', 4),
+        (4, 'For ocean or land?', 3),
+        (1, 'On my way to pick her up now. Hurray!', 2)";
 $sth = $db->prepare($query);
 $sth->execute();
 
