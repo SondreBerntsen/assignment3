@@ -19,16 +19,30 @@ class Item extends Model  {
   }
 	public function getItem($catName){
 		$db = $this->connectToDB();
-		$query = 'SELECT *
-							FROM item
-							WHERE category = ?
-							ORDER BY date DESC';
+		if($catName=='none'){
+			$query = 'SELECT *
+								FROM item
+								ORDER BY date DESC
+								LIMIT 5';
 
-		$sth = $db->prepare($query);
-		$data = array($catName);
-		$sth->execute($data);
-		$itemData=$sth->fetchAll(PDO::FETCH_ASSOC);
-		echo json_encode($itemData);
+			$sth = $db->prepare($query);
+			$sth->execute(array());
+			$itemData=$sth->fetchAll(PDO::FETCH_ASSOC);
+			echo json_encode($itemData);
+		}else{
+			$query = 'SELECT *
+								FROM item
+								WHERE category = ?
+								ORDER BY date DESC';
+			$sth = $db->prepare($query);
+			$data = array($catName);
+			$sth->execute($data);
+			$itemData=$sth->fetchAll(PDO::FETCH_ASSOC);
+			echo json_encode($itemData);
+		}
+
+
+
 	}
 	public function getItemData($itemId){
 		$db = $this->connectToDB();
@@ -48,7 +62,6 @@ class Item extends Model  {
 		$sth = $db->prepare($query);
 		$sth->execute(array($itemId));
 	}
-
 	public function editItem(){
 
 	}

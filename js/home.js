@@ -29,7 +29,7 @@ function listItems(){
            type: 'post',
            success: function(output) {
              json = JSON.parse(output);
-
+             //console.log(cateroony);
              for(i=0; json.length > i; i++){
 
                var tmpl = $('#itemCardTempl').clone();
@@ -47,7 +47,11 @@ function listItems(){
 }
 function getURL(){
   url = location.href;
+  console.log(url);
   cat = url.substring(url.indexOf("=")+1);
+  if(cat.includes('index')){
+    cat='none';
+  }
 }
 function pushURL(category){
   $('#listOfItems').html('');
