@@ -11,9 +11,9 @@ class uploadItemController extends Controller{
     public function uploadItem(){
 
       $values = array('name' => $_POST['name'], 'prev'=> $_POST['preview'],
-      'descr'=> $_POST['descr'], 'ftmp' => $_FILES['imgfile']['tmp_name']);
+      'descr'=> $_POST['descr'], 'ftmp' => $_FILES['imgfile']['tmp_name'], 'category' => $_POST['category'], 'id'=>2);
       print_r($values);
-      
+
         $item = new Item();
         $item-> newItem($values);
       }
