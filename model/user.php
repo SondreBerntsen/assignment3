@@ -43,7 +43,7 @@ class User extends Model{
 
 	}
 
-	public function validateRegistration($data){
+	public function validateRegistration($fname, $surname, $password, $email){
 		$db = $this->connectToDB();
 
 		$query =
@@ -52,13 +52,13 @@ class User extends Model{
 			 WHERE email = ?';
 
 		$sth = $db->prepare($query);
-	 	$sth->execute($data[2]);
+	 	$sth->execute(array($email));
 		$result = $sth->fetch(PDO::FETCH_ASSOC);
 
 		if ($sth->rowCount() == 1){
 			echo 'false';
     }else{
-			$this->register($data);
+			$this->register($fname, $surname, $password, $email);
     }
 	}
 
@@ -71,15 +71,16 @@ class User extends Model{
 		echo 'true';
 		// window.location.href = 'index.php' in ajax callback
 	}
-  public function register($data){
+  public function register($fname, $surname, $password, $email){
 		$db = $this->connectToDB();
 
 		$query =
-			'INSERT INTO user (firstName, lastName, email, password, type)
-			 VALUES (?, ?, ?, ?, "user")';
+			"INSERT INTO user (firstName, lastName, email, password, type)
+			 VALUES (?, ?, ?, ?, 'user')";
 
 		$sth = $db->prepare($query);
-		$sth->execute($data);
+		$sth->execute(array($fname, $surname, $email,
+		password_hash($password, PASSWORD_DEFAULT)));
 
 		echo 'true';
 		// window.location.href = 'index.php' in ajax callback
