@@ -29,21 +29,17 @@ class User extends Model{
 		$result = $sth->fetch(PDO::FETCH_ASSOC);
 
 		if ($sth->rowCount() == 1){
-			$loginData = [
-				$result['id'],
-				$result['firstName'],
-				$result['lastName'],
-				$result['email'],
-				$result['type']
-			];
-      $this->login($loginData);
+			$_SESSION['userID'] = $result['id'];
+			$_SESSION['name'] = $result['firstName'].' '.$result['lastName'];
+			$_SESSION['email'] = $result['email'];
+			$_SESSION['userType'] = $result['type'];
+			echo 'true';
     }else{
      	echo 'false';
     }
-
 	}
 
-	public function validateRegistration($data){
+	public function validateRegistration($fname, $surname, $password, $email){
 		$db = $this->connectToDB();
 
 		$query =
@@ -52,34 +48,26 @@ class User extends Model{
 			 WHERE email = ?';
 
 		$sth = $db->prepare($query);
-	 	$sth->execute($data[2]);
+	 	$sth->execute(array($email));
 		$result = $sth->fetch(PDO::FETCH_ASSOC);
 
 		if ($sth->rowCount() == 1){
 			echo 'false';
     }else{
-			$this->register($data);
+			$this->register($fname, $surname, $password, $email);
     }
 	}
 
-	public function login($loginData){
-		$_SESSION['userID'] = $loginData[0];
-		$_SESSION['name'] = $loginData[1].' '.$loginData[2];
-		$_SESSION['email'] = $loginData[3];
-		$_SESSION['userType'] = $loginData[4];
-
-		echo 'true';
-		// window.location.href = 'index.php' in ajax callback
-	}
-  public function register($data){
+  public function register($fname, $surname, $password, $email){
 		$db = $this->connectToDB();
 
 		$query =
-			'INSERT INTO user (firstName, lastName, email, password, type)
-			 VALUES (?, ?, ?, ?, "user")';
+			"INSERT INTO user (firstName, lastName, email, password, type)
+			 VALUES (?, ?, ?, ?, 'user')";
 
 		$sth = $db->prepare($query);
-		$sth->execute($data);
+		$sth->execute(array($fname, $surname, $email,
+		password_hash($password, PASSWORD_DEFAULT)));
 
 		echo 'true';
 		// window.location.href = 'index.php' in ajax callback
