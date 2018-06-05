@@ -28,7 +28,8 @@
              <input type="password" class="form-control" id="pwd" name="pwd" required placeholder="*******">
            </div>
          </div>
-           <button name="Mads sin knapp" type="submit" class="btn btn-primary">Register user</button>
+           <button name="Mads sin knapp" type="submit" class="btn btn-primary" onclick="register()">Register user</button>
+           <p id="errorLogin"></p>
        </form>
      </div>
 
@@ -52,7 +53,8 @@
                 <input type="password" class="form-control" id="ext_pwd" name="pwd" required placeholder="*******">
               </div>
             </div>
-              <button name="Mads sin knapp2" type="submit" class="btn btn-success">Login!</button>
+              <button name="Mads sin knapp2" type="submit" class="btn btn-success" onclick="login()">Login!</button>
+              <p id="errorRegister"></p>
           </form>
         </div>
       </div>
