@@ -67,8 +67,8 @@ function loadUserView(page){
       $('#').load('includes/submitButton.html');
     break;
 
-    case 'item':
-      //no idea yet
+    case 'login':
+      location.href('index.php');
     break;
   }
 }

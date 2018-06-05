@@ -8,7 +8,7 @@ class UserController extends Controller{
     $user = new User();
     $user->checkLoginState();
   }
-  public function Login(){
+  public function login(){
     $email = $_POST['email'];
     $password = $_POST['password'];
 
