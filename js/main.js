@@ -3,6 +3,7 @@ function checkLoginState(){
            data: {action: 'checkLoginState'},
            type: 'post',
            success: function(output) {
+             console.log(output);
              if(output == 'true'){
                callback('checkLoginState', 'true');
              }else{
@@ -29,7 +30,7 @@ function callback(func, val){
 
     case 'login':
       if(val == 'true'){
-        //location.href = 'index.php';
+        location.href = 'index.php';
       }else{
         $('#errorLogin').html('Incorrect login info');
       }
@@ -37,8 +38,7 @@ function callback(func, val){
 
     case 'register':
       if(val == 'true'){
-        //location.href = 'index.php';
-        console.log('hallo');
+        location.href = 'index.php';
       }else{
         $('#errorLogin').html('Email already exists');
       }
@@ -47,12 +47,11 @@ function callback(func, val){
 }
 function loadGuestView(page){
 
-  var tmpl = $('#buttonTmpl').clone();
+  var tmpl = $('#loginButton').clone();
   tmpl.removeAttr('id');
-  tmpl.attr('href', 'login.php');
-  tmpl.append('Log in');
   $('#headerButton').append(tmpl);
 
+    console.log('loadGuestView ENGAGE');
   switch(page){
     case 'index':
       // Nothing is loaded I guess.
@@ -67,15 +66,12 @@ function loadGuestView(page){
 function loadUserView(page){
   var formTmpl = $('#formTmpl').clone();
   formTmpl.removeAttr('id');
-
-  var buttonTmpl = $('#buttonTmpl').clone();
+  formTmpl.attr('action', '')
+  var buttonTmpl = $('#logoutButton').clone();
   buttonTmpl.removeAttr('id');
-  buttonTmpl.attr('name', 'logout');
-  buttonTmpl.attr('type', 'submit');
-  buttonTmpl.append('Log out');
-  formTmpl.append(tmpl);
+  formTmpl.html(buttonTmpl);
 
-  $('#headetButton').append(formTmpl);
+  $('#headerButton').append(formTmpl);
 
   console.log('loadUserView ENGAGE');
   switch(page){

@@ -24,18 +24,21 @@
 
   <form id="formTmpl" method="post"></form>
 
-  <a id="buttonTmpl" class="btn btn-success" role="button" type="submit">
-    <i class="fas fa-user"></i>
+  <a id="loginButton" href="login.php" class="btn btn-success" role="button" type="submit">
+    <i class="fas fa-user"></i>Log in
   </a>
+
+  <button id="logoutButton" name="logout" class="btn btn-success" role="button" type="submit">
+    <i class="fas fa-user"></i>Log out
+  </button>
 
 
 </div>
 
 <?php
 if(isset($_POST['logout'])){
-  session_start();
   session_destroy();
-  header('location:index.php');
+  header('Refresh:0');
 }
 ?>
 

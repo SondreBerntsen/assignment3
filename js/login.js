@@ -1,7 +1,11 @@
 function login(){
 
   $.ajax({ url: 'controller/UserController.php',
-           data: {action: 'login'},
+           data: {
+             action: 'login',
+             email: $('#ext_email').val(),
+             password: $('#ext_pwd').val()
+            },
            type: 'post',
            success: function(output) {
              console.log(output);
@@ -18,7 +22,13 @@ function login(){
 function register(){
 
   $.ajax({ url: 'controller/UserController.php',
-           data: {action: 'register'},
+           data: {
+             action: 'register',
+             fName: $('#firstName').val(),
+             surname: $('#lastName').val(),
+             email: $('#email').val(),
+             password: $('#pwd').val()
+            },
            type: 'post',
            success: function(output) {
              console.log(output);

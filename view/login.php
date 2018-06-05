@@ -2,8 +2,9 @@
  <div class="container">
    <div class="row">
      <div class="col-7">
+
        <!-- register form-->
-       <form  class="register" method="post">
+       <form id="formReg" class="register" method="post">
          <div class="form-group row">
            <div class="col-sm-12">
             <label for="firstName" class="form-label">First name</label>
@@ -28,18 +29,20 @@
              <input type="password" class="form-control" id="pwd" name="pwd" required placeholder="*******">
            </div>
          </div>
-           <button class="btn btn-primary" onclick="register()">Register user</button>
-           <p id="errorLogin"></p>
        </form>
+       <button class="btn btn-primary" onclick="register()">Register user</button>
+       <p id="errorLogin"></p>
      </div>
 
 
      <div class="col-sm">
+
       <!--login form -->
       <div class="jumbotron jumbotron-fluid">
         <div class="container">
           <h1 class="display-4">Login</h1>
-          <form method="post">
+
+          <form id="formLogin" method="post">
             <div class="form-group row">
               <div class="col-sm-12">
                <label for="email" class="form-label">Email</label>
@@ -53,9 +56,9 @@
                 <input type="password" class="form-control" id="ext_pwd" name="ext_pwd" required placeholder="*******">
               </div>
             </div>
-              <button class="btn btn-success" onclick="login()">Login!</button>
-              <p id="errorRegister"></p>
           </form>
+          <button class="btn btn-success" onclick="login()">Login!</button>
+          <p id="errorRegister"></p>
         </div>
       </div>
 

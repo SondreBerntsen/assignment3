@@ -9,18 +9,12 @@ class UserController extends Controller{
     $user->checkLoginState();
   }
   public function login(){
-    if(
-      !empty($_POST['ext_email']) &&
-      !empty($_POST['ext_pwd'])){
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-        $data = [$email, $password];
-        $user = new User();
-        $user->validateLogin($data);
-    }else{
-      echo "Empty values";
-    }
+    $user = new User();
+    $user->validateLogin($email, $password);
+
   }
 
   public function register(){
