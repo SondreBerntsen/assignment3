@@ -103,19 +103,5 @@ class User extends Model{
 		// maybe window.location.href = 'userDashboard.php' or whatever in ajax callback, where the updated information should be listed by some function which checks session vars.
   }
 
-	public function newItem($values){
-		$db = $this->connectToDB();
-
-		$query = 'INSERT INTO item(name, descr, img, date, owner, category, previewtxt)
-							VALUES (?, ?, ?, NOW(), ?, ?, ?)';
-		$sth = $db->prepare($query);
-		$sth->execute([$values[0], $values[1], $values[2], $_SESSION['user'], $values[3], $values[4]]);
-
-		if($sth->rowCount() == 1){
-			return "Things were inserted";
-		}else{
-			return "No workerino";
-		}
-  }
 
 }

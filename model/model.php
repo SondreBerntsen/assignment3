@@ -10,7 +10,7 @@ class Model {
 	 }
 	public function getCategoryList()
 	{
-		// here goes some hardcoded values to simulate the database
+		// here goes some hardcoded values to simulate the database fix
 		return array(
 			"category1" => new Category("category1"),
 			"category2" => new Category("category2"),

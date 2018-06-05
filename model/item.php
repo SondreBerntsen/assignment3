@@ -4,7 +4,7 @@ class Item extends Model  {
 
 
 	public function newItem($values){
-		$db = $this->connectToDB();//stores databaseconnection i db variable
+		$db = $this->connectToDB();//stores database connection i db variable
 
 		$query = 'INSERT INTO item(name, descr, img, date, owner, category, previewtxt)
 							VALUES (?, ?, ?, NOW(), ?, ?, ?)';
@@ -22,7 +22,7 @@ class Item extends Model  {
   }
 	//getItemList is a function that returns a list of items
 	public function getItemList($catName){
-		$db = $this->connectToDB();//stores databaseconnection i db variable
+		$db = $this->connectToDB();//stores database connection i db variable
 		//If a category has not been chosen list the 5 most recent items
 		if($catName=='none'){
 			$query = 'SELECT *
@@ -48,7 +48,7 @@ class Item extends Model  {
 	}
 	//getItemData is a function that returns all data from a selected item
 	public function getItemData($itemId){
-		$db = $this->connectToDB();//stores databaseconnection i db variable
+		$db = $this->connectToDB();//stores database connection i db variable
 		$query = 'SELECT item.id, item.name, item.descr, item.date, user.firstName, user.lastName
 							FROM item, user
 							WHERE item.id=?
@@ -60,7 +60,7 @@ class Item extends Model  {
 	}
 	//deleteItem is a function that deletes a selected item
 	public function deleteItem($itemId){
-		$db = $this->connectToDB();//stores databaseconnection i db variable
+		$db = $this->connectToDB();//stores database connection i db variable
 
 		$query = 'DELETE FROM item WHERE id=?';
 		$sth = $db->prepare($query);
