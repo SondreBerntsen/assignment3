@@ -33,7 +33,7 @@
           </div>
           <div class="modal-body">
             <h6 class="modal-title" id="sendMessageModalTitle">Your message</h6>
-            <form action="includes/entries.inc.php" method="POST">
+            <form method="POST">
               <div class="form-group">
                 <textarea class="form-control" name="content" rows="5"></textarea>
                 <small class="form-text text-muted">You will be taken to your message thread after sending the message!</small>
