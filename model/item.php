@@ -3,8 +3,36 @@ require_once('Model.php');
 class Item extends Model  {
 
 
+	public function newItemtest($values){
+		$db = $this->connectToDB();//stores databaseconnection i db variable
+
+		$query = 'INSERT INTO item(name, descr, date, owner, category, previewtxt)
+							VALUES (:name, :descr, NOW(), :owner, :category, :previewtxt)';
+		$sth = $db->prepare($query);
+		$sth->bindParam(':name', $values['name']);
+		$sth->bindParam(':descr', $values['descr']);
+		$sth->bindParam(':owner', $values['id']);
+		$sth->bindParam(':category', $values['category']);
+		$sth->bindParam(':previewtxt',$values['prev']);
+
+	//	$img = file_get_contents($values['ftmp']);
+	//	$scaledContent = $this->scale(imagecreatefromstring($img) , 200, 200);
+	//	unset($img);
+		//$sth->bindParam(':img', $scaledContent);
+		$sth->execute();
+
+
+//
+	/*	if($sth->rowCount() == 1){
+			return "Things were inserted";
+		}else{
+			return "No workerino";
+		}*/
+  }
+
+
 	public function newItem($values){
-		$db = $this->connectToDB();//stores database connection i db variable
+		$db = $this->connectToDB();//stores databaseconnection i db variable
 
 		$query = 'INSERT INTO item(name, descr, img, date, owner, category, previewtxt)
 							VALUES (:name, :descr, :img, NOW(), :owner, :category, :previewtxt)';
@@ -22,7 +50,7 @@ class Item extends Model  {
 		$sth->execute();
 
 
-			// fix feedback
+//
 	/*	if($sth->rowCount() == 1){
 			return "Things were inserted";
 		}else{
@@ -64,10 +92,10 @@ class Item extends Model  {
 	}
 	//getItemList is a function that returns a list of items
 	public function getItemList($catName){
-		$db = $this->connectToDB();//stores database connection i db variable
+		$db = $this->connectToDB();//stores databaseconnection i db variable
 		//If a category has not been chosen list the 5 most recent items
 		if($catName=='none'){
-			$query = 'SELECT *
+			$query =  'SELECT id, name, descr, date
 								FROM item
 								ORDER BY date DESC
 								LIMIT 5';
@@ -77,7 +105,7 @@ class Item extends Model  {
 			$itemData=$sth->fetchAll(PDO::FETCH_ASSOC);
 			echo json_encode($itemData);
 		}else{//Select items from the chosen category
-			$query = 'SELECT *
+			$query = 'SELECT id, name, descr, date
 								FROM item
 								WHERE category = ?
 								ORDER BY date DESC';
@@ -90,7 +118,7 @@ class Item extends Model  {
 	}
 	//getItemData is a function that returns all data from a selected item
 	public function getItemData($itemId){
-		$db = $this->connectToDB();//stores database connection i db variable
+		$db = $this->connectToDB();//stores databaseconnection i db variable
 		$query = 'SELECT item.id, item.name, item.descr, item.date, user.firstName, user.lastName
 							FROM item, user
 							WHERE item.id=?
@@ -102,7 +130,7 @@ class Item extends Model  {
 	}
 	//deleteItem is a function that deletes a selected item
 	public function deleteItem($itemId){
-		$db = $this->connectToDB();//stores database connection i db variable
+		$db = $this->connectToDB();//stores databaseconnection i db variable
 
 		$query = 'DELETE FROM item WHERE id=?';
 		$sth = $db->prepare($query);
