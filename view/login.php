@@ -29,9 +29,10 @@
              <input type="password" class="form-control" id="pwd" name="pwd" required placeholder="*******">
            </div>
          </div>
+         <button class="btn btn-primary" onclick="register()">Register user</button>
+         <p id="errorRegister"></p>
        </form>
-       <button class="btn btn-primary" onclick="register()">Register user</button>
-       <p id="errorLogin"></p>
+
      </div>
 
 
@@ -46,7 +47,7 @@
             <div class="form-group row">
               <div class="col-sm-12">
                <label for="email" class="form-label">Email</label>
-                <input type="text" class="form-control" id="ext_email" name="ext_email" autofocus required placeholder="email">
+                <input type="email" class="form-control" id="ext_email" name="ext_email" autofocus required placeholder="email">
               </div>
             </div>
 
@@ -56,9 +57,11 @@
                 <input type="password" class="form-control" id="ext_pwd" name="ext_pwd" required placeholder="*******">
               </div>
             </div>
+            <button class="btn btn-success" onclick="login()">Login!</button>
+            <p id="errorLogin"></p>
           </form>
-          <button class="btn btn-success" onclick="login()">Login!</button>
-          <p id="errorRegister"></p>
+
+
         </div>
       </div>
 
