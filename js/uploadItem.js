@@ -3,6 +3,7 @@ function submitItem (){
   var name = itemName.value;
   var preview = itemPreview.value;
   var descr = itemDescr.value;
+  var category = selectCategory.value;
   //https://stackoverflow.com/questions/5392344/sending-multipart-formdata-with-jquery-ajax
   var data = new FormData();
   jQuery.each(jQuery('#uploadimg')[0].files, function(i, file) {
@@ -10,6 +11,7 @@ function submitItem (){
     data.append('name', name);
     data.append('preview', preview);
     data.append('descr', descr);
+    data.append('category', category);
   });
 
   $.ajax( {
@@ -20,8 +22,10 @@ function submitItem (){
     processData: false,
     method: 'POST',
     type: 'POST', // For jQuery < 1.9
-    success: function(data){
-      alert(data);
+    success: function(data, output){
+      console.log(data);
+      json = output;
+      console.log(json);
     }
   });
 
