@@ -29,18 +29,14 @@ class User extends Model{
 		$result = $sth->fetch(PDO::FETCH_ASSOC);
 
 		if ($sth->rowCount() == 1){
-			$loginData = [
-				$result['id'],
-				$result['firstName'],
-				$result['lastName'],
-				$result['email'],
-				$result['type']
-			];
-      $this->login($loginData);
+			$_SESSION['userID'] = $result['id'];
+			$_SESSION['name'] = $result['firstName'].' '.$result['lastName'];
+			$_SESSION['email'] = $result['email'];
+			$_SESSION['userType'] = $result['type'];
+			echo 'true';
     }else{
      	echo 'false';
     }
-
 	}
 
 	public function validateRegistration($fname, $surname, $password, $email){
@@ -62,15 +58,6 @@ class User extends Model{
     }
 	}
 
-	public function login($loginData){
-		$_SESSION['userID'] = $loginData[0];
-		$_SESSION['name'] = $loginData[1].' '.$loginData[2];
-		$_SESSION['email'] = $loginData[3];
-		$_SESSION['userType'] = $loginData[4];
-
-		echo 'true';
-		// window.location.href = 'index.php' in ajax callback
-	}
   public function register($fname, $surname, $password, $email){
 		$db = $this->connectToDB();
 

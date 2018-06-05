@@ -33,6 +33,7 @@ function callback(func, val){
         location.href = 'index.php';
       }else{
         $('#errorLogin').html('Incorrect login info');
+        $( '#errorLogin' ).addClass( "alertMsg alert alert-danger" );
       }
     break;
 
@@ -40,7 +41,8 @@ function callback(func, val){
       if(val == 'true'){
         location.href = 'index.php';
       }else{
-        $('#errorLogin').html('Email already exists');
+        $('#errorRegister').html('Email already exists');//Fix dette funka ikke
+        $( '#errorRegister' ).addClass( "alertMsg alert alert-danger" );
       }
     break;
   }
