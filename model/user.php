@@ -37,7 +37,7 @@ class User extends Model{
 			];
       $this->login($data);
     }else{
-     	echo 'User not found';
+     	echo 'false';
     }
 	}
 
@@ -54,7 +54,7 @@ class User extends Model{
 		$result = $sth->fetch(PDO::FETCH_ASSOC);
 
 		if (count($result) == 1){
-			echo 'That email is already in use';
+			echo 'false';
     }else{
 			$this->register($data);
     }
@@ -66,7 +66,7 @@ class User extends Model{
 		$_SESSION['email'] = $data[3];
 		$_SESSION['userType'] = $data[4];
 
-		echo 'success';
+		echo 'true';
 		// window.location.href = 'index.php' in ajax callback
 	}
   public function register($data){
@@ -79,7 +79,7 @@ class User extends Model{
 		$sth = $db->prepare($query);
 		$sth->execute($data);
 
-		echo 'success';
+		echo 'true';
 		// window.location.href = 'index.php' in ajax callback
   }
 

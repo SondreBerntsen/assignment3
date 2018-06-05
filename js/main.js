@@ -27,6 +27,22 @@ function callback(func, val){
         loadGuestView(page);
       }
     break;
+
+    case 'login':
+      if(val == 'true'){
+        location.href('index.php');
+      }else{
+        $('#errorLogin').html('Incorrect login info');
+      }
+    break;
+
+    case 'register':
+      if(val == 'true'){
+        location.href('index.php');
+      }else{
+        $('#errorLogin').html('Email already exists');
+      }
+    break;
   }
 }
 function loadGuestView(page){
