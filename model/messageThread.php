@@ -3,17 +3,16 @@ require_once('Model.php');
 
 class MessageThread extends Model{
 
-	public function checkExisting($itemID, $asker, $owner){
+	public function checkExisting($itemID, $asker){
 		$db = $this->connectToDB();
 
 		$query =
 			'SELECT id
 			 FROM messagethread
 			 WHERE itemID = ?
-			 AND asker = ?
-			 AND owner = ?';
+			 AND asker = ?';
 		$sth = $db->prepare($query);
-		$sth->execute([$itemID, $asker, $owner]);
+		$sth->execute([$itemID, $asker]);
 
 		if ($sth->rowCount() == 1){
       echo 'true';
