@@ -1,17 +1,21 @@
 <?php
+session_start();
 require_once('Model.php');
 class User extends Model{
 
 	public function checkLoginState(){
+		$returnValue;
+
 			if(isset($_SESSION['userID'])){
-				echo 'true';
-				die;
+				$returnValue = 'true';
 			}else{
-				echo 'false';
+				$returnValue = 'false';
 			}
+
+		echo $returnValue;
 	}
 
-	public function validateLogin($data){
+	public function validateLogin($email, $password){
 		$db = $this->connectToDB();
 
 		$query =
@@ -21,21 +25,22 @@ class User extends Model{
 			 AND password = ?';
 
 		$sth = $db->prepare($query);
-	 	$sth->execute($data);
+	 	$sth->execute([$email, $password]);
 		$result = $sth->fetch(PDO::FETCH_ASSOC);
 
-		if (count($result) == 1){
-			$data = [
+		if ($sth->rowCount() == 1){
+			$loginData = [
 				$result['id'],
 				$result['firstName'],
 				$result['lastName'],
 				$result['email'],
 				$result['type']
 			];
-      $this->login($data);
+      $this->login($loginData);
     }else{
-     	echo 'User not found';
+     	echo 'false';
     }
+
 	}
 
 	public function validateRegistration($data){
@@ -50,20 +55,20 @@ class User extends Model{
 	 	$sth->execute($data[2]);
 		$result = $sth->fetch(PDO::FETCH_ASSOC);
 
-		if (count($result) == 1){
-			echo 'That email is already in use';
+		if ($sth->rowCount() == 1){
+			echo 'false';
     }else{
 			$this->register($data);
     }
 	}
 
-	public function login($data){
-		$_SESSION['userID'] = $data[0];
-		$_SESSION['name'] = $data[1].' '.$data[2];
-		$_SESSION['email'] = $data[3];
-		$_SESSION['userType'] = $data[4];
+	public function login($loginData){
+		$_SESSION['userID'] = $loginData[0];
+		$_SESSION['name'] = $loginData[1].' '.$loginData[2];
+		$_SESSION['email'] = $loginData[3];
+		$_SESSION['userType'] = $loginData[4];
 
-		echo 'success';
+		echo 'true';
 		// window.location.href = 'index.php' in ajax callback
 	}
   public function register($data){
@@ -71,12 +76,12 @@ class User extends Model{
 
 		$query =
 			'INSERT INTO user (firstName, lastName, email, password, type)
-			 VALUES (?, ?, ?, ?, 'user')';
+			 VALUES (?, ?, ?, ?, "user")';
 
 		$sth = $db->prepare($query);
 		$sth->execute($data);
 
-		echo 'success';
+		echo 'true';
 		// window.location.href = 'index.php' in ajax callback
   }
 
@@ -93,6 +98,7 @@ class User extends Model{
 		$sth = $db->prepare($query);
 	 	$sth->execute($execute);
 
+		//TIng her
 		$SESSION['name'] = $data[0];
 		$SESSION['email'] = $data[1];
 
@@ -100,19 +106,5 @@ class User extends Model{
 		// maybe window.location.href = 'userDashboard.php' or whatever in ajax callback, where the updated information should be listed by some function which checks session vars.
   }
 
-	public function newItem($values){
-		$db = $this->connectToDB();
-
-		$query = 'INSERT INTO item(name, descr, img, date, owner, category, previewtxt)
-							VALUES (?, ?, ?, NOW(), ?, ?, ?)';
-		$sth = $db->prepare($query);
-		$sth->execute([$values[0], $values[1], $values[2], $_SESSION['user'], $values[3], $values[4]]);
-
-		if($sth->rowCount() == 1){
-			return "Things were inserted";
-		}else{
-			return "No workerino";
-		}
-  }
 
 }

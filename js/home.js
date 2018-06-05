@@ -21,12 +21,6 @@ $(document).ready(function (){
   getURL();
   listItems();
   checkLoginState();
-  // loginState variable is located in main.js
-  if(loginState == false){
-    console.log('Not logged in');
-  }else{
-    console.log('Logged in');
-  }
 });
 
 var cat;

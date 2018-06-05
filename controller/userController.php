@@ -4,37 +4,55 @@ require_once('Controller.php');
 
 class UserController extends Controller{
 
-  $user = new User();
-
   public function checkLoginState(){
+    $user = new User();
     $user->checkLoginState();
   }
-  public function Login(){
+  public function login(){
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $data = [$email, $password];
-    $user->validateLogin($data);
+    $user = new User();
+    $user->validateLogin($email, $password);
+
   }
 
   public function register(){
-    $fname = $_POST['fname'];
-    $surname = $_POST['surname'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    if(
+      !empty($_POST['firstName']) &&
+      !empty($_POST['lastName']) &&
+      !empty($_POST['email']) &&
+      !empty($_POST['password'])){
+        $fname = $_POST['firstName'];
+        $surname = $_POST['lastName'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
 
-    $data = [$fname, $surname, $password, $email];
-    $user->validateRegistration($data);
+        $data = [$fname, $surname, $password, $email];
+        $user = new User();
+        $user->validateRegistration($data);
+    }else{
+      echo "qweqweqwe";
+    }
   }
 
   public function update(){
-    $fname = $_POST['fname'];
-    $surname = $_POST['surname'];
-    $password = $_POST['password'];
+    if(
+      !empty($_POST['firstName']) &&
+      !empty($_POST['lastName']) &&
+      !empty($_POST['email']) &&
+      !empty($_POST['password'])){
+        $fname = $_POST['firstName'];
+        $surname = $_POST['lastName'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
 
-    $data = [$fname, $surname, $password];
-
-    $user->update();
+        $data = [$fname, $surname, $email, $password];
+        $user = new User();
+        $user->update();
+    }else{
+      echo "false";
+    }
   }
 }
 

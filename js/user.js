@@ -1,12 +1,5 @@
 $(document).ready(function (){
-  switch(checkLoginState()){
-    case false:
-      accessDenied();
-      break;
-    case true:
-      //If nothing e x t r a  is done here, use if == false only
-      break;
-  }
+
 });
 
 function accessDenied(){
@@ -34,11 +27,11 @@ function loadOwnListings(){
                tmpl.find('.dateItem').html(json[i].date);
                tmpl.find('.card-text').html(json[i].descr);
 
-               var onclick = 'deleteListing('+'"'+json[i].id+'")';
+               ///var onclick = 'deleteListing('+'"'+json[i].id+'")';
                var del = $('#delTemplate').clone();
 
                del.removeAttr('id');
-               del.attr('onclick' onclick);
+               //del.attr('onclick' onclick);
 
                tmpl.find('.deleteSection').append(del);
 

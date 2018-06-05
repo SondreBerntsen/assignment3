@@ -1,36 +1,59 @@
 function checkLoginState(){
-
   $.ajax({ url: 'controller/UserController.php',
            data: {action: 'checkLoginState'},
            type: 'post',
            success: function(output) {
+             console.log(output);
              if(output == 'true'){
                callback('checkLoginState', 'true');
              }else{
-               callback('checkLoginState', 'true');
+               callback('checkLoginState', 'false');
              }
            }
   });
 }
 
-var loginState;
 //Denne brukes om vi trenger return variabler uten å kjøre kode i success funksjonen til ajax callet.
 function callback(func, val){
+
+  var path = location.pathname.split('assignment3/');
+  var page = path[1].split('.');
+
   switch(func){
     case 'checkLoginState':
       if(val == 'true'){
-        loginState = true;
+        loadUserView(page);
       }else{
-        loginState = false;
+        loadGuestView(page);
+      }
+    break;
+
+    case 'login':
+      if(val == 'true'){
+        location.href = 'index.php';
+      }else{
+        $('#errorLogin').html('Incorrect login info');
+      }
+    break;
+
+    case 'register':
+      if(val == 'true'){
+        location.href = 'index.php';
+      }else{
+        $('#errorLogin').html('Email already exists');
       }
     break;
   }
 }
 function loadGuestView(page){
-  $('#headerButton').load('includes/headerButtonGuest.html');
 
+  var tmpl = $('#loginButton').clone();
+  tmpl.removeAttr('id');
+  $('#headerButton').append(tmpl);
+
+    console.log('loadGuestView ENGAGE');
   switch(page){
-    case 'home':
+    case 'index':
       // Nothing is loaded I guess.
     break;
 
@@ -41,15 +64,23 @@ function loadGuestView(page){
 }
 
 function loadUserView(page){
-  $('#headerButton').load('includes/headerButtonUser.html');
+  var formTmpl = $('#formTmpl').clone();
+  formTmpl.removeAttr('id');
+  formTmpl.attr('action', '')
+  var buttonTmpl = $('#logoutButton').clone();
+  buttonTmpl.removeAttr('id');
+  formTmpl.html(buttonTmpl);
 
+  $('#headerButton').append(formTmpl);
+
+  console.log('loadUserView ENGAGE');
   switch(page){
-    case 'home':
+    case 'index':
       $('#').load('includes/submitButton.html');
     break;
 
-    case 'item':
-      //no idea yet
+    case 'login':
+      location.href('index.php');
     break;
   }
 }
