@@ -3,7 +3,6 @@ function checkLoginState(){
            data: {action: 'checkLoginState'},
            type: 'post',
            success: function(output) {
-             console.log(output);
              if(output == 'true'){
                callback('checkLoginState', 'true');
              }else{
@@ -30,7 +29,7 @@ function callback(func, val){
 
     case 'login':
       if(val == 'true'){
-        location.href('index.php');
+        //location.href = 'index.php';
       }else{
         $('#errorLogin').html('Incorrect login info');
       }
@@ -38,7 +37,8 @@ function callback(func, val){
 
     case 'register':
       if(val == 'true'){
-        location.href('index.php');
+        //location.href = 'index.php';
+        console.log('hallo');
       }else{
         $('#errorLogin').html('Email already exists');
       }

@@ -46,7 +46,7 @@ if(isset($_POST['logout'])){
 <script src="js/main.js"></script>
 <script src="js/home.js"></script>
 <script src="js/item.js"></script>
-<script src="js/user.js"></script>
+<script src="js/login.js"></script>
 <script src="js/uploadItem.js"></script>
 
 

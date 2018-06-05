@@ -9,33 +9,56 @@ class UserController extends Controller{
     $user->checkLoginState();
   }
   public function login(){
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    if(
+      !empty($_POST['ext_email']) &&
+      !empty($_POST['ext_pwd'])){
+        $email = $_POST['email'];
+        $password = $_POST['password'];
 
-    $data = [$email, $password];
-    $user = new User();
-    $user->validateLogin($data);
+        $data = [$email, $password];
+        $user = new User();
+        $user->validateLogin($data);
+    }else{
+      echo "Empty values";
+    }
   }
 
   public function register(){
-    $fname = $_POST['fname'];
-    $surname = $_POST['surname'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    if(
+      !empty($_POST['firstName']) &&
+      !empty($_POST['lastName']) &&
+      !empty($_POST['email']) &&
+      !empty($_POST['password'])){
+        $fname = $_POST['firstName'];
+        $surname = $_POST['lastName'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
 
-    $data = [$fname, $surname, $password, $email];
-    $user = new User();
-    $user->validateRegistration($data);
+        $data = [$fname, $surname, $password, $email];
+        $user = new User();
+        $user->validateRegistration($data);
+    }else{
+      echo "qweqweqwe";
+    }
   }
 
   public function update(){
-    $fname = $_POST['fname'];
-    $surname = $_POST['surname'];
-    $password = $_POST['password'];
+    if(
+      !empty($_POST['firstName']) &&
+      !empty($_POST['lastName']) &&
+      !empty($_POST['email']) &&
+      !empty($_POST['password'])){
+        $fname = $_POST['firstName'];
+        $surname = $_POST['lastName'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
 
-    $data = [$fname, $surname, $password];
-    $user = new User();
-    $user->update();
+        $data = [$fname, $surname, $email, $password];
+        $user = new User();
+        $user->update();
+    }else{
+      echo "false";
+    }
   }
 }
 
