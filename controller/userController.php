@@ -19,20 +19,20 @@ class UserController extends Controller{
 
   public function register(){
     if(
-      !empty($_POST['firstName']) &&
-      !empty($_POST['lastName']) &&
+      !empty($_POST['fName']) &&
+      !empty($_POST['surname']) &&
       !empty($_POST['email']) &&
       !empty($_POST['password'])){
-        $fname = $_POST['firstName'];
-        $surname = $_POST['lastName'];
+        $fname = $_POST['fName'];
+        $surname = $_POST['surname'];
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $data = [$fname, $surname, $password, $email];
+        //$data = [$fname, $surname, $password, $email];
         $user = new User();
-        $user->validateRegistration($data);
+        $user->validateRegistration($fname, $surname, $password, $email);
     }else{
-      echo "qweqweqwe";
+      echo "oh no, you R NOT REG";
     }
   }
 

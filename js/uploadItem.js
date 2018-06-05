@@ -1,10 +1,26 @@
 function submitItem (){
-
   var name = itemName.value;
   var preview = itemPreview.value;
   var descr = itemDescr.value;
   var category = selectCategory.value;
-  //https://stackoverflow.com/questions/5392344/sending-multipart-formdata-with-jquery-ajax
+
+
+  if( document.getElementById("uploadimg").files.length == 0 ){
+    alert("imgfile is empty");
+
+
+    $.ajax( {
+      url: 'controller/uploadItemController.php',
+      data: {name:name, preview:preview, descr: descr, category:category},
+      type: 'post',
+      success: function(data, output){
+        console.log(data, output);
+        json = output, data;
+        console.log(json);
+      }
+    });
+} else {
+
   var data = new FormData();
   jQuery.each(jQuery('#uploadimg')[0].files, function(i, file) {
     data.append('imgfile', file);
@@ -28,6 +44,11 @@ function submitItem (){
       console.log(json);
     }
   });
+
+
+}
+  //https://stackoverflow.com/questions/5392344/sending-multipart-formdata-with-jquery-ajax
+
 
  /*$.ajax( {
 

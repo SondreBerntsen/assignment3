@@ -12,15 +12,31 @@ class uploadItemController extends Controller{
 
     public function uploadItem(){
       $user = new User();
-      //$_SESSION['userID'] = $user-> login($loginData);
 
-      $values = array('name' => $_POST['name'], 'prev'=> $_POST['preview'],
-      'descr'=> $_POST['descr'], 'ftmp' => $_FILES['imgfile']['tmp_name'], 'category' => $_POST['category'], 'id'=>$_SESSION['userID']);
-      print_r($values);
+  if( !isset($_FILES['imgfile']) ) {
+    echo "imgfile does not exist";
 
-        $item = new Item();
-        $item-> newItem($values);
-      }
+    $values = array('name' => $_POST['name'], 'prev'=> $_POST['preview'],
+    'descr'=> $_POST['descr'], 'category' => $_POST['category'], 'id'=>$_SESSION['userID']);
+    print_r($values);
+
+    $item = new Item();
+    $item-> newItemtest($values);
+
+  }
+  else {
+
+    echo "fil er blitt lagt med";
+
+    $values = array('name' => $_POST['name'], 'prev'=> $_POST['preview'],
+    'descr'=> $_POST['descr'], 'ftmp' => $_FILES['imgfile']['tmp_name'], 'category' => $_POST['category'], 'id'=>$_SESSION['userID']);
+    print_r($values);
+
+    $item = new Item();
+    $item-> newItem($values);
+
+    }
+  }
 }
 
 
