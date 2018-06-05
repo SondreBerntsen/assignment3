@@ -30,8 +30,13 @@ function callback(func, val){
   }
 }
 function loadGuestView(page){
-  $('#headerButton').load('includes/headerButtonGuest.html');
-  console.log('EXCUSE ME, WHY DOES THIS LOAD?');
+
+  var tmpl = $('#buttonTmpl').clone();
+  tmpl.removeAttr('id');
+  tmpl.attr('href', 'login.php');
+  tmpl.append('Log in');
+  $('#headerButton').append(tmpl);
+
   switch(page){
     case 'index':
       // Nothing is loaded I guess.
@@ -44,7 +49,18 @@ function loadGuestView(page){
 }
 
 function loadUserView(page){
-  $('#headerButton').load('includes/headerButtonUser.php');
+  var formTmpl = $('#formTmpl').clone();
+  formTmpl.removeAttr('id');
+
+  var buttonTmpl = $('#buttonTmpl').clone();
+  buttonTmpl.removeAttr('id');
+  buttonTmpl.attr('name', 'logout');
+  buttonTmpl.attr('type', 'submit');
+  buttonTmpl.append('Log out');
+  formTmpl.append(tmpl);
+
+  $('#headetButton').append(formTmpl);
+
   console.log('loadUserView ENGAGE');
   switch(page){
     case 'index':
