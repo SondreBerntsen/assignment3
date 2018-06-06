@@ -38,7 +38,7 @@
                 <textarea class="form-control" name="content" rows="5"></textarea>
                 <small class="form-text text-muted">You will be taken to your message thread after sending the message!</small>
               </div>
-              <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+              <button class="btn btn-success" onclick="checkExistingThread()">Send message</button>
             </form>
           </div>
         </div>
