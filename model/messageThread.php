@@ -103,9 +103,11 @@ class MessageThread extends Model{
 		$db = $this->connectToDB();
 
 		$query =
-			'SELECT id, content, date
-			 FROM message
-			 WHERE threadID = ?';
+			'SELECT message.id, message.content, message.date, user.firstName
+				FROM message, user
+				WHERE threadID = ?
+				AND user.id=message.sender
+				ORDER BY date';
 		$sth = $db->prepare($query);
 	 	$sth->execute([$threadID]);
 

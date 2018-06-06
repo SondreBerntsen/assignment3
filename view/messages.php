@@ -42,8 +42,8 @@
               <p>About that used condom?About that used condom?</p>
             </div>
             <form class="form-inline messageform" method="POST">
-                <input name="search" required class="form-control mr-sm-2 sendmessage" type="text" placeholder="Enter message" aria-label="entermessage">
-                <button class="headerbutton btn btn-success sendmessagebutton" type="submit">Send message</button>
+                <textarea name="message" required class="form-control mr-sm-2 sendmessage col-md-8" type="text" placeholder="Enter message" aria-label="entermessage"></textarea>
+                <button class="headerbutton btn btn-success sendmessagebutton col-md-3" type="submit">Send message</button>
             </form>
           </div>
         </div>

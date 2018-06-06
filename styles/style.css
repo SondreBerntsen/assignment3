@@ -1,6 +1,7 @@
 /**All pages**/
 .container{
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 a.navbar-brand {
   font-size: 32px;
