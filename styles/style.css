@@ -22,7 +22,11 @@ a:hover{
     overflow-x: hidden;
     padding: 8px 0;
     position: fixed;
-    width: 250px;
+    width: 400px;
+}
+
+.active {
+  color: white;
 }
 
 .sidenav ul {
@@ -34,6 +38,7 @@ a:hover{
   padding-bottom: 10px;
   text-align: center;
   font-size: 22px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .sidenav li {
@@ -42,6 +47,7 @@ a:hover{
   padding-bottom: 5px;
   list-style: none;
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .sidenav li :hover {
@@ -68,7 +74,7 @@ a:hover{
 }
 a li:hover{
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 600;
 }
 .main {
     margin-left: 140px; /* Same width as the sidebar + left position in px */
