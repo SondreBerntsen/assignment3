@@ -33,6 +33,7 @@ if(isset($_POST['action'])){
   switch($action){
     case 'getItemData':
       $itemController->getItemData($_POST['item']);
+
       break;
     case 'checkExistingThread':
       $itemController->checkExistingThread($_POST['item']);

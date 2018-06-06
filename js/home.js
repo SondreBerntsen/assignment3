@@ -38,8 +38,8 @@ function listItems(){
     success: function(output) {
     json = JSON.parse(output);
     console.log(json);
-             /*
-             array = output.split('|');
+
+            /* array = output.split('|');
              console.log(array.length);
              json = JSON.parse(array[0]);
              console.log(array[0]);
@@ -47,19 +47,21 @@ function listItems(){
 
              var tmpl = $('#itemCardTempl').clone();
              tmpl.removeAttr('id');
-             tmpl.find('#pleaseWork').attr('src', img);
+             var src = 'storedImages/'+json.id;
+             tmpl.find('#img').attr('src', src);
              tmpl.attr("href", "item.php?id="+json.id);
              tmpl.find('.card-title').html(json.name);
              tmpl.find('.dateItem').html(json.date);
              tmpl.find('.card-text').html(json.previewtxt);
 
-             $('#listOfItems').append(tmpl);
-             */
+             $('#listOfItems').append(tmpl);*/
+
      for(i=0; json.length > i; i++){
 
        var tmpl = $('#itemCardTempl').clone();
        tmpl.removeAttr('id');
-       //tmpl.find('img').attr('src', img);
+       var src = 'storedImages/'+json[i].id+'/image'
+       tmpl.find('img').attr('src', src);
        tmpl.attr("href", "item.php?id="+json[i].id);
        tmpl.find('.card-title').html(json[i].name);
        tmpl.find('.dateItem').html(json[i].date);

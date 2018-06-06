@@ -47,6 +47,10 @@ class Item extends Model  {
 		$sth->bindParam(':img', $scaledContent);
 		$sth->execute();
 
+		$this->itemID = $db->lastInsertId();
+
+		return $this->itemID;
+
 
 //
 	/*	if($sth->rowCount() == 1){
