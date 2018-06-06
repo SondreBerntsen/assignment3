@@ -14,21 +14,11 @@
           <!-- message cards -->
           <div id="content" class="tab-content py-4">
             <div class="tab-pane active" id="mymessages" role="tabpanel">
-              <div class="card">
-                <div class="card-block">
-                  <h6 class="card-title">Item title</h5>
-																<h6 class='card-subtitle mb-2 text-muted dateItem'>Item in interested in</h6>
-                </div>
-              </div>
+
             </div>
 
             <div class="tab-pane" id="othermessages" role="tabpanel">
-              <div class="card">
-                <div class="card-block">
-                  <h6 class="card-title">Item title</h5>
-																<h6 class='card-subtitle mb-2 text-muted dateItem'>Item im giving away</h6>
-                </div>
-              </div>
+    
             </div>
           </div>
         </div>

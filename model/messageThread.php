@@ -68,11 +68,12 @@ class MessageThread extends Model{
 		$query= 'SELECT messagethread.id, item.name, user.firstName, user.lastName
 							FROM messagethread, item, user
 							WHERE messagethread.owner=?
-							AND  user.id =?
-							AND item.owner=?';
+							AND  user.id=messagethread.asker
+							AND item.owner=?
+							AND item.id=messagethread.itemID';
 
 		$sth = $db->prepare($query);
-	 	$sth->execute(array($userID, $userID, $userID));
+	 	$sth->execute(array($userID, $userID));
 
 		$results = $sth->fetchAll(PDO::FETCH_ASSOC);
 

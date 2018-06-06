@@ -1,12 +1,13 @@
 <!-- Templates -->
 <div id="tmplContainer">
-
-  <!-- MESSAGES BUTTON -->
-  <a id="messagebutton" href="messages.php">
-    <button name="messages" type="button" class="btn btn-info messagebutton"><i class="fas fa-comments messageicon"></i> Messages</button>
+  <a id="msgTmpl">
+    <div class="card">
+      <div class="card-block">
+        <h6 class="card-title msgTitle"></h5>
+          <h6 class='card-subtitle mb-2 text-muted dateItem msgParticipant'></h6>
+      </div>
+    </div>
   </a>
-
-
   <a id="categoryTmpl"><li></li></a>
 
 	<a  id="itemCardTempl">
@@ -29,6 +30,15 @@
 	</a>
 
   <form id="formTmpl" class="logoutloginform" method="post"></form>
+  <!-- MESSAGES BUTTON
+  <a href="messages.php">
+    <button name="messages" type="button" class="btn btn-info messagebutton"><i class="fas fa-comments messageicon"></i> Messages</button>
+  </a>
+
+  <a id="loginButton" href="login.php" class="btn btn-success" role="button" type="submit">
+    <i class="fas fa-user"></i> Log in
+  </a>
+  -->
 
   <a id="loginButton" href="login.php">
     <button name="messages" type="submit" role="button" class="btn btn-success"><i class="fas fa-user"></i> Log in</button>
@@ -52,9 +62,10 @@ if(isset($_POST['logout'])){
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
 <script src="js/home.js"></script>
-<script src="js/item.js"></script> 
+<script src="js/item.js"></script>
 <script src="js/login.js"></script>
 <script src="js/uploadItem.js"></script>
+<script src="js/messages.js"></script>
 
 
 </body>
