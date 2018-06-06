@@ -113,7 +113,7 @@ a li:hover{
   margin-left: 5px;
 }
 /* Item site */
-.imgInItem{
+.imgInItem, .imgItem{
   height:200px;
 }
 .nameHeadingItem{
