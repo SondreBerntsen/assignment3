@@ -20,7 +20,7 @@ class ItemController extends Controller{
   public function newMsgThread($itemID, $content){
     $asker = $_SESSION['userID'];
     $messageThread = new MessageThread();
-    $messageThread->newThread($itemID, $asker); // Target function currently takes three params, but it has to check for owner itself
+    $messageThread->newThread($itemID, $asker, $content); // Target function currently takes three params, but it has to check for owner itself
   }
 
 }
