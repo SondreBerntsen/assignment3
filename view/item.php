@@ -38,7 +38,11 @@
                 <textarea id="msgContent" class="form-control" name="content" rows="5"></textarea>
                 <small class="form-text text-muted">You will be taken to your message thread after sending the message!</small>
               </div>
+<<<<<<< HEAD
+              <button class="btn btn-success" onclick="checkExistingThread()">Send message</button>
+=======
               <button type="submit" name="submit" class="btn btn-primary" onclick="newMsgThread()">Submit</button>
+>>>>>>> cb6a0a49305efc2111200a38aed516b252a942cf
             </form>
           </div>
         </div>
