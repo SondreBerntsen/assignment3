@@ -1,6 +1,6 @@
 <!-- Templates -->
 <div id="tmplContainer">
-  <a id="msgTmpl">
+  <a id="convTmpl">
     <div class="card">
       <div class="card-block">
         <h6 class="card-title msgTitle"></h5>

@@ -21,10 +21,10 @@ if(isset($_POST['action'])){
   $action = $_POST['action'];
 
   switch($action){
-    case 'getmsgThreadData':
+    case 'getMyItems':
       $msgController->listMessageThreadsOwner($_SESSION['userID']);
       break;
-    case 'getMsgThreadDataOther':
+    case 'getOther':
       $msgController->listMessageThreadsAsker($_SESSION['userID']);
       break;
   }

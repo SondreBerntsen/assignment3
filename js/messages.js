@@ -2,35 +2,39 @@ $(document).ready(function (){
   $.ajax({
     url: 'controller/msgController.php',
     data: {
-      action: 'getmsgThreadData'
+      action: 'getMyItems'
     },
     type: 'post',
     success: function(output) {
       json = JSON.parse(output);
       for(i=0; json.length > i; i++){
-      var tmpl = $('#msgTmpl').clone();
-      tmpl.removeAttr('id');
-      tmpl.attr('href', 'messages.php?id='+json[i].id);
-      tmpl.find('.msgTitle').html(json[i].name);
-      tmpl.find('.msgParticipant').html(json[i].firstName+" "+ json[i].lastName);
+        var tmpl = $('#convTmpl').clone();
+        tmpl.removeAttr('id');
 
-      $('#mymessages').append(tmpl);
-    }
+        var onclick = 'pushURLMsg('+'"'+json[i].id+'")';
+        tmpl.attr('onclick', onclick);
+        tmpl.find('.msgTitle').html(json[i].name);
+        tmpl.find('.msgParticipant').html(json[i].firstName+" "+ json[i].lastName);
+
+        $('#mymessages').append(tmpl);
+      }
     }
   });
 
   $.ajax({
     url: 'controller/msgController.php',
     data: {
-      action: 'getMsgThreadDataOther'
+      action: 'getOther'
     },
     type: 'post',
     success: function(output) {
       json = JSON.parse(output);
       for(i=0; json.length > i; i++){
-      var tmpl = $('#msgTmpl').clone();
+      var tmpl = $('#convTmpl').clone();
       tmpl.removeAttr('id');
-      tmpl.attr('href', 'messages.php?id='+json[i].id);
+
+      var onclick = 'pushURLMsg('+'"'+json[i].id+'")';
+      tmpl.attr('onclick', onclick);
       tmpl.find('.msgTitle').html(json[i].name);
       tmpl.find('.msgParticipant').html(json[i].firstName+" "+ json[i].lastName);
 
@@ -38,8 +42,50 @@ $(document).ready(function (){
     }
     }
   });
-
-
-
-
 });
+
+
+var threadID;
+function listMessages(){
+
+  var threaderoony = threadID;
+  $.ajax({
+    url: 'controller/msgController.php',
+    data: {
+      action: 'listMessages',
+      threadID: threaderoony
+    },
+    type: 'post',
+    success: function(output) {
+      json = JSON.parse(output);
+      for(i=0; json.length > i; i++){
+        var tmpl = $('#msgTmpl').clone();
+        tmpl.removeAttr('id');
+
+        var onclick = 'pushURLMsg('+'"'+json[i].id+'")';
+        tmpl.attr('onclick', onclick);
+        tmpl.find('.msgTitle').html(json[i].name);
+        tmpl.find('.msgParticipant').html(json[i].firstName+" "+ json[i].lastName);
+
+        $('#mymessages').append(tmpl);
+      }
+    }
+  });
+
+}
+
+function getURL(){
+  url = location.href;
+  console.log(url);
+  threadID = url.substring(url.indexOf("=")+1);
+  if(threadID.includes('assignment3')){//FIx tror ikke jeg like dettee, meeeen det fonka fin ja
+    threadID='none';
+  }
+}
+
+
+function pushURLMsg(threadID){
+  window.history.replaceState("Details", "Title", window.location.pathname+'?id='+threadID);
+  getURL();
+  //listMessages();
+}
