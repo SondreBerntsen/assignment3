@@ -26,20 +26,8 @@
         <!-- messagethreadcontainer -->
         <div class="col">
           <div class="messagecontainer">
+            <div class="msgList">
 
-            <div class="mymessage">
-              <h6>Me</h6>
-              <p>hello</p>
-            </div>
-            <div class="recipientmessage">
-              <div class="recipientname">
-                <h6>Ronny</h6>
-              </div>
-              <p>yo</p>
-            </div>
-            <div class="mymessage">
-              <h6>Me</h6>
-              <p>About that used condom?About that used condom?</p>
             </div>
             <form class="form-inline messageform" method="POST">
                 <textarea name="message" required class="form-control mr-sm-2 sendmessage col-md-8" type="text" placeholder="Enter message" aria-label="entermessage"></textarea>

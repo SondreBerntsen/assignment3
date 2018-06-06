@@ -1,5 +1,15 @@
 <!-- Templates -->
 <div id="tmplContainer">
+  <div class="recipientmessage">
+    <div class="recipientname">
+      <h6>Ronny</h6>
+    </div>
+    <p>yo</p>
+  </div>
+  <div class="mymessage">
+    <h6>Me</h6>
+    <p>About that used condom?About that used condom?</p>
+  </div>
   <a id="convTmpl">
     <div class="card">
       <div class="card-block">
