@@ -4,8 +4,9 @@ $(document).ready(function (){
            data: {action: 'listCategories'},
            type: 'post',
            success: function(output) {
+             console.log(output);
              json = JSON.parse(output);
-
+             console.log(json);
              for(i=0; json.length > i; i++){
 
                var tmpl = $('#categoryTmpl').clone();
@@ -26,24 +27,48 @@ $(document).ready(function (){
 var cat;
 function listItems(){
   var cateroony = cat;
-  $.ajax({ url: 'controller/HomeController.php',
-           data: {action: 'listItems', category: cateroony},
-           type: 'post',
-           success: function(output) {
-             json = JSON.parse(output);
-             //console.log(cateroony);
-             for(i=0; json.length > i; i++){
 
-               var tmpl = $('#itemCardTempl').clone();
-               tmpl.removeAttr('id');
-               tmpl.attr("href", "item.php?id="+json[i].id);
-               tmpl.find('.card-title').html(json[i].name);
-               tmpl.find('.dateItem').html(json[i].date);
-               tmpl.find('.card-text').html(json[i].previewtxt);
+  $.ajax({
+    url: 'controller/HomeController.php',
+    data: {
+      action: 'listItems',
+      category: cateroony
+    },
+    type: 'post',
+    success: function(output) {
+    json = JSON.parse(output);
+    console.log(json);
+             /*
+             array = output.split('|');
+             console.log(array.length);
+             json = JSON.parse(array[0]);
+             console.log(array[0]);
+             img = 'data:image/jpeg;base64, ' + array[2];
 
-               $('#listOfItems').append(tmpl);
-             }
-           }
+             var tmpl = $('#itemCardTempl').clone();
+             tmpl.removeAttr('id');
+             tmpl.find('#pleaseWork').attr('src', img);
+             tmpl.attr("href", "item.php?id="+json.id);
+             tmpl.find('.card-title').html(json.name);
+             tmpl.find('.dateItem').html(json.date);
+             tmpl.find('.card-text').html(json.previewtxt);
+
+             $('#listOfItems').append(tmpl);
+             */
+     for(i=0; json.length > i; i++){
+
+       var tmpl = $('#itemCardTempl').clone();
+       tmpl.removeAttr('id');
+       //tmpl.find('img').attr('src', img);
+       tmpl.attr("href", "item.php?id="+json[i].id);
+       tmpl.find('.card-title').html(json[i].name);
+       tmpl.find('.dateItem').html(json[i].date);
+       tmpl.find('.card-text').html(json[i].previewtxt);
+
+       $('#listOfItems').append(tmpl);
+     }
+
+    }
   });
 }
 

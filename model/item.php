@@ -21,8 +21,6 @@ class Item extends Model  {
 		//$sth->bindParam(':img', $scaledContent);
 		$sth->execute();
 
-
-//
 	/*	if($sth->rowCount() == 1){
 			return "Things were inserted";
 		}else{
@@ -95,26 +93,42 @@ class Item extends Model  {
 		$db = $this->connectToDB();//stores databaseconnection i db variable
 		//If a category has not been chosen list the 5 most recent items
 		if($catName=='none'){
-			$query =  'SELECT id, name, descr, date
-								FROM item
-								ORDER BY date DESC
-								LIMIT 5';
-
+			$query = //ADD IMG WHEN RESUMING THE BALL
+				'SELECT id, name, descr, date, previewtxt
+				 FROM item
+				 ORDER BY date DESC
+				 LIMIT 5';
 			$sth = $db->prepare($query);
-			$sth->execute(array());
-			$itemData=$sth->fetchAll(PDO::FETCH_ASSOC);
-			echo json_encode($itemData);
+			$sth->execute();
+			$itemData = $sth->fetchAll(PDO::FETCH_ASSOC);
+
 		}else{//Select items from the chosen category
-			$query = 'SELECT id, name, descr, date
-								FROM item
-								WHERE category = ?
-								ORDER BY date DESC';
+			$query = //ADD IMG WHEN RESUMING THE BALL
+				'SELECT id, name, descr, date, previewtxt
+				 FROM item
+				 WHERE category = ?
+				 ORDER BY date DESC';
 			$sth = $db->prepare($query);
 			$data = array($catName);
 			$sth->execute($data);
-			$itemData=$sth->fetchAll(PDO::FETCH_ASSOC);
-			echo json_encode($itemData);
+			$itemData = $sth->fetchAll(PDO::FETCH_ASSOC);
 		}
+		/*
+		for($i = 0; $i < count($itemData); $i++){
+			if($itemData[$i]['img'] != null){
+				$imgData = base64_encode($itemData[$i]['img']);
+				unset($itemData[$i]['img']);
+				$json = json_encode($itemData[$i]);
+
+
+				echo $json;
+				echo '|';
+				echo $imgData;
+			}else{
+				echo json_encode($itemData);
+			}
+			*/
+			echo json_encode($itemData);
 	}
 	//getItemData is a function that returns all data from a selected item
 	public function getItemData($itemId){

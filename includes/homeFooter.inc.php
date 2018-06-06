@@ -15,22 +15,29 @@
 				</div>
 				<div class="col-md-4">
 					<div class="card-img-bottom float-right">
-						<img src="resources/images/testimg.jpg" class="img-fluid imgItem" alt="Responsive image">
+						<img id="pleaseWork" class="img-fluid imgItem" alt="Responsive image">
 					</div>
 				</div>
 			</div>
 		</div>
 	</a>
 
-  <form id="formTmpl" method="post"></form>
-
-  <a id="loginButton" href="login.php">
-    <button name="messages" type="submit" class="btn btn-success messagebutton"><i class="fas fa-user messageicon"></i> Log in</button>
+  <form id="formTmpl" class="logoutloginform" method="post"></form>
+  <!-- MESSAGES BUTTON
+  <a href="messages.php">
+    <button name="messages" type="button" class="btn btn-info messagebutton"><i class="fas fa-comments messageicon"></i> Messages</button>
   </a>
 
-  <button id="logoutButton" name="logout" class="btn btn-success" role="button" type="submit">
-    <i class="fas fa-user"></i>Log out
-  </button>
+  <a id="loginButton" href="login.php" class="btn btn-success" role="button" type="submit">
+    <i class="fas fa-user"></i> Log in
+  </a>
+  -->
+
+  <a id="loginButton" href="login.php">
+    <button name="messages" type="submit" role="button" class="btn btn-success"><i class="fas fa-user"></i> Log in</button>
+  </a>
+
+  <button id="logoutButton" name="logout" class="btn btn-success" role="button" type="submit"><i class="fas fa-user"></i> Log out</button>
 
 
 </div>
@@ -48,7 +55,7 @@ if(isset($_POST['logout'])){
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
 <script src="js/home.js"></script>
-<script src="js/item.js"></script>
+<script src="js/item.js"></script> 
 <script src="js/login.js"></script>
 <script src="js/uploadItem.js"></script>
 
