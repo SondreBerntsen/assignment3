@@ -39,7 +39,6 @@ $query = 'CREATE TABLE IF NOT EXISTS item (
           id INT PRIMARY KEY AUTO_INCREMENT,
           name VARCHAR(255) NOT NULL,
           descr text NOT NULL,
-          img BLOB,
           date DATETIME,
           owner INT,
           category VARCHAR(255),

@@ -7,7 +7,7 @@
 <div id="tmplContainer">
   <div id="tmplItem" class="row">
     <div class="col-md-8">
-        <img  class="imgInItem" src="storedImages/4/14/image" class="img-fluid imgItem" alt="Responsive image">
+        <img  class="imgInItem" class="img-fluid imgItem" alt="Responsive image">
           <h1 class="itemName"></h1>
           <p class="itemDate">
           </p>
