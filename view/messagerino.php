@@ -52,6 +52,9 @@
                       </div>
                     </div>
                 </div>
+
+								<!-- messages -->
+
                 <div class="tab-pane" id="messages" role="tabpanel">
 									<div class="row">
 										<div class="col">
