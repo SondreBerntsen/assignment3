@@ -14,6 +14,8 @@ $(document).ready(function (){
       json = JSON.parse(output);
       var tmpl = $('#tmplItem').clone();
       tmpl.removeAttr('id');
+      var src = 'storedImages/'+json.id+'/image'
+      tmpl.find('.imgInItem').attr('src', src);
       tmpl.find('.itemName').html(json.name);
       tmpl.find('.itemDate').html(json.date);
       tmpl.find('.itemDescr').html(json.descr);
