@@ -121,14 +121,20 @@ $sth = $db->prepare($query);
 $sth->execute();
 
 // example data for message table
-$query ="INSERT INTO message (sender, content, threadID)
-         VALUES (2, 'Can I pick her up around 4pm today!?!', 1),
-        (3, 'Is she castrated?', 1),
-        (4, 'When can she be picked up?', 1),
-        (3, 'Are they scratched?', 2),
-        (1, 'Exams are making me very mad. How heavy is it?', 4),
-        (4, 'For ocean or land?', 3),
-        (1, 'On my way to pick her up now. Hurray!', 2)";
+$query ="INSERT INTO message (content, date, sender, threadID)
+         VALUES ('Can I pick her up around 4pm today!?!','2018-06-05 10:20:55', 2, 1),
+         ('Hello! I leave school at 4. How about 4:30?','2018-06-05 10:21:00', 1, 1),
+         ('OK!', '2018-06-05 10:25:00', 2, 1),
+        ('Is she castrated?', '2018-06-06 11:20:55', 3, 1),
+        ('No. Lånekassa does not cover that.', '2018-06-06 11:25:00', 1, 1),
+        ('OK. I can castrate her myself with my poker money!', '2018-06-06 11:30:43', 2, 1),
+        ('Sounds good', '2018-06-06 11:40:43', 1, 1),
+        ('When can she be picked up?', '2018-06-06 10:21:15', 4, 1),
+        ('I will be home around 4:30', '2018-06-06 10:27:55', 1, 1),
+        ('Are they scratched?', '2018-06-05 10:20:55', 3, 2),
+        ('Exams are making me very mad. How heavy is it?', '2018-06-05 10:20:55', 1, 4),
+        ('For ocean or land?', '2018-06-05 10:20:55', 4, 3),
+        ('On my way to pick her up now. Hurray!', '2018-06-05 10:20:55', 1, 2)";
 $sth = $db->prepare($query);
 $sth->execute();
 
