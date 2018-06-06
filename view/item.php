@@ -16,7 +16,7 @@
     </div>
     <div class="col-md-4" >
       <h4 class="nameHeadingItem"><i class="fas fa-user-circle userImg"></i><span class="nameOwner"></span></h4>
-      <button class="btn btn-primary col-md-12" data-toggle="modal" data-target="#sendMessageModal" style="margin-top:20px;">Send melding</button>
+      <button class="btn btn-primary col-md-12" style="margin-top:20px;" onclick="checkExistingThread()">Send melding</button>
     </div>
   </div>
 </div>
