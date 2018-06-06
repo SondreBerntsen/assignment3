@@ -22,15 +22,22 @@
 		</div>
 	</a>
 
-  <form id="formTmpl" method="post"></form>
-
-  <a id="loginButton" href="login.php" class="btn btn-success" role="button" type="submit">
-    <i class="fas fa-user"></i>Log in
+  <form id="formTmpl" class="logoutloginform" method="post"></form>
+  <!-- MESSAGES BUTTON
+  <a href="messages.php">
+    <button name="messages" type="button" class="btn btn-info messagebutton"><i class="fas fa-comments messageicon"></i> Messages</button>
   </a>
 
-  <button id="logoutButton" name="logout" class="btn btn-success" role="button" type="submit">
-    <i class="fas fa-user"></i>Log out
-  </button>
+  <a id="loginButton" href="login.php" class="btn btn-success" role="button" type="submit">
+    <i class="fas fa-user"></i> Log in
+  </a>
+  -->
+
+  <a id="loginButton" href="login.php">
+    <button name="messages" type="submit" role="button" class="btn btn-success"><i class="fas fa-user"></i> Log in</button>
+  </a>
+
+  <button id="logoutButton" name="logout" class="btn btn-success" role="button" type="submit"><i class="fas fa-user"></i> Log out</button>
 
 
 </div>
