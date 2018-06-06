@@ -24,8 +24,8 @@
 
   <form id="formTmpl" method="post"></form>
 
-  <a id="loginButton" href="login.php" class="btn btn-success" role="button" type="submit">
-    <i class="fas fa-user"></i>Log in
+  <a id="loginButton" href="login.php">
+    <button name="messages" type="submit" class="btn btn-success messagebutton"><i class="fas fa-user messageicon"></i> Log in</button>
   </a>
 
   <button id="logoutButton" name="logout" class="btn btn-success" role="button" type="submit">

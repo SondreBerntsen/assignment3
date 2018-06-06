@@ -32,6 +32,7 @@ session_start();
 			</ul>
 		</div>
 		<div id="headerButton">
+		<button name="messages" type="button" class="btn btn-info messagebutton"><i class="fas fa-comments messageicon"></i> Messages</button>
 		</div>
 
 		</nav>
