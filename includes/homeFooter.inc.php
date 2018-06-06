@@ -22,7 +22,7 @@
 		</div>
 	</a>
 
-  <form id="formTmpl" method="post"></form>
+  <form id="formTmpl" class="logoutloginform" method="post"></form>
   <!-- MESSAGES BUTTON
   <a href="messages.php">
     <button name="messages" type="button" class="btn btn-info messagebutton"><i class="fas fa-comments messageicon"></i> Messages</button>
