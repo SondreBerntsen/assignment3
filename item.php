@@ -5,6 +5,5 @@
 
 <?php
 	include('view/item.php');
-	include_once("includes/homeFooter.inc.php");
 
 ?>

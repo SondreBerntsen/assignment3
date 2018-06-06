@@ -5,6 +5,4 @@
 
 <?php
 	include('view/user.php');
-	include_once("includes/homeFooter.inc.php");
-
 ?>
