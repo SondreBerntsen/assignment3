@@ -3,9 +3,7 @@
   <div class="row">
     <div class="col-sm-3">
 			<div class="sidenav">
-        <h4>
-          <strong>Categories</strong>
-        </h4>
+        <h3>Categories</h3>
 				<ul id="listOfCategories"></ul>
 			</div>
     </div>
