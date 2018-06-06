@@ -15,20 +15,7 @@
           <div class="profileheader">
             <h2 class="mb-3 profileheading justify-content-left">Your profile</h2>
           </div>
-            <ul class="nav nav-tabs small justify-content-end" role="tablist">
-                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#settings" role="tab">Settings</a></li>
-                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#listings" role="tab">Listings</a></li>
-                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#messages" role="tab">Messages</a></li>
-            </ul>
             <div id="content" class="tab-content py-4">
-                <div class="tab-pane active" id="settings" role="tabpanel">
-                  <h4 class="mb-3">Change your settings</h2>
-                    <!--
-
-                    ROGNHILD COMING TRUE
-
-                    -->
-                </div>
                 <div class="tab-pane" id="listings" role="tabpanel">
                   <h4 class="mb-3">Listings</h2>
                     <div class="useritem rounded">
@@ -52,10 +39,12 @@
                       </div>
                     </div>
                 </div>
-                <div class="tab-pane" id="messages" role="tabpanel">
+							</div>
+
+								<!-- messages -->
+
 									<div class="row">
 										<div class="col">
-		                  <h4 class="mb-3">Messages</h2>
 										</div>
 										<div class="col">
 											<h4 class="mb-3">Item in question</h4>
@@ -63,14 +52,34 @@
 									</div>
 										<div class="row">
 
+											<!-- message titlecards -->
 											<div class="col-3">
-												<div class="card">
-													<div class="card-block">
-														<h6 class="card-title">Item title</h5>
-														<h6 class='card-subtitle mb-2 text-muted dateItem'>Sellers name</h6>
+												<ul class="nav nav-tabs small" role="tablist">
+														<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#mymessages" role="tab">My items</a></li>
+														<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#othermessages" role="tab">Other items</a></li>
+												</ul>
+												<div id="content" class="tab-content py-4">
+													<div class="tab-pane active" id="mymessages" role="tabpanel">
+														<div class="card">
+															<div class="card-block">
+																<h6 class="card-title">Item title</h5>
+																<h6 class='card-subtitle mb-2 text-muted dateItem'>Item in interested in</h6>
+															</div>
+														</div>
+													</div>
+
+													<div class="tab-pane" id="othermessages" role="tabpanel">
+														<div class="card">
+															<div class="card-block">
+																<h6 class="card-title">Item title</h5>
+																<h6 class='card-subtitle mb-2 text-muted dateItem'>Item im giving away</h6>
+															</div>
+														</div>
 													</div>
 												</div>
 											</div>
+
+											<!-- messagethreadcontainer -->
 											<div class="col">
 												<div class="messagecontainer">
 
@@ -91,8 +100,6 @@
 											</div>
 										</div>
                 </div>
-            </div>
-        </div>
     </div>
 </div>
 

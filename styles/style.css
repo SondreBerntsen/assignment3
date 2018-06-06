@@ -180,3 +180,11 @@ a li:hover{
   display: block;
   width: 100%;
 }
+
+.messageicon {
+  margin-right: 5px;
+}
+
+.messagebutton {
+  margin-bottom: 5px;
+}
