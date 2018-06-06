@@ -32,8 +32,8 @@ class Category extends Model {
               FROM category
               ORDER BY name DESC';
     $sth = $db->prepare($query);
-    $sth->execute(array());
-    $data=$sth->fetchAll(PDO::FETCH_ASSOC);
+    $sth->execute();
+    $data = $sth->fetchAll(PDO::FETCH_ASSOC);
 		$json = json_encode($data);
 		echo $json;
 	}

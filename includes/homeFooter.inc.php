@@ -15,7 +15,7 @@
 				</div>
 				<div class="col-md-4">
 					<div class="card-img-bottom float-right">
-						<img src="resources/images/testimg.jpg" class="img-fluid imgItem" alt="Responsive image">
+						<img id="pleaseWork" class="img-fluid imgItem" alt="Responsive image">
 					</div>
 				</div>
 			</div>
@@ -48,7 +48,7 @@ if(isset($_POST['logout'])){
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
 <script src="js/home.js"></script>
-<script src="js/item.js"></script>
+<script src="js/item.js"></script> 
 <script src="js/login.js"></script>
 <script src="js/uploadItem.js"></script>
 

@@ -5,13 +5,13 @@ $(document).ready(function (){
   $.ajax({
     url: 'controller/ItemController.php',
     data: {
-      action: 'getItemData'
+      action: 'getItemData',
       item: itemID
     },
     type: 'post',
     success: function(output) {
+      console.log(output);
       json = JSON.parse(output);
-      console.log(json);
       var tmpl = $('#tmplItem').clone();
       tmpl.removeAttr('id');
       tmpl.find('.itemName').html(json.name);
@@ -56,8 +56,8 @@ function newMsgTHread(){
     url: 'controller/ItemController.php',
     data: {
       action: 'newMsgThread',
-      item: itemID
-      content: $('#msgContent').val();
+      item: itemID,
+      content: $('#msgContent').val()
     },
     type: 'post',
     success: function(output) {
