@@ -1,5 +1,5 @@
 <?php
-
+header('Content-type: image/jpeg');
 require_once('../model/Model.php');
 require_once('../model/Category.php');
 require_once('../model/Item.php');
