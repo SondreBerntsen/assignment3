@@ -58,6 +58,7 @@ if($('#itemName').val()==""||$('#itemPreview').val()==""||$('#itemDescr').val()=
       success: function(data, output){
         console.log(data);
         json = output;
+        console.log(data);
         console.log(json);
       }
     });

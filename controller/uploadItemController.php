@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('../model/Item.php');
 require_once('../model/Category.php');
 require_once('Controller.php');
