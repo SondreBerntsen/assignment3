@@ -42,8 +42,9 @@ $(document).ready(function (){
       }
     }
   });
-  getURL();
   checkLoginState();
+  getURL();
+  listMessages();
 });
 
 
@@ -51,7 +52,6 @@ var threadID;
 function listMessages(){
 
   var threaderoony = threadID;
-  console.log(threaderoony);
   $.ajax({
     url: 'controller/msgController.php',
     data: {
@@ -63,19 +63,17 @@ function listMessages(){
       json = JSON.parse(output);
       user = json.user;
       delete json.user;
-      console.log(json);
-      console.log(Object.keys(json).length);
+      //console.log(json);
+      //console.log(Object.keys(json).length);
 
       $('.msgList').html(''); //Empties current content
       for(i=0; i < Object.keys(json).length-1; i++){
-        console.log(user);
-        console.log(json[i].sender);
+        //console.log(user);
+        //console.log(json[i].sender);
         if(json[i].sender == user){
-          console.log('appended own msg');
           var tmpl = $('#myMsg').clone();
           tmpl.removeAttr('id');
         }else{
-          console.log('appended their msg');
           var tmpl = $('#theirMsg').clone();
           tmpl.find('.senderName').html(json[i].firstName);
           tmpl.removeAttr('id');
@@ -88,12 +86,12 @@ function listMessages(){
       }
     }
   });
-
 }
 
 function getURL(){
   url = location.href;
   threadID = url.substring(url.indexOf("=")+1);
+  console.log(threadID);
   if(threadID.includes('assignment3')){//FIx tror ikke jeg like dettee, meeeen det fonka fin ja
     threadID='none';
   }
@@ -101,8 +99,6 @@ function getURL(){
     listMessages(threadID);
   }
 }
-
-
 function pushURLMsg(threadID){
   window.history.replaceState("Details", "Title", window.location.pathname+'?id='+threadID);
   getURL();

@@ -1,15 +1,16 @@
 function checkLoginState(){
-  $.ajax({ url: 'controller/UserController.php',
-           data: {action: 'checkLoginState'},
-           type: 'post',
-           success: function(output) {
-             console.log(output);
-             if(output == 'true'){
-               callback('checkLoginState', 'true');
-             }else{
-               callback('checkLoginState', 'false');
-             }
-           }
+  $.ajax({
+    url: 'controller/UserController.php',
+    data: {action: 'checkLoginState'},
+    type: 'post',
+    success: function(output) {
+      console.log(output);
+      if(output == 'true'){
+        callback('checkLoginState', 'true');
+      }else{
+        callback('checkLoginState', 'false');
+      }
+    }
   });
 }
 
@@ -92,6 +93,9 @@ function loadUserView(page){
 
     case 'login':
       location.href('index.php');
+    break;
+    case 'item':
+      // Should check if item.owner == $_SESSION['userID'], in which case 'send message' should not load
     break;
   }
 }

@@ -23,8 +23,6 @@ $(document).ready(function (){
       $('#itemContainer').append(tmpl);
     }
   });
-
-
   checkLoginState();
 });
 
