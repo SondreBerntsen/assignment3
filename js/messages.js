@@ -100,6 +100,7 @@ function newMessage(){
       type: 'post',
       success: function(output) {
         listMessages();
+        $('#messageContent').val('');
       }
     });
   }
