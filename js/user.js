@@ -14,11 +14,17 @@ function loadOwnListings(){
     type: 'post',
     success: function(output) {
       json = JSON.parse(output);
-      console.log(json[0]);
+      console.log(json);
+
+      userfName = json[0].fName;
+      userSurname = json[0].surname;
+      userEmail = json[0].email;
+
+      $('userfName').html(userfName);
+      $('userSurname').html(userSurname);
+      $('userEmail').html(userEmail);
 
       for(i=0; json.length > i; i++){
-
-        
 
         var tmpl = $('#userCardTmpl').clone();
         tmpl.removeAttr('id');
