@@ -20,7 +20,6 @@ $(document).ready(function (){
       tmpl.find('.itemDate').html(json.date);
       tmpl.find('.itemDescr').html(json.descr);
       tmpl.find('.nameOwner').html(json.firstName +" "+ json.lastName);
-
       $('#itemContainer').append(tmpl);
     }
   });
@@ -29,6 +28,7 @@ $(document).ready(function (){
 });
 
 function checkExistingThread(){
+  var url = location.href;
   var itemID = url.substring(url.indexOf("=")+1);
 
   $.ajax({
@@ -40,7 +40,7 @@ function checkExistingThread(){
     type: 'post',
     success: function(output) {
       if(output == 'true'){
-        location.href = '';// This has to redirect to user page, set
+        location.href = 'messages.php';// This has to redirect to user page, set
       }else{
         // Toggles message modal so user can create a message
         $('#sendMessageModal').modal('toggle');
@@ -51,7 +51,9 @@ function checkExistingThread(){
 }
 
 // Called when user clicks 'send' in the message modal
-function newMsgTHread(){
+function newMsgThread(){
+  console.log('newMsgThread');
+  var url = location.href;
   var itemID = url.substring(url.indexOf("=")+1);
 
   $.ajax({
@@ -63,11 +65,10 @@ function newMsgTHread(){
     },
     type: 'post',
     success: function(output) {
+      console.log(output);
       if(output == 'true'){
-
-        location.href = ''; // This has to redirect to user page, set
+        location.href = 'messages.php';// This has to redirect to user page, set
       }
-     }
+    }
   });
-
 }

@@ -1,8 +1,11 @@
 <?php
+session_start();
 header('Content-type: image/jpeg');
 require_once('../model/MessageThread.php');
 require_once('../model/Item.php');
 require_once('Controller.php');
+
+
 
 class ItemController extends Controller{
 
@@ -39,7 +42,7 @@ if(isset($_POST['action'])){
       $itemController->checkExistingThread($_POST['item']);
       break;
     case 'newMsgThread':
-      $itemController->newMsgThread($_POST['item']);
+      $itemController->newMsgThread($_POST['item'], $_POST['content']);
       break;
   }
 
