@@ -41,7 +41,7 @@ class MessageThread extends Model{
 	  $sth->execute([$itemID, $askerID, $id['owner']]);
 		if ($sth->rowCount() == 1){
     	$threadID = $db->lastInsertId(); //Gets threadId from the newly created messagethread
-			$this->newMessage($content,$askerID, $threadID); //Creates a new message
+			$this->newMessage($content, $askerID, $threadID); //Creates a new message
     }else{
       echo 'false';
     }
@@ -50,16 +50,16 @@ class MessageThread extends Model{
 	public function newMessage($content, $sender, $threadID){
 			$db = $this->connectToDB();//Connection to database
 
-			$query ='INSERT INTO messagethread (content, date, sender,  threadID)
+			$query ='INSERT INTO message (content, date, sender,  threadID)
 				 				VALUES (?, ?, ?, ?)';
 			$sth = $db->prepare($query);
-		  $sth->execute([$content, NOW(), $sender, $threadID]);
+		  $sth->execute([$content, date('Y-m-d H:i:s'), $sender, $threadID]);
 			//If the message was successfully put in the database return true
 			if ($sth->rowCount() == 1){
-				return 'true';
-			}else{//Else return false
-				return 'false';
-			}
+	      echo 'true';
+	    }else{
+	      echo 'false';
+	    }
 	}
 	//Function to list all message threads the logged in user has been the owner
 	public function listMessageThreadsOwner($userID){
@@ -120,9 +120,6 @@ class MessageThread extends Model{
 	public function deleteThread(){
 
 	}
-
-
-
 }
 
 ?>

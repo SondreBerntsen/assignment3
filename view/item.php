@@ -33,13 +33,12 @@
           </div>
           <div class="modal-body">
             <h6 class="modal-title" id="sendMessageModalTitle">Your message</h6>
-            <form action="includes/entries.inc.php" method="POST">
+            <form method="post" >
               <div class="form-group">
                 <textarea id="msgContent" class="form-control" name="content" rows="5"></textarea>
                 <small class="form-text text-muted">You will be taken to your message thread after sending the message!</small>
               </div>
-              <button class="btn btn-success" onclick="checkExistingThread()">Send message</button>
-              <button type="submit" name="submit" class="btn btn-primary" onclick="newMsgThread()">Submit</button>
+              <button type="submit" name="submit" class="btn btn-primary" onclick="newMsgThread()">Send message</button>
             </form>
           </div>
         </div>
