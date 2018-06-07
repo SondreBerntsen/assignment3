@@ -66,7 +66,6 @@
 
   <form id="formTmpl" class="logoutloginform" method="post">
 	<div class="form-group">
-		<a href="admin.php" id="administrateBubtton"><button class="btn btn-warning"><i class="fas fa-cog"></i> Administrate</button></a>
 		<a href="user.php" id="userButton"><button class="btn btn-info"><i class="fas fa-user"></i> My profile</button></a>
 		<a href="login.php" id="loginButton"><button class="btn btn-success"><i class="fas fa-power-off"></i> Log in</button></a>
 		<button id="logoutButton" name="logout" class="btn btn-outline-danger" role="button" type="submit"><i class="fas fa-user"></i> Log out</button>
