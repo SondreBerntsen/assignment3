@@ -17,70 +17,6 @@ a:hover{
 .card-title{
   color:black;
 }
-/**Sidenav in home**/
-.sidenav {
-    z-index: 1;
-    top: 100px;
-    left: 10px;
-    background: #eee;
-    overflow-x: hidden;
-    padding: 8px 0;
-    position: fixed;
-    width: 250px;
-}
-
-.sidenav ul {
-  padding: 0px;
-}
-
-.sidenav h3 {
-  border-bottom: 3px solid white;
-  padding-bottom: 10px;
-  text-align: center;
-  font-size: 22px;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.sidenav li {
-  text-decoration: none;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  list-style: none;
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.sidenav li :hover {
-  background-color: white;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.sidenav li a:hover {
-  color: black;
-}
-
-.sidenav a {
-    padding: 6px 8px 6px 8px;
-    text-decoration: none;
-    font-size: 18px;
-    color: black;
-    display: block;
-
-}
-
-.sidenav a:hover {
-    color: #064579;
-}
-a li:hover{
-  cursor: pointer;
-  font-weight: 600;
-}
-.main {
-    margin-left: 140px; /* Same width as the sidebar + left position in px */
-    font-size: 28px; /* Increased text to enable scrolling */
-    padding: 0px 10px;
-}
 
 /* hiding template container */
 .tmplContainer{
@@ -225,10 +161,6 @@ a li:hover{
   margin-right: 5px;
 }
 
-.newItemButton {
-  width: 100% !important;
-}
-
 .logoutloginform {
   margin-bottom: 0px;
 }
@@ -241,4 +173,7 @@ a li:hover{
 
 .tab-content {
   color: #000000;
+}
+.alertMsg{
+  display: none;
 }

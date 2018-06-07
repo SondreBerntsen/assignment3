@@ -22,6 +22,13 @@ class Item extends Model  {
 
 		if($sth->rowCount() == 1){
 			echo $itemID;
+			echo $outdir = "../storedImages/".$itemID."/";
+	    $outdir = '../storedImages/'.$itemID.'/'; // the directory to the videofile on disc
+	    if (!is_dir($outdir)) // if it is not a directory...
+	    {
+	      mkdir($outdir, 0755, true); // create the directory
+	    }
+	    move_uploaded_file($values['ftmp'], $outdir.'image'); // move the tmp file to the directory named as 'videoFile'*/
 		}else{
 			echo "false";
 		}

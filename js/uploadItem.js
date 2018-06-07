@@ -5,14 +5,15 @@ function submitItem (){
   var descr = itemDescr.value;
   var category = selectCategory.value;
 
-
+if($('#itemName').val()==""||$('#itemPreview').val()==""||$('#itemDescr').val()==""){
+  $(".alertMsg").css("display", "block");
+}else{
   if( document.getElementById("uploadimg").files.length == 0 ){
     $.ajax( {
       url: 'controller/uploadItemController.php',
       data: {name:name, preview:preview, descr: descr, category:category},
       type: 'post',
       success: function(data, output){
-        json = output, data;
       }
     });
 } else {
@@ -43,6 +44,8 @@ function submitItem (){
 
 
 }
+}
+
   //https://stackoverflow.com/questions/5392344/sending-multipart-formdata-with-jquery-ajax
 
 
@@ -88,6 +91,5 @@ $(document).ready(function (){
     }
 
   });
-  getURL();
   checkLoginState();
 });

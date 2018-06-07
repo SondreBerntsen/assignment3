@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once('../model/Model.php');
 require_once('../model/Item.php');
 require_once('../model/User.php');
@@ -22,15 +21,6 @@ class uploadItemController extends Controller{
     $item = new Item();
     //$item-> newItem($values);
     $itemID = $item->newItem($values); // fetches the lastInsertId from the method 'uploadVideo'
-    echo $itemID;
-
-
-    $outdir = '../storedImages/'.$itemID.'/'; // the directory to the videofile on disc
-    if (!is_dir($outdir)) // if it is not a directory...
-    {
-      mkdir($outdir, 0755, true); // create the directory
-    }
-    move_uploaded_file($values['ftmp'], $outdir.'image'); // move the tmp file to the directory named as 'videoFile'*/
 
     }
   }

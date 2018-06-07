@@ -38,6 +38,9 @@
       </form>
     </div>
   </div>
+  <div class="alertMsg alert alert-danger col-md-7" role="alert">
+  You have to fill out the fileds
+</div>
 </div>
 
 <div id="tmplContainer">
