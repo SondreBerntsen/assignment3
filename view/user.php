@@ -39,7 +39,7 @@
                                 <label for="lastname">Lastname</label>
                                 <input type="text" class="form-control" id="lastname" placeholder="Lastname" required>
                               </div>
-                              <button type="submit" class="btn btn-primary" name="submitNameChange">Change name</button>
+                              <button type="submit" class="btn btn-primary" name="submitNameChange" onclick="updateName()">Change name</button>
                             </form>
                           </div>
                         </div>
@@ -55,7 +55,7 @@
                                 <label for="email">Email</label>
                                 <input type="email" class="form-control" id="email" placeholder="Email" required>
                               </div>
-                              <button type="submit" class="btn btn-primary" name="submitEmailChange">Change email</button>
+                              <button type="submit" class="btn btn-primary" name="submitEmailChange" onclick="updateEmail()">Change email</button>
                             </form>
                           </div>
                         </div>
@@ -75,7 +75,7 @@
                                 <label for="password2">Repeat password</label>
                                 <input type="password" class="form-control" id="password2" placeholder="Password" required>
                               </div>
-                              <button type="submit" class="btn btn-primary" name="submitPasswordChange">Change Password</button>
+                              <button type="submit" class="btn btn-primary" name="submitPasswordChange" onclick="updatePwd()">Change Password</button>
                             </form>
                           </div>
                         </div>

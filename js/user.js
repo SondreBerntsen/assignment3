@@ -30,10 +30,52 @@ function loadOwnListings(){
         tmpl.find('.dateItem').html(json[i].date);
         tmpl.find('.card-text').html(json[i].descr);
         // Makes onclick function call ith current itemID as parameter
-        var onclick = 'deleteListing('+'"'+json[i].itemID+'")';
-        tmpl.find('.deleteItemButton').attr('onclick', onclick);
+        var onclickDel = 'deleteListing('+'"'+json[i].itemID+'")';
+        tmpl.find('.deleteItemButton').attr('onclick', onclickDel);
         $('#listItems').append(tmpl);
       }
+    }
+  });
+}
+
+function updateName(){
+  $.ajax({
+    url: 'controller/userController.php',
+    data: {
+      action: 'updateName',
+      firstName: $('#firstname').val(),
+      lastName: $('#lastname').val()
+    },
+    type: 'post',
+    success: function(output) {
+     console.log(output);
+    }
+  });
+}
+function updateEmail(){
+  $.ajax({
+    url: 'controller/userController.php',
+    data: {
+      action: 'updateEmail',
+      email: $('#email').val()
+    },
+    type: 'post',
+    success: function(output) {
+     console.log(output);
+    }
+  });
+}
+function updatePwd(){
+  $.ajax({
+    url: 'controller/userController.php',
+    data: {
+      action: 'updatePwd',
+      pwd1: $('#password1').val(),
+      pwd2: $('#password2').val()
+    },
+    type: 'post',
+    success: function(output) {
+     console.log(output);
     }
   });
 }

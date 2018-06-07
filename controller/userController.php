@@ -10,11 +10,11 @@ class UserController extends Controller{
     $user->checkLoginState();
   }
   public function login(){
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    //$email = $_POST['email'];
+    //$password = $_POST['password'];
 
     $user = new User();
-    $user->validateLogin($email, $password);
+    $user->validateLogin($_POST['email'], $_POST['password']);
 
   }
 
@@ -37,52 +37,46 @@ class UserController extends Controller{
     }
   }
 
-  public function update1(){
+  public function updateName(){
     // if neither of these input fields are empty..
     if(
       !empty($_POST['firstName']) &&
       !empty($_POST['lastName'])){
         $fname = $_POST['firstName'];
         $surname = $_POST['lastName'];
-        $id = $_SESSION['ID'];
-        //..we store them in an array
-        $data = [$fname, $surname];
+        $id = $_SESSION['userID'];
         $user = new User();
-        $user->update1($data);
+        $user->updateName($fname, $surname, $id);
     }
     else {
       echo "false";
     }
   }
 
-  public function update2(){
+  public function updateEmail(){
     // if this input fields are empty..
     if(
       !empty($_POST['email'])){
         $email = $_POST['email'];
-        $id = $_SESSION['ID'];
-        //..we store them in an array
-        $data = [$email, $id];
+        $id = $_SESSION['userID'];
         $user = new User();
-        $user->update2($data);
+        $user->updateEmail($email, $id);
     }
     else {
       echo "false";
     }
   }
 
-  public function update3(){
+  public function updatePwd(){
     // if this input fields are empty..
     if(
       !empty($_POST['pwd1']) &&
       !empty($_POST['pwd2']) &&
-      $_POST['pwd'] == $_POST['pwd2']){
+      $_POST['pwd1'] == $_POST['pwd2']){
         $pwd = $_POST['pwd1'];
-        $id = $_SESSION['ID'];
-        //..we store them in an array
-        $data = [$pwd, $id];
+        $id = $_SESSION['userID'];
         $user = new User();
-        $user->update3($data);
+        $user->updatePwd($pwd, $id);
     }
     else {
       echo "false";
@@ -116,12 +110,24 @@ if(isset($_POST['action'])) {
     case 'register':
       $controller->register();
       break;
-    case 'update':
-      $controller->update();
+    case 'updateName':
+      $controller->updateName();
+      break;
+    case 'updateEmail':
+      $controller->updateEmail();
+      break;
+    case 'updatePwd':
+      $controller->updatePwd();
       break;
     case 'listOwnItems':
       $controller->listOwnItems();
       break;
+      /*
+    case 'deleteListing':
+      $controller->deleteListing();
+      */
   }
 }
+
+
 ?>
