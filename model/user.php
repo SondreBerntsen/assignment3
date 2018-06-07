@@ -74,7 +74,7 @@ class User extends Model{
 		echo 'true';
   }
 	// this method updates the users name
-  public function update1($data){
+  public function updateName($fname, $surname, $id){
 		$db = $this->connectToDB();
 
 		$query =
@@ -82,15 +82,14 @@ class User extends Model{
 			 SET firstName = ?, lastName = ?
 			 WHERE id = ?';
 
-	  $execute = [$fname, $surname, $id];
 		$sth = $db->prepare($query);
-	 	$sth->execute($execute);
+	 	$sth->execute([$fname, $surname, $id]);
 
 		echo 'success';
-
   }
+
 	// this method updates the user email
-	public function update2($data){
+	public function updateEmail($email, $id){
 		$db = $this->connectToDB();
 
 		$query =
@@ -98,15 +97,14 @@ class User extends Model{
 			 SET email= ?
 			 WHERE id = ?';
 
-		$execute = [$email, $id];
 		$sth = $db->prepare($query);
-		$sth->execute($execute);
+		$sth->execute([$email, $id]);
 
 		echo 'success';
-
 	}
+
 	// this method updates the user password
-	public function update3($data){
+	public function updatePwd($pwd, $id){
 		$db = $this->connectToDB();
 
 		$query =
@@ -114,11 +112,9 @@ class User extends Model{
 			 SET password= ?
 			 WHERE id = ?';
 
-		$execute = [$data['pwd'], $data['id']];
 		$sth = $db->prepare($query);
-		$sth->execute($execute);
+		$sth->execute([password_hash($pwd, PASSWORD_DEFAULT), $id]);
 
 		echo 'success';
-
 	}
 }
