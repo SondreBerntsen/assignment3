@@ -30,16 +30,16 @@ $(document).ready(function (){
     success: function(output) {
       json = JSON.parse(output);
       for(i=0; json.length > i; i++){
-      var tmpl = $('#convTmpl').clone();
-      tmpl.removeAttr('id');
+        var tmpl = $('#convTmpl').clone();
+        tmpl.removeAttr('id');
 
-      var onclick = 'pushURLMsg('+'"'+json[i].id+'")';
-      tmpl.attr('onclick', onclick);
-      tmpl.find('.msgTitle').html(json[i].name);
-      tmpl.find('.msgParticipant').html(json[i].firstName+" "+ json[i].lastName);
+        var onclick = 'pushURLMsg('+'"'+json[i].id+'")';
+        tmpl.attr('onclick', onclick);
+        tmpl.find('.msgTitle').html(json[i].name);
+        tmpl.find('.msgParticipant').html(json[i].firstName+" "+ json[i].lastName);
 
-      $('#othermessages').append(tmpl);
-    }
+        $('#othermessages').append(tmpl);
+      }
     }
   });
 });
@@ -58,7 +58,9 @@ function listMessages(){
     type: 'post',
     success: function(output) {
       json = JSON.parse(output);
-      for(i=0; json.length > i; i++){
+      console.log(json);
+      console.log(json.length);
+      for(i=0; i < json.length-1; i++){
         var tmpl = $('#msgTmpl').clone();
         tmpl.removeAttr('id');
 
@@ -76,10 +78,12 @@ function listMessages(){
 
 function getURL(){
   url = location.href;
-  console.log(url);
   threadID = url.substring(url.indexOf("=")+1);
   if(threadID.includes('assignment3')){//FIx tror ikke jeg like dettee, meeeen det fonka fin ja
     threadID='none';
+  }
+  if(threadID != 'none'){
+    listMessages(threadID);
   }
 }
 

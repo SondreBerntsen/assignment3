@@ -14,6 +14,10 @@ class MsgController extends Controller{
     $messageThread = new MessageThread();
     $messageThread->listMessageThreadsAsker($userID);
   }
+  public function listMessages($threadID){
+    $messageThread = new MessageThread();
+    $messageThread->listMessages($threadID);
+  }
 }
 $msgController = new MsgController ();
 
@@ -27,6 +31,8 @@ if(isset($_POST['action'])){
     case 'getOther':
       $msgController->listMessageThreadsAsker($_SESSION['userID']);
       break;
+    case 'listMessages':
+      $msgController->listMessages($_POST['threadID']);
   }
 
 }

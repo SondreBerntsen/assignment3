@@ -52,14 +52,14 @@
     <h6>Me</h6>
     <p>About that used condom?About that used condom?</p>
   </div>
-  <a id="convTmpl">
+  <div id="convTmpl">
     <div class="card">
       <div class="card-block">
         <h6 class="card-title msgTitle"></h5>
           <h6 class='card-subtitle mb-2 text-muted dateItem msgParticipant'></h6>
       </div>
     </div>
-  </a>
+  </div>
   <a id="categoryTmpl"><li></li></a>
 
 	<a  id="itemCardTempl">

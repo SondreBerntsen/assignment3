@@ -103,7 +103,7 @@ class MessageThread extends Model{
 		$db = $this->connectToDB();
 
 		$query =
-			'SELECT message.id, message.content, message.date, user.firstName
+			'SELECT message.id, message.content, message.date, user.firstName, message.sender
 				FROM message, user
 				WHERE threadID = ?
 				AND user.id=message.sender
@@ -112,7 +112,7 @@ class MessageThread extends Model{
 	 	$sth->execute([$threadID]);
 
 		$results = $sth->fetchAll(PDO::FETCH_ASSOC);
-
+		$results['user'] = $_SESSION['userID'];
 		$json = json_encode($results);
 		echo $json;
 	}
