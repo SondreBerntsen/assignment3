@@ -29,11 +29,12 @@
             <div class="msgList">
 
             </div>
-            <form class="form-inline messageform" method="POST">
-                <textarea name="message" required class="form-control mr-sm-2 sendmessage col-md-8" type="text" placeholder="Enter message" aria-label="entermessage"></textarea>
-                <button class="headerbutton btn btn-success sendmessagebutton col-md-3" type="submit">Send message</button>
-            </form>
+
           </div>
+          <form class="form-inline messageform" method="POST">
+              <textarea name="message" required class="form-control mr-sm-2 sendmessage col-md-8" type="text" placeholder="Enter message" aria-label="entermessage"></textarea>
+              <button class="headerbutton btn btn-success sendmessagebutton col-md-3" type="submit">Send message</button>
+          </form>
         </div>
       </div>
     </div>
@@ -43,22 +44,22 @@
 <!-- Templates -->
 <div id="tmplContainer">
 
-  <div id="theirMsg" class="recipientmessage">
+  <div id="theirMsg" class="recipientmessage col-md-6">
     <div class="recipientname">
       <h6>Ronny</h6>
     </div>
     <p>yo</p>
   </div>
 
-  <div id="myMsg" class="mymessage">
+  <div id="myMsg" class="mymessage col-md-6">
     <h6>Me</h6>
-    <p>About that used condom?About that used condom?</p>
+    <p></p>
   </div>
 
   <div id="convTmpl">
     <div class="card">
       <div class="card-block">
-        <h6 class="card-title msgTitle"></h5>
+        <h6 class="card-title msgTitle"></h6>
           <h6 class='card-subtitle mb-2 text-muted dateItem msgParticipant'></h6>
       </div>
     </div>

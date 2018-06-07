@@ -17,8 +17,11 @@ function checkLoginState(){
 function callback(func, val){
 
   var path = location.pathname.split('assignment3/');
-  var page = path[1].split('.');
-
+  if(path[1] != ''){
+    var page = path[1].split('.')[0];
+  }else{
+    page = path[1];
+  }
   switch(func){
     case 'checkLoginState':
       if(val == 'true'){
@@ -66,6 +69,7 @@ function loadGuestView(page){
 }
 
 function loadUserView(page){
+  console.log(page);
   var formTmpl = $('#formTmpl').clone();
   formTmpl.removeAttr('id');
   formTmpl.attr('action', '')
@@ -74,17 +78,16 @@ function loadUserView(page){
   formTmpl.html(buttonTmpl);
   var msgBtnTmpl = $('#messageButton').clone()
   msgBtnTmpl.removeAttr('id')
-  var itemBtnTmpl = $('#uploadItem').clone()
-  itemBtnTmpl.removeAttr('id')
 
-  $('#uploadItem').append(itemBtnTmpl);
   $('#headerButton').append(msgBtnTmpl);
   $('#headerButton').append(formTmpl);
 
   console.log('loadUserView ENGAGE');
   switch(page){
-    case 'index':
-      $('#').load('includes/submitButton.html');
+    case 'index'||'':
+      var tmpl = $('#uploadItem').clone();
+      tmpl.removeAttr('id');
+      $('#submitButton').append(tmpl);
     break;
 
     case 'login':
