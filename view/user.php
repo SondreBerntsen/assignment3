@@ -1,8 +1,5 @@
 
-<head>
-	<!-- Required meta tags -->
-	<link rel="stylesheet" href="../styles/style.css">
-</head>
+
 
 <div class="container py-3">
     <div class="row">
@@ -94,7 +91,7 @@
                         </div>
                         <div class="col-md-4">
                           <div class="card-img-bottom float-right">
-                            <img src="../resources/images/testimg.jpg" class="img-fluid imgItem" alt="Responsive image">
+                            <img src="resources/images/testimg.jpg" class="img-fluid imgItem" alt="Responsive image">
                           </div>
                           <button name="edit" type="submit" class="btn btn-info userbutton">Edit item</button>
                           <button name="deleteitem" type="submit" class="btn btn-outline-danger userbutton">Delete item</button>
