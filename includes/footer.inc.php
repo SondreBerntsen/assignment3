@@ -37,27 +37,12 @@
   <a href="user.php" id="userButton"><button class="btn btn-info"><i class="fas fa-user"></i> My profile</button></a>
   <a href="login.php" id="loginButton"><button class="btn btn-success"><i class="fas fa-power-off"></i> Log in</button></a>
 
-  <div id="tmplItem" class="row">
-    <div class="col-md-8">
-        <img  class="imgInItem" class="img-fluid imgItem" alt="Responsive image" onerror="this.src ='./resources/images/error.jpg';">
-          <h1 class="itemName"></h1>
-          <p class="itemDate">
-          </p>
-          <p class="itemDescr">
-          </p>
-    </div>
-    <div class="col-md-4" >
-      <h4 class="nameHeadingItem"><i class="fas fa-user-circle userImg"></i><span class="nameOwner"></span></h4>
-      <button class="btn btn-primary col-md-12" style="margin-top:20px;" onclick="checkExistingThread()">Send melding</button>
-    </div>
-  </div>
-
 </div>
 
 <?php
 if(isset($_POST['logout'])){
-  session_destroy();
-  header('Refresh:0');
+	session_destroy();
+	echo "<meta http-equiv='refresh' content='0'>";
 }
 ?>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

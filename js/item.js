@@ -1,4 +1,5 @@
 $(document).ready(function (){
+  checkLoginState();
   //Get the id that is located in the url
    var url = location.href;
    var itemID = url.substring(url.indexOf("=")+1);
@@ -12,18 +13,16 @@ $(document).ready(function (){
     success: function(output) {
       console.log(output);
       json = JSON.parse(output);
-      var tmpl = $('#tmplItem').clone();
-      tmpl.removeAttr('id');
+
+      var container = $('#itemContainer');
       var src = 'storedImages/'+json.id+'/image';
-      tmpl.find('.imgInItem').attr('src', src);
-      tmpl.find('.itemName').html(json.name);
-      tmpl.find('.itemDate').html(json.date);
-      tmpl.find('.itemDescr').html(json.descr);
-      tmpl.find('.nameOwner').html(json.firstName +" "+ json.lastName);
-      $('#itemContainer').append(tmpl);
+      container.find('.imgInItem').attr('src', src);
+      container.find('.itemName').html(json.name);
+      container.find('.itemDate').html(json.date);
+      container.find('.itemDescr').html(json.descr);
+      container.find('.nameOwner').html(json.firstName +" "+ json.lastName);
     }
   });
-  checkLoginState();
 });
 
 function checkExistingThread(){

@@ -5,7 +5,6 @@ function checkLoginState(){
     data: {action: 'checkLoginState'},
     type: 'post',
     success: function(output) {
-      console.log(output);
       // Sends output data to callback function
       if(output == 'true'){
         callback('checkLoginState', 'true');
@@ -15,7 +14,7 @@ function checkLoginState(){
     }
   });
 }
-
+var page;
 // Responds to ajax calls and does whatever it's told to do based on which function name is sent as parameter
 function callback(func, val){
   // Gets page name
@@ -32,7 +31,7 @@ function callback(func, val){
       if(val == 'true'){
         loadUserView(page);
       }else{
-        loadGuestView();
+        loadGuestView(page);
       }
     break;
     // Notifies user if they entered invalid login information
@@ -57,13 +56,42 @@ function callback(func, val){
 }
 
 // Loads guest view
-function loadGuestView(){
+function loadGuestView(page){
+  console.log(page);
+  switch(page){
+    case 'user':
+    location.href('index.php');
+    break;
+    case 'messages':
+    location.href('index.php');
+    break;
+  }
   var tmpl = $('#loginButton').clone();
   tmpl.removeAttr('id');
   $('#headerButton').append(tmpl);
+
 }
+
 // Loads user view. Different items are cloned and appended based on page.
 function loadUserView(page){
+  console.log(page);
+  switch(page){
+    case 'index':
+    console.log('ayo');
+    var tmpl = $('#uploadItem').clone();
+    tmpl.removeAttr('id');
+    $('#submitButton').append(tmpl);
+    break;
+    case 'login':
+    location.href('index.php');
+    break;
+    // =)
+    case 'item':
+    var tmpl = $('#sendMessageButton').clone();
+    tmpl.removeAttr('id');
+    $('#messageButtonContainer').append(tmpl);
+    break;
+  }
   var formTmpl = $('#formTmpl').clone();
   formTmpl.removeAttr('id');
 
@@ -77,19 +105,4 @@ function loadUserView(page){
   $('#headerButton').append(userBtnTmpl);
   $('#headerButton').append(formTmpl);
   // Checks page and takes appropriate actions
-  switch(page){
-    case 'index':
-      console.log('ayo');
-      var tmpl = $('#uploadItem').clone();
-      tmpl.removeAttr('id');
-      $('#submitButton').append(tmpl);
-    break;
-    case 'login':
-      location.href('index.php');
-    break;
-    // =)
-    case 'item':
-      // Should check if item.owner == $_SESSION['userID'], in which case 'send message' should not load
-    break;
-  }
 }
