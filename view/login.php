@@ -125,6 +125,7 @@
    </a>
 
    <button id="logoutButton" name="logout" class="btn btn-success" role="button" type="submit"><i class="fas fa-user"></i> Log out</button>
+   <button id="messageButton" name="messageButton" class="btn btn-info" role="button" type="submit"><i class="fas fa-comments"></i> Messages</button>
 
 
  </div>
