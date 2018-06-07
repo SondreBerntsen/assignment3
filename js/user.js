@@ -1,5 +1,6 @@
 $(document).ready(function (){
-
+  getURL();
+  checkLoginState();
 });
 
 function accessDenied(){

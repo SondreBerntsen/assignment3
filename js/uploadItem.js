@@ -92,5 +92,6 @@ $(document).ready(function (){
     }
 
   });
-
+  getURL();
+  checkLoginState();
 });

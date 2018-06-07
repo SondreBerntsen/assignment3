@@ -16,7 +16,8 @@ function login(){
              }
            }
   });
-
+  getURL();
+  checkLoginState();
 }
 
 function register(){
