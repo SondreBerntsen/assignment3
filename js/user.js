@@ -4,6 +4,8 @@ $(document).ready(function (){
 });
 // Loads user's listings
 function loadOwnListings(){
+  // Reloads view
+  $('#listItems').html('');
   // Ajax call to listOwnItems function
   $.ajax({
     url: 'controller/UserController.php',
@@ -13,14 +15,18 @@ function loadOwnListings(){
       // Parses JSON output
       json = JSON.parse(output);
       // Loads existing user information
-      var userfName = json[0].firstName;
-      var userSurname = json[0].lastName;
-      var userEmail = json[0].email;
+      var userfName = json.firstName;
+      var userSurname = json.lastName;
+      var userEmail = json.email;
+      delete json.firstName;
+      delete json.lastName;
+      delete json.email;
+
       $('#userfName').html(userfName);
       $('#userSurname').html(userSurname);
       $('#userEmail').html(userEmail);
       // Clones and appends user cards for each item
-      for(i=0; json.length > i; i++){
+      for(i=0; i < Object.keys(json).length; i++){
         var tmpl = $('#userCardTmpl').clone();
         tmpl.removeAttr('id');
         // Image path to current item's image
@@ -30,7 +36,7 @@ function loadOwnListings(){
         tmpl.find('.dateItem').html(json[i].date);
         tmpl.find('.card-text').html(json[i].descr);
         // Makes onclick function call ith current itemID as parameter
-        var onclickDel = 'deleteListing('+'"'+json[i].itemID+'")';
+        var onclickDel = 'deleteItem('+'"'+json[i].itemID+'")';
         tmpl.find('.deleteItemButton').attr('onclick', onclickDel);
         $('#listItems').append(tmpl);
       }
@@ -80,16 +86,16 @@ function updatePwd(){
   });
 }
 
-function deleteListing(itemID){
+function deleteItem(itemID){
   $.ajax({
     url: 'controller/userController.php',
     data: {
-      action: 'deleteListing',
+      action: 'deleteItem',
       itemID: itemID
     },
     type: 'post',
     success: function(output) {
-     console.log(output);
+      loadOwnListings();
     }
   });
 }

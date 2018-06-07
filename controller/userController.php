@@ -88,8 +88,15 @@ class UserController extends Controller{
       $userId = $_SESSION['userID'];
       $item = new Item();
       $data=$item->listOwnItems($userId);
-    }
   }
+
+  public function deleteItem($itemID){
+      $item = new Item();
+      $item->deleteItem($itemID);
+  }
+} // End class UserController
+
+
 
 // if an action has been set..
 if(isset($_POST['action'])) {
@@ -122,10 +129,11 @@ if(isset($_POST['action'])) {
     case 'listOwnItems':
       $controller->listOwnItems();
       break;
-      /*
-    case 'deleteListing':
-      $controller->deleteListing();
-      */
+
+    case 'deleteItem':
+      $itemID = $_POST['itemID'];
+      $controller->deleteItem($itemID);
+      break;
   }
 }
 
