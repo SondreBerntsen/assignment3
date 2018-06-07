@@ -93,7 +93,6 @@
                           <div class="card-img-bottom float-right">
                             <img src="resources/images/testimg.jpg" class="img-fluid imgItem" alt="Responsive image">
                           </div>
-                          <button name="edit" type="submit" class="btn btn-info userbutton">Edit item</button>
                           <button name="deleteitem" type="submit" class="btn btn-outline-danger userbutton">Delete item</button>
                         </div>
                       </div>
