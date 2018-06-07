@@ -18,10 +18,10 @@ class Item extends Model  {
 		$sth->bindParam(':previewtxt',$values['prev']);
 
 		$sth->execute();
-		$this->itemID = $db->lastInsertId();
+		$itemID = $db->lastInsertId();
 
 		if($sth->rowCount() == 1){
-			echo $this->itemID;
+			echo $itemID;
 		}else{
 			echo "false";
 		}
@@ -79,7 +79,7 @@ class Item extends Model  {
 	public function listOwnItems($userID){
 		$db = $this->connectToDB();//stores databaseconnection i db variable
 		$query =
-			'SELECT item.id as itemID, item.name, item.descr, item.date,  item.category, user.id as userID
+			'SELECT item.id as itemID, item.name, item.descr, item.date,  item.category, user.id as userID, user.firstName, user.lastName, user.email
 			 FROM item, user
 			 WHERE user.id = ?
 			 AND item.owner = user.id';
