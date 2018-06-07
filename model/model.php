@@ -1,7 +1,7 @@
 <?php
 /*
 *The Model class contain the function that creates and returns the database connection
-*All other classes extends this class
+*All other classes in model extends this class
 */
 class Model {
 	public function connectToDB(){
