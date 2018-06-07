@@ -51,6 +51,7 @@ var threadID;
 function listMessages(){
 
   var threaderoony = threadID;
+  console.log(threaderoony);
   $.ajax({
     url: 'controller/msgController.php',
     data: {
@@ -60,7 +61,6 @@ function listMessages(){
     type: 'post',
     success: function(output) {
       json = JSON.parse(output);
-      console.log(json.user);
       user = json.user;
       delete json.user;
       console.log(json);
@@ -68,17 +68,17 @@ function listMessages(){
 
       $('.msgList').html(''); //Empties current content
       for(i=0; i < Object.keys(json).length-1; i++){
-
-        console.log(json[i]);
-
+        console.log(user);
+        console.log(json[i].sender);
         if(json[i].sender == user){
+          console.log('appended own msg');
           var tmpl = $('#myMsg').clone();
           tmpl.removeAttr('id');
-          tmpl.find('h6').html(json[i].name);
         }else{
+          console.log('appended their msg');
           var tmpl = $('#theirMsg').clone();
+          tmpl.find('.senderName').html(json[i].firstName);
           tmpl.removeAttr('id');
-          tmpl.find('h6').html(json[i].name);
         }
 
 

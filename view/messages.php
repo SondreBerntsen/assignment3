@@ -9,6 +9,7 @@
           <!-- message nav -->
           <ul class="nav nav-tabs small" role="tablist">
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#mymessages" role="tab">My items</a></li>
+
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#othermessages" role="tab">Other items</a></li>
           </ul>
           <!-- message cards -->
@@ -46,13 +47,13 @@
 
   <div id="theirMsg" class="recipientmessage col-md-6">
     <div class="recipientname">
-      <h6>Ronny</h6>
+      <h6 class="senderName">Ronny</h6>
     </div>
     <p>yo</p>
   </div>
 
   <div id="myMsg" class="mymessage col-md-6">
-    <h6>Me</h6>
+    <h6 class="myName">Me</h6>
     <p></p>
   </div>
 
