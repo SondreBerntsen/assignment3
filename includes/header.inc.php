@@ -10,6 +10,7 @@ session_start();
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 	<link rel="stylesheet" href="styles/style.css">
+	<link rel="stylesheet" href="styles/sidebar.css">
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Poiret+One|Montserrat:300|" rel="stylesheet">
 
