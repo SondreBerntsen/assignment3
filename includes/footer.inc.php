@@ -42,7 +42,7 @@
 <?php
 if(isset($_POST['logout'])){
 	session_destroy();
-	echo "<meta http-equiv='refresh' content='0'>";
+	echo "<meta http-equiv='refresh' content='0;url=index.php'>";
 }
 ?>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

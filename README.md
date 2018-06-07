@@ -7,9 +7,12 @@ Mads Øigård,
 Elisabeth Medlien
 
 
+HOW TO GET STARTED
+Run setup.php file in browser to create the database 'secondhand'
 
+USERS
 There are four users to this system,
-two andmins and two regular users. 
+two andmins and two regular users.
 
 LOG IN AS ADMIN
 
