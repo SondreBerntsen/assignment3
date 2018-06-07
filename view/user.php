@@ -17,7 +17,7 @@
                     <div class="col-md-4">
 
                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item" id="userfName"> </li>
+                      <li class="list-group-item" id="userfName"></li>
                       <li class="list-group-item" id="userSurname"></li>
                       <li class="list-group-item" id="userEmail"><i class="fas fa-at"></i></li>
                     </ul>
@@ -107,7 +107,7 @@
       </div>
       <div class="col-md-4">
         <div class="card-img-bottom float-right">
-          <img src="resources/images/testimg.jpg" class="img-fluid imgItem" alt="Responsive image">
+          <img src="resources/images/testimg.jpg" class="img-fluid imgItem" alt="Responsive image" onerror="this.src ='./resources/images/error.jpg';">
         </div>
         <button name="deleteitem" type="submit" class="btn btn-outline-danger userbutton deleteItemButton">Delete item</button>
       </div>
