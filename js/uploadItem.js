@@ -34,7 +34,7 @@ if($('#itemName').val()==""||$('#itemPreview').val()==""||$('#itemDescr').val()=
       type: 'post',
       success: function(data, output){
         console.log(data);
-        console.log(output);
+        location.href = 'item.php?id='+data;
       }
     });
 } else {
@@ -62,6 +62,7 @@ if($('#itemName').val()==""||$('#itemPreview').val()==""||$('#itemDescr').val()=
         json = output;
         console.log(data);
         console.log(json);
+        location.href = 'item.php?id='+data;
       }
     });
 
