@@ -76,15 +76,16 @@ class Item extends Model  {
 	}
 //Function that list all the items of the logged in user
 //Takes the id of the logged in user as parameter
-	public function listOwnItems($userId){
+	public function listOwnItems($userID){
 		$db = $this->connectToDB();//stores databaseconnection i db variable
-		$query = 'SELECT item.id, item.name, item.descr, item.date, item.category
-							FROM item, user
-							WHERE user.id=?
-							AND item.owner = user.id';
+		$query =
+			'SELECT item.id as itemID, item.name, item.descr, item.date,  item.category, user.id as userID
+			 FROM item, user
+			 WHERE user.id = ?
+			 AND item.owner = user.id';
 		$sth = $db->prepare($query);
-	 	$sth->execute(array($userId));
-		$result = $sth->fetch(PDO::FETCH_ASSOC);
+	 	$sth->execute(array($userID));
+		$result = $sth->fetchAll(PDO::FETCH_ASSOC);
 		echo json_encode($result);
 	}
 }
