@@ -79,3 +79,17 @@ function updatePwd(){
     }
   });
 }
+
+function deleteListing(itemID){
+  $.ajax({
+    url: 'controller/userController.php',
+    data: {
+      action: 'deleteListing',
+      itemID: itemID
+    },
+    type: 'post',
+    success: function(output) {
+     console.log(output);
+    }
+  });
+}
