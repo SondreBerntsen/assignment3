@@ -22,7 +22,7 @@
 
 <!-- login, logout, message and add item -->
   <a href="uploadItem.php" id="uploadItem">
-		<button class="btn btn-primary newItemButton"><i class="fas fa-plus-circle"></i> List new item</button>
+		<button class="btn btn-primary"><i class="fas fa-plus-circle"></i> List new item</button>
 	</a>
 
 
