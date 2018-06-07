@@ -87,14 +87,19 @@
 	</a>
 
   <!-- login, logout, message and add item -->
-    <a href="uploadItem.php" id="uploadItem"><button class="btn btn-info"><i class="fas fa-plus-circle"></i> Add item</button></a>
-  	<a href="messages.php" id="messageButton"><button class="btn btn-info"><i class="fas fa-comments"></i> Messages</button></a>
+    <a href="uploadItem.php" id="uploadItem">
+  		<button class="btn btn-primary newItemButton"><i class="fas fa-plus-circle"></i> List new item</button>
+  	</a>
 
-    <form id="formTmpl" class="logoutloginform form-inline my-2 my-lg-0" method="post">
-  	<div class="form-group">
-  		<a href="login.php" id="loginButton"><button class="btn btn-success"><i class="fas fa-user"></i> Log in</button></a>
-  		<button id="logoutButton" name="logout" class="btn btn-outline-danger" role="button" type="submit"><i class="fas fa-user"></i> Log out</button>
-  	</div>
+
+  	<a href="messages.php" class="messagesButton" id="messageButton"><button class="btn btn-info"><i class="fas fa-comments"></i> Messages</button></a>
+
+    <form id="formTmpl" class="logoutloginform" method="post">
+  		<div class="form-group">
+  			<a href="user.php" id="userButton"><button class="btn btn-info"><i class="fas fa-user"></i> My profile</button></a>
+  			<a href="login.php" id="loginButton"><button class="btn btn-success"><i class="fas fa-power-off"></i> Log in</button></a>
+  			<button id="logoutButton" name="logout" class="btn btn-outline-danger" role="button" type="submit"><i class="fas fa-power-off"></i> Log out</button>
+  		</div>
   	</form>
 
 
