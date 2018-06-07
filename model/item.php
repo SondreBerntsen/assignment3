@@ -3,9 +3,8 @@ require_once('Model.php');
 class Item extends Model  {
 
 
-	//newItem is a function that creates a new item
-	//It takes an array of all the values of the new item
-	public function newItem($values){
+
+	public function newItem($values) {
 		$db = $this->connectToDB();//stores databaseconnection i db variable
 
 		$query = 'INSERT INTO item(name, descr, date, owner, category, previewtxt)
@@ -22,7 +21,30 @@ class Item extends Model  {
 
 		if($sth->rowCount() == 1){
 			echo $itemID;
-			echo $outdir = "../storedImages/".$itemID."/";
+		}
+		else{
+			echo "false";
+		}
+	}
+	//newItem is a function that creates a new item
+	//It takes an array of all the values of the new item
+	public function newItemWithImg($values){
+		$db = $this->connectToDB();//stores databaseconnection i db variable
+
+		$query = 'INSERT INTO item(name, descr, date, owner, category, previewtxt)
+							VALUES (:name, :descr, NOW(), :owner, :category, :previewtxt)';
+		$sth = $db->prepare($query);
+		$sth->bindParam(':name', $values['name']);
+		$sth->bindParam(':descr', $values['descr']);
+		$sth->bindParam(':owner', $values['id']);
+		$sth->bindParam(':category', $values['category']);
+		$sth->bindParam(':previewtxt',$values['prev']);
+
+		$sth->execute();
+		$itemID = $db->lastInsertId();
+
+		if($sth->rowCount() == 1){
+			echo $itemID;
 	    $outdir = '../storedImages/'.$itemID.'/'; // the directory to the videofile on disc
 	    if (!is_dir($outdir)) // if it is not a directory...
 	    {

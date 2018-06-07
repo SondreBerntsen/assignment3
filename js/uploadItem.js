@@ -22,6 +22,7 @@ function submitItem (){
   var preview = itemPreview.value;
   var descr = itemDescr.value;
   var category = selectCategory.value;
+  var action = "uploadItemWithImg";
 
 if($('#itemName').val()==""||$('#itemPreview').val()==""||$('#itemDescr').val()==""){
   $(".alertMsg").css("display", "block");
@@ -45,6 +46,7 @@ if($('#itemName').val()==""||$('#itemPreview').val()==""||$('#itemDescr').val()=
       data.append('preview', preview);
       data.append('descr', descr);
       data.append('category', category);
+      data.append('action', action);
     });
 
     $.ajax( {
