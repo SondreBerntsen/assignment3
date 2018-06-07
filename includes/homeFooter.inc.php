@@ -1,20 +1,10 @@
 <!-- Templates -->
 <div id="tmplContainer">
-  <div class="recipientmessage">
-    <div class="recipientname">
-      <h6>Ronny</h6>
-    </div>
-    <p>yo</p>
-  </div>
-  <div class="mymessage">
-    <h6>Me</h6>
-    <p>About that used condom?About that used condom?</p>
-  </div>
   <a id="convTmpl">
     <div class="card">
       <div class="card-block">
         <h6 class="card-title msgTitle"></h5>
-          <h6 class='card-subtitle mb-2 text-muted dateItem msgParticipant'></h6>
+          <h6 class='card-subtitle mb-2 text-muted dateItem Participant'></h6>
       </div>
     </div>
   </a>

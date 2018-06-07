@@ -58,18 +58,31 @@ function listMessages(){
     type: 'post',
     success: function(output) {
       json = JSON.parse(output);
+      console.log(json.user);
+      user = json.user;
+      delete json.user;
       console.log(json);
-      console.log(json.length);
-      for(i=0; i < json.length-1; i++){
-        var tmpl = $('#msgTmpl').clone();
-        tmpl.removeAttr('id');
+      console.log(Object.keys(json).length);
 
-        var onclick = 'pushURLMsg('+'"'+json[i].id+'")';
-        tmpl.attr('onclick', onclick);
-        tmpl.find('.msgTitle').html(json[i].name);
-        tmpl.find('.msgParticipant').html(json[i].firstName+" "+ json[i].lastName);
+      $('.msgList').html(''); //Empties current content
+      for(i=0; i < Object.keys(json).length-1; i++){
 
-        $('#mymessages').append(tmpl);
+        console.log(json[i]);
+
+        if(json[i].sender == user){
+          var tmpl = $('#myMsg').clone();
+          tmpl.removeAttr('id');
+          tmpl.find('h6').html(json[i].name);
+        }else{
+          var tmpl = $('#theirMsg').clone();
+          tmpl.removeAttr('id');
+          tmpl.find('h6').html(json[i].name);
+        }
+
+
+        tmpl.find('p').html(json[i].content);
+
+        $('.msgList').append(tmpl);
       }
     }
   });
