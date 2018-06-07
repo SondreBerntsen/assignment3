@@ -18,6 +18,10 @@ class MsgController extends Controller{
     $messageThread = new MessageThread();
     $messageThread->listMessages($threadID);
   }
+  public function newMessage($content, $sender, $threadID){
+    $messageThread = new MessageThread();
+    $messageThread->newMessage($content, $sender, $threadID);
+  }
 }
 $msgController = new MsgController ();
 
@@ -33,6 +37,12 @@ if(isset($_POST['action'])){
       break;
     case 'listMessages':
       $msgController->listMessages($_POST['threadID']);
+      break;
+    case 'newMessage':
+      $sender = $_SESSION['userID'];
+      $threadID = $_POST['thread'];
+      $content = $_POST['message'];
+      $msgController->newMessage($content, $sender, $threadID);
   }
 
 }

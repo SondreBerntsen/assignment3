@@ -86,7 +86,24 @@ function listMessages(){
 }
 
 function newMessage(){
-  
+  threadID = threadID;
+  if(!$('#messageContent').val()){
+    console.log('no message data');
+  }else{
+    $.ajax({
+      url: 'controller/msgController.php',
+      data: {
+        action: 'newMessage',
+        message: $('#messageContent').val(),
+        thread: threadID
+      },
+      type: 'post',
+      success: function(output) {
+        listMessages();
+      }
+    });
+  }
+
 }
 
 function getURL(){
