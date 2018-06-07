@@ -149,6 +149,15 @@ a:hover{
     margin-bottom: 0px;
 }
 
+#submitButton {
+  display: inline;
+}
+
+#menu-toggle {
+  margin: 0px;
+  margin-bottom: 0px !important;
+}
+
 .marginbutton {
   margin-left: 5px;
 }
