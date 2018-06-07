@@ -73,25 +73,54 @@ class User extends Model{
 
 		echo 'true';
   }
-
-  public function update($data){
+	// this method updates the users name
+  public function update1($data){
 		$db = $this->connectToDB();
 
 		$query =
 			'UPDATE user
-			 SET firstName = ?, lastName = ?, password = ?
+			 SET firstName = ?, lastName = ?
 			 WHERE id = ?';
 
-	  $execute = [$data[0], $data[1], $data[2], $_SESSION['id']];
+	  $execute = [$data['fname'], $data['lname'], $data['id']];
 		$sth = $db->prepare($query);
 	 	$sth->execute($execute);
-
-		$SESSION['name'] = $data[0];
-		$SESSION['email'] = $data[1];
 
 		echo 'success';
 
   }
+	// this method updates the user email
+	public function update2($data){
+		$db = $this->connectToDB();
+
+		$query =
+			'UPDATE user
+			 SET email= ?
+			 WHERE id = ?';
+
+		$execute = [$data['email'], $data['id'],;
+		$sth = $db->prepare($query);
+		$sth->execute($execute);
+
+		echo 'success';
+
+	}
+	// this method updates the user password
+	public function update3($data){
+		$db = $this->connectToDB();
+
+		$query =
+			'UPDATE user
+			 SET password= ?
+			 WHERE id = ?';
+
+		$execute = [$data['pwd'], $data['id'],;
+		$sth = $db->prepare($query);
+		$sth->execute($execute);
+
+		echo 'success';
+
+	}
 
 
 }
