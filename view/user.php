@@ -145,15 +145,20 @@
 		</div>
 	</a>
 
-	<!-- login, logout, message and add item -->
-		<a href="messages.php" id="messageButton"><button class="btn btn-info"><i class="fas fa-comments"></i> Messages</button></a>
+	<div id="tmplContainer"></div>
 
-	  <form id="formTmpl" class="logoutloginform form-inline my-2 my-lg-0" method="post">
-		<div class="form-group">
-			<a href="login.php" id="loginButton"><button class="btn btn-success"><i class="fas fa-user"></i> Log in</button></a>
-			<button id="logoutButton" name="logout" class="btn btn-outline-danger" role="button" type="submit"><i class="fas fa-user"></i> Log out</button>
-		</div>
-		</form>
+	<!-- login, logout, message and add item -->
+		<!--<a href="messages.php" id="messageButton"><button class="btn btn-info"><i class="fas fa-comments"></i> Messages</button></a>-->
+
+		<a href="messages.php" class="messagesButton" id="messageButton"><button class="btn btn-info"><i class="fas fa-comments"></i> Messages</button></a>
+
+  <form id="formTmpl" class="logoutloginform" method="post">
+	<div class="form-group">
+		<a href="user.php" id="userButton"><button class="btn btn-info"><i class="fas fa-user"></i> My profile</button></a>
+		<a href="login.php" id="loginButton"><button class="btn btn-success"><i class="fas fa-power-off"></i> Log in</button></a>
+		<button id="logoutButton" name="logout" class="btn btn-outline-danger" role="button" type="submit"><i class="fas fa-power-off"></i> Log out</button>
+	</div>
+</form>
 
 
 </div>
@@ -170,6 +175,7 @@ if(isset($_POST['logout'])){
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
+<script src="js/user.js"></script>
 
 </body>
 </html>
