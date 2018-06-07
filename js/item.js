@@ -39,11 +39,12 @@ function checkExistingThread(){
     },
     type: 'post',
     success: function(output) {
-      if(output == 'true'){
-        location.href = 'messages.php';// This has to redirect to user page, set
-      }else{
+      if(output == 'false'){
         // Toggles message modal so user can create a message
         $('#sendMessageModal').modal('toggle');
+      }else{
+        location.href = 'messages.php?id='+output;// This has to redirect to user page, set
+
       }
      }
   });
@@ -52,7 +53,6 @@ function checkExistingThread(){
 
 // Called when user clicks 'send' in the message modal
 function newMsgThread(){
-  console.log('newMsgThread');
   var url = location.href;
   var itemID = url.substring(url.indexOf("=")+1);
 
@@ -66,9 +66,9 @@ function newMsgThread(){
     type: 'post',
     success: function(output) {
       console.log(output);
-      if(output == 'true'){
-        location.href = 'messages.php';// This has to redirect to user page, set
-      }
+
+      location.href = 'messages.php?id='+output;// This has to redirect to user page, set
+
     }
   });
 }
