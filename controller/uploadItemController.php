@@ -9,7 +9,7 @@ class uploadItemController extends Controller{
   public function uploadItemWithImg(){
     $values = array('name' => $_POST['name'], 'prev'=> $_POST['preview'],
     'descr'=> $_POST['descr'], 'ftmp' => $_FILES['imgfile']['tmp_name'],  'category' => $_POST['category'], 'id'=>$_SESSION['userID']);
-    print_r($values);
+
     $item = new Item();
     //$item-> newItem($values);
     $itemID = $item->newItemWithImg($values); // fetches the lastInsertId from the method
@@ -18,7 +18,7 @@ class uploadItemController extends Controller{
   public function uploadItem() {
     $values = array('name' => $_POST['name'], 'prev'=> $_POST['preview'],
     'descr'=> $_POST['descr'],  'category' => $_POST['category'], 'id'=>$_SESSION['userID']);
-    print_r($values);
+    
     $item = new Item();
     $itemID = $item->newItem($values); // fetches the lastInsertId from the method
   }
