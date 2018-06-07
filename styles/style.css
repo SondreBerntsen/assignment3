@@ -242,3 +242,6 @@ a li:hover{
 .tab-content {
   color: #000000;
 }
+.alertMsg{
+  display: none;
+}
