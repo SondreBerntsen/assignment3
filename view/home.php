@@ -13,7 +13,7 @@
             <div class="container">
             <div class="row">
               <div class="col">
-                <a href="#menu-toggle" class="btn btn-info" id="menu-toggle">Categories</a>
+                <a href="#menu-toggle" class="btn btn-info" id="menu-toggle">Categories -></a>
                 <div id="submitButton"></div>
           			<section id="listOfItems">
           			</section>

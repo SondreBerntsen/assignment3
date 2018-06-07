@@ -2,8 +2,7 @@
 require_once('Model.php');
 class Item extends Model  {
 
-
-
+	// this is the method for uploaded item without image
 	public function newItem($values) {
 		$db = $this->connectToDB();//stores databaseconnection i db variable
 
@@ -28,6 +27,7 @@ class Item extends Model  {
 	}
 	//newItem is a function that creates a new item
 	//It takes an array of all the values of the new item
+	// this is the method for uploaded item containing image
 	public function newItemWithImg($values){
 		$db = $this->connectToDB();//stores databaseconnection i db variable
 

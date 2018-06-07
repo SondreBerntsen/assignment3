@@ -186,3 +186,11 @@ a:hover{
 .alertMsg{
   display: none;
 }
+#listOfCategories li{
+  cursor: pointer;
+}
+#listOfCategories li:hover{
+  background-color: gray;
+  color:white;
+  font-weight: bold;
+}
