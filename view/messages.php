@@ -34,7 +34,7 @@
           </div>
           <form class="form-inline messageform" method="POST">
               <textarea name="message" required class="form-control mr-sm-2 sendmessage col-sm-12 col-md-8" type="text" placeholder="Enter message" aria-label="entermessage"></textarea>
-              <button class="headerbutton btn btn-success sendmessagebutton col-md-3 col-sm-12" type="submit">Send message</button>
+              <button class="headerbutton btn btn-success sendmessagebutton col-md-3 col-sm-12" onclick="newMessage()" type="submit">Send message</button>
           </form>
         </div>
       </div>

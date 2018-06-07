@@ -63,13 +63,10 @@ function listMessages(){
       json = JSON.parse(output);
       user = json.user;
       delete json.user;
-      //console.log(json);
-      //console.log(Object.keys(json).length);
+      console.log(json);
 
       $('.msgList').html(''); //Empties current content
-      for(i=0; i < Object.keys(json).length-1; i++){
-        //console.log(user);
-        //console.log(json[i].sender);
+      for(i=0; i < Object.keys(json).length; i++){
         if(json[i].sender == user){
           var tmpl = $('#myMsg').clone();
           tmpl.removeAttr('id');
@@ -86,6 +83,10 @@ function listMessages(){
       }
     }
   });
+}
+
+function newMessage(){
+  
 }
 
 function getURL(){

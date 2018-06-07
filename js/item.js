@@ -65,7 +65,7 @@ function newMsgThread(){
     type: 'post',
     success: function(output) {
       console.log(output);
-
+      console.log(page);
       location.href = 'messages.php?id='+output;// This has to redirect to user page, set
 
     }
