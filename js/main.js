@@ -73,16 +73,15 @@ function loadUserView(page){
   console.log(page);
   var formTmpl = $('#formTmpl').clone();
   formTmpl.removeAttr('id');
-  formTmpl.attr('action', '')
-  var buttonTmpl = $('#logoutButton').clone();
-  buttonTmpl.removeAttr('id');
-  formTmpl.html(buttonTmpl);
-  var msgBtnTmpl = $('#messageButton').clone()
-  msgBtnTmpl.removeAttr('id')
 
+  var msgBtnTmpl = $('#messageButton').clone();
+  msgBtnTmpl.removeAttr('id');
+
+  var userBtnTmpl = $('#userButton').clone();
+  userBtnTmpl.removeAttr('id');
   $('#headerButton').append(msgBtnTmpl);
+  $('#headerButton').append(userBtnTmpl);
   $('#headerButton').append(formTmpl);
-
   console.log('loadUserView ENGAGE');
   switch(page){
     case 'index'||'':
