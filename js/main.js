@@ -23,7 +23,7 @@ function callback(func, val){
   if(path[1] != ''){
     var page = path[1].split('.')[0];
   }else{
-    page = path[1];
+    page = 'index';
   }
   // Checks function name sent as parameter
   switch(func){
@@ -76,10 +76,10 @@ function loadUserView(page){
   $('#headerButton').append(msgBtnTmpl);
   $('#headerButton').append(userBtnTmpl);
   $('#headerButton').append(formTmpl);
-
   // Checks page and takes appropriate actions
   switch(page){
-    case 'index'||'':
+    case 'index':
+      console.log('ayo');
       var tmpl = $('#uploadItem').clone();
       tmpl.removeAttr('id');
       $('#submitButton').append(tmpl);
