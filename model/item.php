@@ -98,7 +98,7 @@ class Item extends Model  {
 
 	}
 
-	public function getMyItems(){
+	public function listOwnItems(){
 		$db = $this->connectToDB();//stores databaseconnection i db variable
 		$query = 'SELECT item.id, item.name, item.descr, item.date, item.category
 							FROM item, user
