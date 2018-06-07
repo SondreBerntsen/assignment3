@@ -5,7 +5,7 @@
         <h2 class="mb-3 profileheading justify-content-left">Messages</h2>
       </div>
       <div class="row">
-        <div class="col-3">
+        <div class="col-md-3">
           <!-- message nav -->
           <ul class="nav nav-tabs small" role="tablist">
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#mymessages" role="tab">My items</a></li>
@@ -25,7 +25,7 @@
         </div>
 
         <!-- messagethreadcontainer -->
-        <div class="col">
+        <div class="col-md-9">
           <div class="messagecontainer">
             <div class="msgList">
 
@@ -33,8 +33,8 @@
 
           </div>
           <form class="form-inline messageform" method="POST">
-              <textarea name="message" required class="form-control mr-sm-2 sendmessage col-md-8" type="text" placeholder="Enter message" aria-label="entermessage"></textarea>
-              <button class="headerbutton btn btn-success sendmessagebutton col-md-3" type="submit">Send message</button>
+              <textarea name="message" required class="form-control mr-sm-2 sendmessage col-sm-12 col-md-8" type="text" placeholder="Enter message" aria-label="entermessage"></textarea>
+              <button class="headerbutton btn btn-success sendmessagebutton col-md-3 col-sm-12" type="submit">Send message</button>
           </form>
         </div>
       </div>
