@@ -13,9 +13,10 @@ class MessageThread extends Model{
 			 AND asker = ?';
 		$sth = $db->prepare($query);
 		$sth->execute([$itemID, $asker]);
+		$thread = $sth->fetch(PDO::FETCH_ASSOC);//Store thread id in $thread['id']
 
 		if ($sth->rowCount() == 1){
-      echo 'true';
+      echo $thread['id'];
     }else{
       echo 'false';
     }
@@ -56,7 +57,7 @@ class MessageThread extends Model{
 		  $sth->execute([$content, date('Y-m-d H:i:s'), $sender, $threadID]);
 			//If the message was successfully put in the database return true
 			if ($sth->rowCount() == 1){
-	      echo 'true';
+	      echo $threadID;
 	    }else{
 	      echo 'false';
 	    }
