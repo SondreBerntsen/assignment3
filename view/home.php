@@ -58,6 +58,7 @@
 	</a>
 
 <!-- login, logout, message and add item -->
+  <a href="uploadItem.php" id="uploadItem"><button class="btn btn-info"><i class="fas fa-plus-circle"></i> Add item</button></a>
 	<a href="messages.php" id="messageButton"><button class="btn btn-info"><i class="fas fa-comments"></i> Messages</button></a>
 
   <form id="formTmpl" class="logoutloginform form-inline my-2 my-lg-0" method="post">

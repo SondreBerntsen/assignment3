@@ -74,7 +74,10 @@ function loadUserView(page){
   formTmpl.html(buttonTmpl);
   var msgBtnTmpl = $('#messageButton').clone()
   msgBtnTmpl.removeAttr('id')
+  var itemBtnTmpl = $('#uploadItem').clone()
+  itemBtnTmpl.removeAttr('id')
 
+  $('#uploadItem').append(itemBtnTmpl);
   $('#headerButton').append(msgBtnTmpl);
   $('#headerButton').append(formTmpl);
 
