@@ -82,7 +82,7 @@ class User extends Model{
 			 SET firstName = ?, lastName = ?
 			 WHERE id = ?';
 
-	  $execute = [$data['fname'], $data['lname'], $data['id']];
+	  $execute = [$fname, $surname, $id];
 		$sth = $db->prepare($query);
 	 	$sth->execute($execute);
 
@@ -98,7 +98,7 @@ class User extends Model{
 			 SET email= ?
 			 WHERE id = ?';
 
-		$execute = [$data['email'], $data['id']];
+		$execute = [$email, $id];
 		$sth = $db->prepare($query);
 		$sth->execute($execute);
 

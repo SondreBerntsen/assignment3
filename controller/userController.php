@@ -37,40 +37,77 @@ class UserController extends Controller{
     }
   }
 
-  public function update(){
+  public function update1(){
+    // if neither of these input fields are empty..
     if(
       !empty($_POST['firstName']) &&
-      !empty($_POST['lastName']) &&
-      !empty($_POST['email']) &&
-      !empty($_POST['password'])){
+      !empty($_POST['lastName'])){
         $fname = $_POST['firstName'];
         $surname = $_POST['lastName'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-
-        $data = [$fname, $surname, $email, $password];
+        $id = $_SESSION['ID'];
+        //..we store them in an array
+        $data = [$fname, $surname];
         $user = new User();
-        $user->update();
-    }else{
+        $user->update1($data);
+    }
+    else {
       echo "false";
     }
   }
+
+  public function update2(){
+    // if this input fields are empty..
+    if(
+      !empty($_POST['email']){
+        $email = $_POST['email'];
+        $id = $_SESSION['ID'];
+        //..we store them in an array
+        $data = [$email, $id];
+        $user = new User();
+        $user->update2($data);
+    }
+    else {
+      echo "false";
+    }
+  }
+
+  public function update3(){
+    // if this input fields are empty..
+    if(
+      !empty($_POST['pwd1']) &&
+      !empty($_POST['pwd2']) &&
+      $_POST['pwd'] == $_POST['pwd2']{
+        $pwd = $_POST['pwd1'];
+        $id = $_SESSION['ID'];
+        //..we store them in an array
+        $data = [$pwd, $id];
+        $user = new User();
+        $user->update3($data);
+    }
+    else {
+      echo "false";
+    }
+  }
+
+  //method to call the inlogged students uploaded items
   public function listOwnItems(){
       $userId = $_SESSION['userID'];
       $item = new Item();
       $data=$item->listOwnItems($userId);
-      print_r($data);
     }
   }
 
-
+// if an action has been set..
 if(isset($_POST['action'])) {
 
   $controller = new UserController();
 
   $action = $_POST['action'];
+  // we go through actions..
   switch($action) {
+    // and check the value of action
     case 'checkLoginState':
+      // then we execute a method
       $controller->checkLoginState();
       break;
     case 'login':
