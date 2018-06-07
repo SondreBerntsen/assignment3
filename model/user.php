@@ -98,7 +98,7 @@ class User extends Model{
 			 SET email= ?
 			 WHERE id = ?';
 
-		$execute = [$data['email'], $data['id'],;
+		$execute = [$data['email'], $data['id']];
 		$sth = $db->prepare($query);
 		$sth->execute($execute);
 
@@ -114,13 +114,11 @@ class User extends Model{
 			 SET password= ?
 			 WHERE id = ?';
 
-		$execute = [$data['pwd'], $data['id'],;
+		$execute = [$data['pwd'], $data['id']];
 		$sth = $db->prepare($query);
 		$sth->execute($execute);
 
 		echo 'success';
 
 	}
-
-
 }
