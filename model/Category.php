@@ -18,16 +18,19 @@ class Category extends Model {
      return false;
    }
 	}
+	/*
+	*deleteCategory function gets catecoryname as parameter and deletes it
+	*/
 	public function deleteCategory($name){
-		$db = $this->connectToDB();
+		$db = $this->connectToDB();//Gets the connection to database
 
 		$query = 'DELETE FROM category WHERE name=?';
     $sth = $db->prepare($query);
     $sth->execute(array($name));
 	}
-
+//Function to list all the categories
 	public function listCategories(){
-		$db = $this->connectToDB();
+		$db = $this->connectToDB();//connection to database
 		$query = 'SELECT name
               FROM category
               ORDER BY name DESC';

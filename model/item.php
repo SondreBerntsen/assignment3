@@ -3,7 +3,8 @@ require_once('Model.php');
 class Item extends Model  {
 
 
-
+	//newItem is a function that creates a new item
+	//It takes an array of all the values of the new item
 	public function newItem($values){
 		$db = $this->connectToDB();//stores databaseconnection i db variable
 
@@ -17,27 +18,21 @@ class Item extends Model  {
 		$sth->bindParam(':previewtxt',$values['prev']);
 
 		$sth->execute();
-
 		$this->itemID = $db->lastInsertId();
 
-		return $this->itemID;
-
-
-//
-	/*	if($sth->rowCount() == 1){
-			return "Things were inserted";
+		if($sth->rowCount() == 1){
+			echo $this->itemID;
 		}else{
-			return "No workerino";
-		}*/
+			echo "false";
+		}
   }
-
 
 	//getItemList is a function that returns a list of items
 	public function getItemList($catName){
 		$db = $this->connectToDB();//stores databaseconnection i db variable
 		//If a category has not been chosen list the 5 most recent items
 		if($catName=='none'){
-			$query = //ADD IMG WHEN RESUMING THE BALL
+			$query =
 				'SELECT id, name, descr, date, previewtxt
 				 FROM item
 				 ORDER BY date DESC
@@ -47,7 +42,7 @@ class Item extends Model  {
 			$itemData = $sth->fetchAll(PDO::FETCH_ASSOC);
 
 		}else{//Select items from the chosen category
-			$query = //ADD IMG WHEN RESUMING THE BALL
+			$query =
 				'SELECT id, name, descr, date, previewtxt
 				 FROM item
 				 WHERE category = ?
@@ -57,21 +52,6 @@ class Item extends Model  {
 			$sth->execute($data);
 			$itemData = $sth->fetchAll(PDO::FETCH_ASSOC);
 		}
-		/*
-		for($i = 0; $i < count($itemData); $i++){
-			if($itemData[$i]['img'] != null){
-				$imgData = base64_encode($itemData[$i]['img']);
-				unset($itemData[$i]['img']);
-				$json = json_encode($itemData[$i]);
-
-
-				echo $json;
-				echo '|';
-				echo $imgData;
-			}else{
-				echo json_encode($itemData);
-			}
-			*/
 			echo json_encode($itemData);
 	}
 	//getItemData is a function that returns all data from a selected item
@@ -94,10 +74,8 @@ class Item extends Model  {
 		$sth = $db->prepare($query);
 		$sth->execute(array($itemId));
 	}
-	public function editItem(){
-
-	}
-
+//Function that list all the items of the logged in user
+//Takes the id of the logged in user as parameter
 	public function listOwnItems($userId){
 		$db = $this->connectToDB();//stores databaseconnection i db variable
 		$query = 'SELECT item.id, item.name, item.descr, item.date, item.category

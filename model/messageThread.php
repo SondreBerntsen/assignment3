@@ -2,9 +2,11 @@
 require_once('Model.php');
 
 class MessageThread extends Model{
-
+	/*
+	*checkExisting is a function that checks if the messagethread already exists
+	*/
 	public function checkExisting($itemID, $asker){
-		$db = $this->connectToDB();
+		$db = $this->connectToDB();//gets the database connection
 
 		$query =
 			'SELECT id
@@ -15,9 +17,9 @@ class MessageThread extends Model{
 		$sth->execute([$itemID, $asker]);
 		$thread = $sth->fetch(PDO::FETCH_ASSOC);//Store thread id in $thread['id']
 
-		if ($sth->rowCount() == 1){
+		if ($sth->rowCount() == 1){//if the thread already exists, retrun threadid
       echo $thread['id'];
-    }else{
+    }else{//if the thread does noe exist return false
       echo 'false';
     }
 

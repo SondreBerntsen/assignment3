@@ -2,7 +2,9 @@
 session_start();
 require_once('Model.php');
 class User extends Model{
-
+	/*
+	*checkLoginState function checks if the user is logged in or not
+	*/
 	public function checkLoginState(){
 		$returnValue;
 
@@ -14,31 +16,31 @@ class User extends Model{
 
 		echo $returnValue;
 	}
-
+/*
+*Function that logs user in if username and password match
+*/
 	public function validateLogin($email, $password){
 		$db = $this->connectToDB();
 
 		$query =
 			'SELECT *
 			 FROM user
-			 WHERE email = ?
-			 AND password = ?';
+			 WHERE email = ?';
 
 		$sth = $db->prepare($query);
-	 	$sth->execute([$email, $password]);
-		$result = $sth->fetch(PDO::FETCH_ASSOC);
-
-		if ($sth->rowCount() == 1){
-			$_SESSION['userID'] = $result['id'];
-			$_SESSION['name'] = $result['firstName'].' '.$result['lastName'];
-			$_SESSION['email'] = $result['email'];
-			$_SESSION['userType'] = $result['type'];
-			echo 'true';
-    }else{
-     	echo 'false';
-    }
+	 	$sth->execute([$email]);
+		if($result = $sth->fetch(PDO::FETCH_ASSOC)){
+			  if (password_verify($password, $result['password'])){
+					$_SESSION['userID'] = $result['id'];
+					$_SESSION['name'] = $result['firstName'].' '.$result['lastName'];
+					$_SESSION['email'] = $result['email'];
+					$_SESSION['userType'] = $result['type'];
+					echo 'true';
+				}else{
+					echo 'false';
+				}
+		}
 	}
-
 	public function validateRegistration($fname, $surname, $password, $email){
 		$db = $this->connectToDB();
 
@@ -70,12 +72,10 @@ class User extends Model{
 		password_hash($password, PASSWORD_DEFAULT)));
 
 		echo 'true';
-		// window.location.href = 'index.php' in ajax callback
   }
 
   public function update($data){
 		$db = $this->connectToDB();
-		// I decided not to let them change email because it complicates the funcion =( If you want them to be able to change email, we need a select statement to check if the email is taken or not before running the rest of the function.
 
 		$query =
 			'UPDATE user
@@ -86,12 +86,11 @@ class User extends Model{
 		$sth = $db->prepare($query);
 	 	$sth->execute($execute);
 
-		//TIng her
 		$SESSION['name'] = $data[0];
 		$SESSION['email'] = $data[1];
 
 		echo 'success';
-		// maybe window.location.href = 'userDashboard.php' or whatever in ajax callback, where the updated information should be listed by some function which checks session vars.
+
   }
 
 

@@ -74,15 +74,18 @@ $query = 'CREATE TABLE IF NOT EXISTS message (
           )';
 $sth = $db->prepare($query);
 $sth->execute();
-
+$sondrepwd=password_hash('sondre', PASSWORD_DEFAULT);
 // example data for user table
 $query ="INSERT INTO user (firstName, lastName, email, password, type)
-         VALUES ('Sondre', 'Berntsen', 'sondre@ntnu.no', 'sondre', 'admin'),
-        ('Ragnhild', 'Alstadsæter', 'ragnhild@ntnu.no', 'ragnhild', 'admin'),
-        ('Mads', 'Øigård', 'mads@ntnu.no', 'mads', 'user'),
-        ('Elisabeth', 'Medlien', 'elisabeth@ntnu.no', 'elisabeth', 'user')";
+         VALUES ('Sondre', 'Berntsen', 'sondre@ntnu.no', ?, 'admin'),
+        ('Ragnhild', 'Alstadsæter', 'ragnhild@ntnu.no', ?, 'admin'),
+        ('Mads', 'Øigård', 'mads@ntnu.no', ?, 'user'),
+        ('Elisabeth', 'Medlien', 'elisabeth@ntnu.no', ?, 'user')";
 $sth = $db->prepare($query);
-$sth->execute();
+$sth->execute(array(password_hash('sondre', PASSWORD_DEFAULT),
+                    password_hash('ragnhild', PASSWORD_DEFAULT),
+                    password_hash('mads', PASSWORD_DEFAULT),
+                    password_hash('elisabeth', PASSWORD_DEFAULT)));
 
 // example data for category table
 $query ="INSERT INTO category (name)
