@@ -1,3 +1,4 @@
+
 function submitItem (){
   var name = itemName.value;
   var preview = itemPreview.value;
@@ -8,15 +9,11 @@ if($('#itemName').val()==""||$('#itemPreview').val()==""||$('#itemDescr').val()=
   $(".alertMsg").css("display", "block");
 }else{
   if( document.getElementById("uploadimg").files.length == 0 ){
-
     $.ajax( {
       url: 'controller/uploadItemController.php',
       data: {name:name, preview:preview, descr: descr, category:category},
       type: 'post',
       success: function(data, output){
-        console.log('hello');
-        console.log(data);
-        console.log('hello');
       }
     });
 } else {
