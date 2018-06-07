@@ -33,6 +33,8 @@ class User extends Model{
 			  if (password_verify($password, $result['password'])){
 					$_SESSION['userID'] = $result['id'];
 					$_SESSION['name'] = $result['firstName'].' '.$result['lastName'];
+					$_SESSION['firstName'] = $result['firstName'];
+					$_SESSION['lastName'] = $result['lastName'];
 					$_SESSION['email'] = $result['email'];
 					$_SESSION['userType'] = $result['type'];
 					echo 'true';
@@ -84,7 +86,8 @@ class User extends Model{
 
 		$sth = $db->prepare($query);
 	 	$sth->execute([$fname, $surname, $id]);
-
+		$_SESSION['firstName'] =$fname;
+		$_SESSION['lastName'] = $surname;
 		echo 'success';
   }
 
@@ -99,7 +102,7 @@ class User extends Model{
 
 		$sth = $db->prepare($query);
 		$sth->execute([$email, $id]);
-
+		$_SESSION['email'] = $email;
 		echo 'success';
 	}
 

@@ -108,14 +108,17 @@ class Item extends Model  {
 	public function listOwnItems($userID){
 		$db = $this->connectToDB();//stores databaseconnection i db variable
 		$query =
-			'SELECT item.id as itemID, item.name, item.descr, item.date,  item.category, user.id as userID, user.firstName, user.lastName, user.email
+			'SELECT item.id as itemID, item.name, item.descr, item.date,  item.category, user.id as userID
 			 FROM item, user
 			 WHERE user.id = ?
 			 AND item.owner = user.id';
 		$sth = $db->prepare($query);
 	 	$sth->execute(array($userID));
-		$result = $sth->fetchAll(PDO::FETCH_ASSOC);
-		echo json_encode($result);
+		$results = $sth->fetchAll(PDO::FETCH_ASSOC);
+		$results['firstName'] = $_SESSION['firstName'];
+		$results['lastName'] = $_SESSION['lastName'];
+		$results['email'] = $_SESSION['email'];
+		echo json_encode($results);
 	}
 }
 
