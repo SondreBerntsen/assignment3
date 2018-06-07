@@ -5,6 +5,7 @@
 			<div class="sidenav">
         <h3>Categories</h3>
 				<ul id="listOfCategories"></ul>
+				<div id="submitButton"></div>
 			</div>
     </div>
     <div class="col">
@@ -13,7 +14,6 @@
 			</section>
     </div>
   </div>
-	<div id="submitButton"></div>
 </div>
 
 <!-- Templates -->
@@ -58,7 +58,11 @@
 	</a>
 
 <!-- login, logout, message and add item -->
-  <a href="uploadItem.php" id="uploadItem"><button class="btn btn-info"><i class="fas fa-plus-circle"></i> Add item</button></a>
+  <a href="uploadItem.php" id="uploadItem">
+		<button class="btn btn-info"><i class="fas fa-plus-circle"></i>List new item</button>
+	</a>
+
+
 	<a href="messages.php" id="messageButton"><button class="btn btn-info"><i class="fas fa-comments"></i> Messages</button></a>
 
   <form id="formTmpl" class="logoutloginform form-inline my-2 my-lg-0" method="post">
