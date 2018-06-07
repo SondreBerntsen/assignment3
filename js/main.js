@@ -1,3 +1,4 @@
+// Chceks if user is logged in
 function checkLoginState(){
   $.ajax({
     url: 'controller/UserController.php',
@@ -5,6 +6,7 @@ function checkLoginState(){
     type: 'post',
     success: function(output) {
       console.log(output);
+      // Sends output data to callback function
       if(output == 'true'){
         callback('checkLoginState', 'true');
       }else{
@@ -14,24 +16,26 @@ function checkLoginState(){
   });
 }
 
-//Denne brukes om vi trenger return variabler uten å kjøre kode i success funksjonen til ajax callet.
+// Responds to ajax calls and does whatever it's told to do based on which function name is sent as parameter
 function callback(func, val){
-
+  // Gets page name
   var path = location.pathname.split('assignment3/');
   if(path[1] != ''){
     var page = path[1].split('.')[0];
   }else{
     page = path[1];
   }
+  // Checks function name sent as parameter
   switch(func){
     case 'checkLoginState':
+      // Loads view based on login status, sends page as parameter to user view
       if(val == 'true'){
         loadUserView(page);
       }else{
-        loadGuestView(page);
+        loadGuestView();
       }
     break;
-
+    // Notifies user if they entered invalid login information
     case 'login':
       if(val == 'true'){
         location.href = 'index.php';
@@ -40,7 +44,7 @@ function callback(func, val){
         $( '#errorLogin' ).addClass( "alertMsg alert alert-danger" );
       }
     break;
-
+    // Notifies user if registration email already exists
     case 'register':
       if(val == 'true'){
         location.href = 'index.php';
@@ -51,26 +55,15 @@ function callback(func, val){
     break;
   }
 }
-function loadGuestView(page){
 
+// Loads guest view
+function loadGuestView(){
   var tmpl = $('#loginButton').clone();
   tmpl.removeAttr('id');
   $('#headerButton').append(tmpl);
-
-    console.log('loadGuestView ENGAGE');
-  switch(page){
-    case 'index':
-      // Nothing is loaded I guess.
-    break;
-
-    case 'item':
-      // Nothing is loaded here either? =(
-    break;
-  }
 }
-
+// Loads user view. Different items are cloned and appended based on page.
 function loadUserView(page){
-  console.log(page);
   var formTmpl = $('#formTmpl').clone();
   formTmpl.removeAttr('id');
 
@@ -79,20 +72,22 @@ function loadUserView(page){
 
   var userBtnTmpl = $('#userButton').clone();
   userBtnTmpl.removeAttr('id');
+
   $('#headerButton').append(msgBtnTmpl);
   $('#headerButton').append(userBtnTmpl);
   $('#headerButton').append(formTmpl);
-  console.log('loadUserView ENGAGE');
+
+  // Checks page and takes appropriate actions
   switch(page){
     case 'index'||'':
       var tmpl = $('#uploadItem').clone();
       tmpl.removeAttr('id');
       $('#submitButton').append(tmpl);
     break;
-
     case 'login':
       location.href('index.php');
     break;
+    // =)
     case 'item':
       // Should check if item.owner == $_SESSION['userID'], in which case 'send message' should not load
     break;
