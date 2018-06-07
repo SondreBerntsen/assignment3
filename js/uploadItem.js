@@ -29,9 +29,11 @@ if($('#itemName').val()==""||$('#itemPreview').val()==""||$('#itemDescr').val()=
   if( document.getElementById("uploadimg").files.length == 0 ){
     $.ajax( {
       url: 'controller/uploadItemController.php',
-      data: {name:name, preview:preview, descr: descr, category:category},
+      data: {action: 'uploadItem',name:name, preview:preview, descr: descr, category:category},
       type: 'post',
       success: function(data, output){
+        console.log(data);
+        console.log(output);
       }
     });
 } else {
