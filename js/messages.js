@@ -43,7 +43,7 @@ $(document).ready(function (){
     }
   });
   checkLoginState();
-  getURL();
+  getURLMsg();
   listMessages();
 });
 
@@ -107,7 +107,7 @@ function newMessage(){
 
 }
 
-function getURL(){
+function getURLMsg(){
   url = location.href;
   threadID = url.substring(url.indexOf("=")+1);
   console.log(threadID);
@@ -120,6 +120,6 @@ function getURL(){
 }
 function pushURLMsg(threadID){
   window.history.replaceState("Details", "Title", window.location.pathname+'?id='+threadID);
-  getURL();
+  getURLMsg();
   //listMessages();
 }

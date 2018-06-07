@@ -16,7 +16,6 @@ function login(){
              }
            }
   });
-  getURL();
   checkLoginState();
 }
 

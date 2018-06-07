@@ -220,3 +220,13 @@ a li:hover{
 .newItemButton {
   width: 100% !important;
 }
+
+.logoutloginform {
+  margin-bottom: 0px;
+}
+
+#headerbutton {
+    display: inherit;
+    margin-bottom: 0px;
+    height: 45px;
+}
