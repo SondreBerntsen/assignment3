@@ -5,4 +5,5 @@
 
 <?php
 	include('view/user.php');
+	include('includes/footer.inc.php');
 ?>

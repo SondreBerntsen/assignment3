@@ -5,5 +5,5 @@
 
 <?php
 	include('view/item.php');
-
+	include('includes/footer.inc.php');
 ?>
