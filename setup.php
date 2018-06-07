@@ -43,8 +43,8 @@ $query = 'CREATE TABLE IF NOT EXISTS item (
           owner INT,
           category VARCHAR(255),
           previewtxt VARCHAR(255) NOT NULL,
-          FOREIGN KEY (owner) REFERENCES user(id),
-          FOREIGN KEY (category) REFERENCES category(name)
+          FOREIGN KEY (owner) REFERENCES user(id) ON DELETE CASCADE,
+          FOREIGN KEY (category) REFERENCES category(name) ON DELETE CASCADE
           )';
 $sth = $db->prepare($query);
 $sth->execute();
@@ -55,8 +55,8 @@ $query = 'CREATE TABLE IF NOT EXISTS messagethread (
           itemID INT,
           asker INT,
           owner INT,
-          FOREIGN KEY (itemID) REFERENCES item(id),
-          FOREIGN KEY (asker) REFERENCES user(id),
+          FOREIGN KEY (itemID) REFERENCES item(id) ON DELETE CASCADE,
+          FOREIGN KEY (asker) REFERENCES user(id) ON DELETE CASCADE,
           FOREIGN KEY (owner) REFERENCES user(id)
           )';
 $sth = $db->prepare($query);
@@ -69,8 +69,8 @@ $query = 'CREATE TABLE IF NOT EXISTS message (
           date DATETIME,
           sender INT,
           threadID INT,
-          FOREIGN KEY (sender) REFERENCES user(id),
-          FOREIGN KEY (threadID) REFERENCES messagethread(id)
+          FOREIGN KEY (sender) REFERENCES user(id) ON DELETE CASCADE,
+          FOREIGN KEY (threadID) REFERENCES messagethread(id) ON DELETE CASCADE
           )';
 $sth = $db->prepare($query);
 $sth->execute();
@@ -112,10 +112,7 @@ $query ="INSERT INTO messagethread (asker, owner, itemID)
          VALUES (2, 1, 1),
         (3, 1, 1),
         (4, 1, 1),
-        (3, 2, 2),
-        (1, 4, 4),
-        (4, 2, 3),
-        (1, 2, 2)";
+        (3, 2, 2),";
 $sth = $db->prepare($query);
 $sth->execute();
 
