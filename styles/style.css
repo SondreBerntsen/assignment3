@@ -208,6 +208,20 @@ a li:hover{
   margin-right: 5px;
 }
 
+/* Messagebutton styling */
+
 .logoutloginform {
   margin-bottom: 0px;
+}
+
+#headerbutton {
+    display: inherit;
+}
+
+.btn-success {
+  margin-right: 5px;
+}
+
+.btn-info {
+  margin-right: 5px;
 }

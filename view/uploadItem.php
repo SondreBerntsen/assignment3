@@ -90,23 +90,15 @@
 		</div>
 	</a>
 
-  <form id="formTmpl" class="logoutloginform" method="post"></form>
-  <!-- MESSAGES BUTTON
-  <a href="messages.php">
-    <button name="messages" type="button" class="btn btn-info messagebutton"><i class="fas fa-comments messageicon"></i> Messages</button>
-  </a>
+  <!-- login, logout, message and add item -->
+  	<a href="messages.php" id="messageButton"><button class="btn btn-info"><i class="fas fa-comments"></i> Messages</button></a>
 
-  <a id="loginButton" href="login.php" class="btn btn-success" role="button" type="submit">
-    <i class="fas fa-user"></i> Log in
-  </a>
-  -->
-
-  <a id="loginButton" href="login.php">
-    <button name="messages" type="submit" role="button" class="btn btn-success"><i class="fas fa-user"></i> Log in</button>
-  </a>
-
-  <button id="logoutButton" name="logout" class="btn btn-success" role="button" type="submit"><i class="fas fa-user"></i> Log out</button>
-  <button id="messageButton" name="messageButton" class="btn btn-info" role="button" type="submit"><i class="fas fa-comments"></i> Messages</button>
+    <form id="formTmpl" class="logoutloginform form-inline my-2 my-lg-0" method="post">
+  	<div class="form-group">
+  		<a href="login.php" id="loginButton"><button class="btn btn-success"><i class="fas fa-user"></i> Log in</button></a>
+  		<button id="logoutButton" name="logout" class="btn btn-outline-danger" role="button" type="submit"><i class="fas fa-user"></i> Log out</button>
+  	</div>
+  	</form>
 
 
 </div>

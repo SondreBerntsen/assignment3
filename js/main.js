@@ -72,7 +72,10 @@ function loadUserView(page){
   var buttonTmpl = $('#logoutButton').clone();
   buttonTmpl.removeAttr('id');
   formTmpl.html(buttonTmpl);
+  var msgBtnTmpl = $('#messageButton').clone()
+  msgBtnTmpl.removeAttr('id')
 
+  $('#headerButton').append(msgBtnTmpl);
   $('#headerButton').append(formTmpl);
 
   console.log('loadUserView ENGAGE');
