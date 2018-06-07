@@ -13,7 +13,7 @@
 				</div>
 				<div class="col-md-4">
 					<div class="card-img-bottom float-right">
-						<img id="pleaseWork" class="img-fluid imgItem" alt="Responsive image">
+						<img id="pleaseWork" class="img-fluid imgItem" alt="Responsive image" onerror="this.src ='./resources/images/error.jpg';">
 					</div>
 				</div>
 			</div>
@@ -39,7 +39,7 @@
 
   <div id="tmplItem" class="row">
     <div class="col-md-8">
-        <img  class="imgInItem" class="img-fluid imgItem" alt="Responsive image">
+        <img  class="imgInItem" class="img-fluid imgItem" alt="Responsive image" onerror="this.src ='./resources/images/error.jpg';">
           <h1 class="itemName"></h1>
           <p class="itemDate">
           </p>
