@@ -29,10 +29,6 @@ a:hover{
     width: 250px;
 }
 
-.active {
-  color: white;
-}
-
 .sidenav ul {
   padding: 0px;
 }
@@ -130,8 +126,20 @@ a li:hover{
   padding: 16px;
 }
 
+.useritem {
+  margin-bottom: 10px
+}
+
 .userbutton {
   margin-top: 10px;
+}
+
+.active {
+    color: #595959;
+}
+
+.card-text {
+  font-size: 16px;
 }
 
 /* message containers styling */
@@ -229,4 +237,8 @@ a li:hover{
     display: inherit;
     margin-bottom: 0px;
     height: 45px;
+}
+
+.tab-content {
+  color: #000000;
 }

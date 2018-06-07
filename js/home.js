@@ -1,23 +1,23 @@
 
 $(document).ready(function (){
-  $.ajax({ url: 'controller/HomeController.php',
-           data: {action: 'listCategories'},
-           type: 'post',
-           success: function(output) {
-             console.log(output);
-             json = JSON.parse(output);
-             console.log(json);
-             for(i=0; json.length > i; i++){
+  $.ajax({
+    url: 'controller/HomeController.php',
+    data: {action: 'listCategories'},
+    type: 'post',
+    success: function(output) {
+      console.log(output);
+      json = JSON.parse(output);
+      console.log(json);
+      for(i=0; json.length > i; i++){
+        var tmpl = $('#categoryTmpl').clone();
+        tmpl.removeAttr('id');
+        tmpl.find('li').html(json[i].name);
 
-               var tmpl = $('#categoryTmpl').clone();
-               tmpl.removeAttr('id');
-               tmpl.find('li').html(json[i].name);
-
-               var onclick = 'pushURL('+'"'+json[i].name+'")'; // FY FAEN I SVARTE HELVETE
-               tmpl.attr('onclick', onclick);
-               $('#listOfCategories').append(tmpl);
-             }
-           }
+        var onclick = 'pushURL('+'"'+json[i].name+'")';
+        tmpl.attr('onclick', onclick);
+        $('#listOfCategories').append(tmpl);
+      }
+    }
   });
   getURL();
   listItems();
@@ -37,24 +37,6 @@ function listItems(){
     type: 'post',
     success: function(output) {
     json = JSON.parse(output);
-    console.log(json);
-
-            /* array = output.split('|');
-             console.log(array.length);
-             json = JSON.parse(array[0]);
-             console.log(array[0]);
-             img = 'data:image/jpeg;base64, ' + array[2];
-
-             var tmpl = $('#itemCardTempl').clone();
-             tmpl.removeAttr('id');
-             var src = 'storedImages/'+json.id;
-             tmpl.find('#img').attr('src', src);
-             tmpl.attr("href", "item.php?id="+json.id);
-             tmpl.find('.card-title').html(json.name);
-             tmpl.find('.dateItem').html(json.date);
-             tmpl.find('.card-text').html(json.previewtxt);
-
-             $('#listOfItems').append(tmpl);*/
 
      for(i=0; json.length > i; i++){
 
@@ -73,7 +55,6 @@ function listItems(){
     }
   });
 }
-
 
 function getURL(){
   url = location.href;
