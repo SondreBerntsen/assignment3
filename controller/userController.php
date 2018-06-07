@@ -1,5 +1,6 @@
 <?php
 require_once('../model/User.php');
+require_once('../model/Item.php');
 require_once('Controller.php');
 
 class UserController extends Controller{
@@ -54,7 +55,14 @@ class UserController extends Controller{
       echo "false";
     }
   }
-}
+  public function listOwnItems(){
+      $userId = $_SESSION['userID'];
+      $item = new Item();
+      $data=$item->listOwnItems($userId);
+      print_r($data);
+    }
+  }
+
 
 if(isset($_POST['action'])) {
 
@@ -73,6 +81,9 @@ if(isset($_POST['action'])) {
       break;
     case 'update':
       $controller->update();
+      break;
+    case 'listOwnItems':
+      $controller->listOwnItems();
       break;
   }
 }

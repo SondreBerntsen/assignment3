@@ -1,6 +1,7 @@
 $(document).ready(function (){
-  getURL();
+  //getURL();
   checkLoginState();
+  loadOwnListings()
 });
 
 function accessDenied(){
@@ -19,10 +20,15 @@ function loadOwnListings(){
            success: function(output) {
 
              json = JSON.parse(output);
+             console.log(json);
+             console.log(json.name);
 
              for(i=0; json.length > i; i++){
+                console.log(json[i].name);
 
-               var tmpl = $('#userCardTempl').clone();
+               var tmpl = $('#itemCardTempl').clone();
+               console.log(tmpl);
+               console.log(json[i].name);
                tmpl.removeAttr('id');
                tmpl.find('.card-title').html(json[i].name);
                tmpl.find('.dateItem').html(json[i].date);
