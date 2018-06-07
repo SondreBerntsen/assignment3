@@ -15,7 +15,7 @@ a:hover{
   color:black;
 }
 .card-title{
-  color:black;  
+  color:black;
 }
 /**Sidenav in home**/
 .sidenav {
@@ -214,14 +214,11 @@ a li:hover{
   margin-right: 5px;
 }
 
-/* Messagebutton styling */
-
-.logoutloginform {
-  margin-bottom: 0px;
-}
+/* Header styling */
 
 #headerbutton {
     display: inherit;
+    margin-bottom: 0px;
 }
 
 .btn-success {
@@ -230,4 +227,8 @@ a li:hover{
 
 .btn-info {
   margin-right: 5px;
+}
+
+.newItemButton {
+  width: 100% !important;
 }
