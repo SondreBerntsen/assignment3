@@ -58,7 +58,7 @@ class UserController extends Controller{
   public function update2(){
     // if this input fields are empty..
     if(
-      !empty($_POST['email']){
+      !empty($_POST['email'])){
         $email = $_POST['email'];
         $id = $_SESSION['ID'];
         //..we store them in an array
@@ -76,7 +76,7 @@ class UserController extends Controller{
     if(
       !empty($_POST['pwd1']) &&
       !empty($_POST['pwd2']) &&
-      $_POST['pwd'] == $_POST['pwd2']{
+      $_POST['pwd'] == $_POST['pwd2']){
         $pwd = $_POST['pwd1'];
         $id = $_SESSION['ID'];
         //..we store them in an array
