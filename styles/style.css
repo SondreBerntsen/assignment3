@@ -14,6 +14,9 @@ a:hover{
   text-decoration: none;
   color:black;
 }
+.card-title{
+  color:black;  
+}
 /**Sidenav in home**/
 .sidenav {
     z-index: 1;
@@ -160,7 +163,7 @@ a li:hover{
     border-radius: 4px;
     color: #FFFFFF;
     float: right;
-    width: 42%;
+    margin-top: 5px;
     text-align: right;
     padding: 5px 11px 0px 5px;
     margin-right: 10px;
@@ -173,7 +176,7 @@ a li:hover{
     border-radius: 4px;
     color: #404040;
     float: left;
-    width: 42%;
+    margin-top: 5px;
     text-align: left;
     padding: 5px 5px 0px 15px;
     margin-left: 10px;
@@ -185,7 +188,8 @@ a li:hover{
     border-radius: 9px;
     border-color: #9f9f9f;
     padding: 15px 0px 10px 5px;
-    min-height: 500px;
+    height: 70vh;
+    overflow: auto;
 }
 
 .mymessagecontainer {
@@ -194,10 +198,12 @@ a li:hover{
 }
 
 .messageform {
-    width: 95%;
-    position: absolute;
+    width: 100%;
+    min-height: 100px;
     bottom: 0;
+    margin-top: 10px;
 }
+
 
 .sendmessage {
   width: 78% !important;
