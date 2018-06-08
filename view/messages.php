@@ -66,10 +66,4 @@
 
 </div>
 
-<?php
-  if(!isset($_SESSION['userID'])){
-    header('location:login.php');
-  }
-?>
-
 <script src="js/messages.js"></script>
