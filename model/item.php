@@ -102,6 +102,12 @@ class Item extends Model  {
 		$query = 'DELETE FROM item WHERE id=?';
 		$sth = $db->prepare($query);
 		$sth->execute(array($itemId));
+		$dir = '../storedImages'; // the directory to the folder of image
+			// removes the image
+			unlink($dir. '/' . $itemId . '/image'); // create the directory
+			// removes the folder for the image
+			rmdir($dir.'/'.$itemId);
+
 	}
 //Function that list all the items of the logged in user
 //Takes the id of the logged in user as parameter
