@@ -115,4 +115,10 @@
   </div>
 
 </div>
+
+<?php
+  if(!isset($_SESSION['user'])){
+    header('location:login.php');
+  }
+?>
 <script src="js/user.js"></script>

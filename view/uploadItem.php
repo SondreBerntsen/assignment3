@@ -47,5 +47,9 @@
   <option id="catTempl" class="categoryName"></option>
 </div>
 
-
+<?php
+  if(!isset($_SESSION['userID'])){
+    header('location:login.php');
+  }
+?>
 <script src="js/uploadItem.js"></script>
