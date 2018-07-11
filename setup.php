@@ -7,6 +7,8 @@ $user = 'root';
 $password = '';
 $db = new PDO($dsn, $user, $password);
 
+
+
 // creating the database
 $query = 'CREATE DATABASE IF NOT EXISTS secondhand';
 $sth = $db->prepare($query);
